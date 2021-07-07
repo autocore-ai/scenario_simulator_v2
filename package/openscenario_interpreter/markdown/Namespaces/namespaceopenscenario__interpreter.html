@@ -802,6 +802,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#function-tolaneposition" class="md-nav__link">
+    function toLanePosition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#function-record_start" class="md-nav__link">
     function record_start
   </a>
@@ -901,6 +908,13 @@
         
           <li class="md-nav__item">
   <a href="#function-rename_1" class="md-nav__link">
+    function RENAME
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-rename_2" class="md-nav__link">
     function RENAME
   </a>
   
@@ -1062,13 +1076,6 @@
         
           <li class="md-nav__item">
   <a href="#function-forward_to_simulation_api_22" class="md-nav__link">
-    function FORWARD_TO_SIMULATION_API
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#function-forward_to_simulation_api_23" class="md-nav__link">
     function FORWARD_TO_SIMULATION_API
   </a>
   
@@ -1254,6 +1261,10 @@
 </thead>
 <tbody>
 <tr>
+<td>auto</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter#function-tolaneposition">toLanePosition</a></strong>(const geometry_msgs::msg::Pose &amp; pose)</td>
+</tr>
+<tr>
 <td>template \&lt;typename... Ts></br>auto</td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter#function-record_start">record_start</a></strong>(Ts &amp;&amp;... xs)</td>
 </tr>
@@ -1312,6 +1323,10 @@
 <tr>
 <td></td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter#function-rename">RENAME</a></strong>(setDriverModel , assignController )</td>
+</tr>
+<tr>
+<td></td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter#function-rename">RENAME</a></strong>(toMapPose , toWorldPosition )</td>
 </tr>
 <tr>
 <td></td>
@@ -1403,10 +1418,6 @@
 </tr>
 <tr>
 <td></td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter#function-forward_to_simulation_api">FORWARD_TO_SIMULATION_API</a></strong>(toMapPose )</td>
-</tr>
-<tr>
-<td></td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Namespaces/namespaceopenscenario__interpreter#function-forward_to_simulation_api">FORWARD_TO_SIMULATION_API</a></strong>(updateFrame )</td>
 </tr>
 </tbody>
@@ -1458,6 +1469,11 @@
 <div class="highlight"><pre><span></span><code><span class="k">using</span> <span class="n">openscenario_interpreter</span><span class="o">::</span><span class="n">ComplexType</span> <span class="o">=</span> <span class="k">typedef</span> <span class="n">Element</span><span class="p">;</span>
 </code></pre></div>
 <h2 id="functions-documentation">Functions Documentation<a class="headerlink" href="#functions-documentation" title="Permanent link">#</a></h2>
+<h3 id="function-tolaneposition">function toLanePosition<a class="headerlink" href="#function-tolaneposition" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="k">auto</span> <span class="n">toLanePosition</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span> <span class="o">&amp;</span> <span class="n">pose</span>
+<span class="p">)</span>
+</code></pre></div>
 <h3 id="function-record_start">function record_start<a class="headerlink" href="#function-record_start" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
 <span class="k">auto</span> <span class="n">record_start</span><span class="p">(</span>
@@ -1545,6 +1561,12 @@
 <div class="highlight"><pre><span></span><code><span class="n">RENAME</span><span class="p">(</span>
     <span class="n">setDriverModel</span> <span class="p">,</span>
     <span class="n">assignController</span> 
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="function-rename_2">function RENAME<a class="headerlink" href="#function-rename_2" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">RENAME</span><span class="p">(</span>
+    <span class="n">toMapPose</span> <span class="p">,</span>
+    <span class="n">toWorldPosition</span> 
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="function-forward_to_simulation_api">function FORWARD_TO_SIMULATION_API<a class="headerlink" href="#function-forward_to_simulation_api" title="Permanent link">#</a></h3>
@@ -1659,11 +1681,6 @@
 </code></pre></div>
 <h3 id="function-forward_to_simulation_api_22">function FORWARD_TO_SIMULATION_API<a class="headerlink" href="#function-forward_to_simulation_api_22" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="n">FORWARD_TO_SIMULATION_API</span><span class="p">(</span>
-    <span class="n">toMapPose</span> 
-<span class="p">)</span>
-</code></pre></div>
-<h3 id="function-forward_to_simulation_api_23">function FORWARD_TO_SIMULATION_API<a class="headerlink" href="#function-forward_to_simulation_api_23" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">FORWARD_TO_SIMULATION_API</span><span class="p">(</span>
     <span class="n">updateFrame</span> 
 <span class="p">)</span>
 </code></pre></div>
@@ -1681,7 +1698,7 @@
 <div class="highlight"><pre><span></span><code><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">API</span> <span class="o">&amp;</span> <span class="n">connection</span> <span class="o">=</span> <span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">API</span> <span class="o">&amp;&gt;</span><span class="p">(</span><span class="n">memory</span><span class="p">);</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 July 2021 at 10:21:46 UTC</p>
+<p>Updated on  7 July 2021 at 16:24:11 UTC</p>
                 
                   
                 

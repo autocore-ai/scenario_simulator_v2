@@ -1279,6 +1279,7 @@
     <member refid="procedure_8hpp_1ab8030e1e1d31cd522fa5cb004b882525" kind="function"><name>connect</name></member>
     <member refid="procedure_8hpp_1ab5915578b4dc4dfc3ca55a19427fa95a" kind="function"><name>getEntityStatus</name></member>
     <member refid="procedure_8hpp_1ad45c795bdf5a02a76b355185ae9144c4" kind="function"><name>getRelativePose</name></member>
+    <member refid="procedure_8hpp_1aaa9ad1623902943fdcc44780ce23358e" kind="function"><name>toLanePosition</name></member>
     <member refid="procedure_8hpp_1ac90cc975d5d628d185d0e310f9a4882b" kind="function"><name>STRIP_OPTIONAL</name></member>
     <member refid="procedure_8hpp_1ad0093563bce9ff2530aaf5ff7e58e169" kind="function"><name>STRIP_OPTIONAL</name></member>
     <member refid="procedure_8hpp_1a51076ad58ee54bcb90e4c145a5c1d5b8" kind="function"><name>STRIP_OPTIONAL</name></member>
@@ -1304,10 +1305,10 @@
     <member refid="procedure_8hpp_1ab2f9073994d30d56ec514a27477bdfcb" kind="function"><name>FORWARD_TO_SIMULATION_API</name></member>
     <member refid="procedure_8hpp_1acd8baec617e870c1e3e6d70d9c260825" kind="function"><name>FORWARD_TO_SIMULATION_API</name></member>
     <member refid="procedure_8hpp_1a7a5a3465b55618f8805c6d9117fa9c6c" kind="function"><name>FORWARD_TO_SIMULATION_API</name></member>
-    <member refid="procedure_8hpp_1a49435ed95c275b2af3851ec925bf708e" kind="function"><name>FORWARD_TO_SIMULATION_API</name></member>
     <member refid="procedure_8hpp_1a960e11b54bc500f8f00b9584cfce03fd" kind="function"><name>FORWARD_TO_SIMULATION_API</name></member>
     <member refid="procedure_8hpp_1a7379d6c9aea6e199b7de50c3c65b7e33" kind="function"><name>RENAME</name></member>
     <member refid="procedure_8hpp_1a99bec18a84b494e3b5af3ea9aa74eeb7" kind="function"><name>RENAME</name></member>
+    <member refid="procedure_8hpp_1a8a763aba7c8250464db3a7351cd4cc7d" kind="function"><name>RENAME</name></member>
     <member refid="openscenario__interpreter_8cpp_1a9d2ab5fd7105832ed6285b187f8bc0d7" kind="function"><name>record_start</name></member>
     <member refid="openscenario__interpreter_8cpp_1ab39e4e2fe4bc269fe829ef87810fa32a" kind="function"><name>record_end</name></member>
     <member refid="pugi__extension_8cpp_1a5ba7dc74bc81e1ea576607fd14d0d4c5" kind="function"><name>operator&lt;&lt;</name></member>

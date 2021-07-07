@@ -289,6 +289,7 @@
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a68ac9642755f613b95c1326b73193f02" kind="function"><name>engage</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a89741f16edb1c0321e282bc291d34394" kind="function"><name>getBoundingBox</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1abf1c3aa1c11796be40e39211481d58cd" kind="function"><name>getCurrentAction</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1ab88f28d165b92c3a88cb3ffb86d3c4c6" kind="function"><name>getEntityStatusBeforeUpdate</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1ad8890dfebc275fdb8b7e6844036ae23e" kind="function"><name>getEntityType</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a9185202e5af64443a218c4bec7cce8d5" kind="function"><name>getEntityTypename</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a61901fd8d051423b362e0b67934129d2" kind="function"><name>getLinearJerk</name></member>
@@ -297,6 +298,7 @@
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1ae823189422b1044c5432308282974f8f" kind="function"><name>getStatus</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a85915279a462bcbf118f2b82a0c2dc7c" kind="function"><name>getStandStillDuration</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a10e0abb8722358feb09ff8c097987f86" kind="function"><name>getVisibility</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1ac06646d01cb5dbc6668a83273a70d837" kind="function"><name>getVehicleCommand</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a1ae9994146a73567c18f02ab76f8770b" kind="function"><name>getVehicleParameters</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1af3dd9a648e131368ff7a31f1ed8a8cc0" kind="function"><name>getWaypoints</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a4997ff2dca928f3f0b298f8901333320" kind="function"><name>setDriverModel</name></member>
@@ -318,8 +320,6 @@
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1adaa0eee865fbbcaf8e3ebfc0d8065224" kind="function"><name>stopAtEndOfRoad</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1ab2ccab44e0202371ccee31dc4cb4d7e7" kind="function"><name>updateEntityStatusTimestamp</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a4b957ec5d6bb199a12de020ea1e305a0" kind="function"><name>updateStandStillDuration</name></member>
-    <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a98d9e60aa5abe92d631ee91d23e71935" kind="function"><name>getVehicleCommand</name></member>
-    <member refid="classtraffic__simulator_1_1entity_1_1EntityBase_1a28a0a0bf8237644e7aaed07c493d8485" kind="function"><name>getEntityStatusBeforeUpdate</name></member>
   </compound>
   <compound refid="classtraffic__simulator_1_1entity_1_1EntityManager" kind="class"><name>traffic_simulator::entity::EntityManager</name>
     <member refid="classtraffic__simulator_1_1entity_1_1EntityManager_1a0fcee4c5f9e11d43e431c831135ca888" kind="typedef"><name>EntityStatusWithTrajectoryArray</name></member>
