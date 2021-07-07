@@ -6,71 +6,71 @@
     <includes refid="color_8hpp" local="no">openscenario_interpreter/syntax/color.hpp</includes>
     <includes local="no">unordered_map</includes>
     <incdepgraph>
-      <node id="17560">
+      <node id="17568">
         <label>scenario_simulator_exception/exception.hpp</label>
       </node>
-      <node id="17556">
+      <node id="17564">
         <label>iomanip</label>
       </node>
-      <node id="17557">
+      <node id="17565">
         <label>openscenario_interpreter/utility/demangle.hpp</label>
         <link refid="demangle_8hpp_source"/>
-        <childnode refid="17558" relation="include">
-        </childnode>
-        <childnode refid="17559" relation="include">
-        </childnode>
-      </node>
-      <node id="17561">
-        <label>stdexcept</label>
-      </node>
-      <node id="17558">
-        <label>string</label>
-      </node>
-      <node id="17565">
-        <label>traffic_simulator/traffic_lights/traffic_light_state.hpp</label>
-      </node>
-      <node id="17554">
-        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/color.cpp</label>
-        <link refid="color_8cpp"/>
-        <childnode refid="17555" relation="include">
-        </childnode>
-        <childnode refid="17562" relation="include">
-        </childnode>
         <childnode refid="17566" relation="include">
         </childnode>
+        <childnode refid="17567" relation="include">
+        </childnode>
       </node>
-      <node id="17555">
-        <label>openscenario_interpreter/error.hpp</label>
-        <link refid="error_8hpp_source"/>
-        <childnode refid="17556" relation="include">
-        </childnode>
-        <childnode refid="17557" relation="include">
-        </childnode>
-        <childnode refid="17560" relation="include">
-        </childnode>
-        <childnode refid="17561" relation="include">
-        </childnode>
+      <node id="17569">
+        <label>stdexcept</label>
+      </node>
+      <node id="17566">
+        <label>string</label>
+      </node>
+      <node id="17573">
+        <label>traffic_simulator/traffic_lights/traffic_light_state.hpp</label>
       </node>
       <node id="17562">
-        <label>openscenario_interpreter/syntax/color.hpp</label>
-        <link refid="color_8hpp_source"/>
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/color.cpp</label>
+        <link refid="color_8cpp"/>
         <childnode refid="17563" relation="include">
         </childnode>
+        <childnode refid="17570" relation="include">
+        </childnode>
+        <childnode refid="17574" relation="include">
+        </childnode>
+      </node>
+      <node id="17563">
+        <label>openscenario_interpreter/error.hpp</label>
+        <link refid="error_8hpp_source"/>
         <childnode refid="17564" relation="include">
         </childnode>
         <childnode refid="17565" relation="include">
         </childnode>
+        <childnode refid="17568" relation="include">
+        </childnode>
+        <childnode refid="17569" relation="include">
+        </childnode>
       </node>
-      <node id="17559">
+      <node id="17570">
+        <label>openscenario_interpreter/syntax/color.hpp</label>
+        <link refid="color_8hpp_source"/>
+        <childnode refid="17571" relation="include">
+        </childnode>
+        <childnode refid="17572" relation="include">
+        </childnode>
+        <childnode refid="17573" relation="include">
+        </childnode>
+      </node>
+      <node id="17567">
         <label>typeinfo</label>
       </node>
-      <node id="17564">
+      <node id="17572">
         <label>iostream</label>
       </node>
-      <node id="17566">
+      <node id="17574">
         <label>unordered_map</label>
       </node>
-      <node id="17563">
+      <node id="17571">
         <label>boost/optional.hpp</label>
       </node>
     </incdepgraph>

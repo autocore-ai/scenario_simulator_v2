@@ -1894,7 +1894,6 @@
   <compound refid="openscenario__interpreter_8cpp" kind="file"><name>openscenario_interpreter.cpp</name>
     <member refid="openscenario__interpreter_8cpp_1afbcb7ebeb83aed21a574fd939c59cdbd" kind="define"><name>OPENSCENARIO_INTERPRETER_ALLOW_ATTRIBUTES_TO_BE_BLANK</name></member>
     <member refid="openscenario__interpreter_8cpp_1a961194921aca016d7117bf465f3a1009" kind="define"><name>OPENSCENARIO_INTERPRETER_NO_EXTENSION</name></member>
-    <member refid="openscenario__interpreter_8cpp_1ab68d33b7548e2e4a81fa57e5a621dfe9" kind="define"><name>AUTOWARE_ARCHITECTURE_PROPOSAL</name></member>
     <member refid="openscenario__interpreter_8cpp_1a944aaef80590057b61fb622a65359058" kind="define"><name>INTERPRETER_INFO_STREAM</name></member>
     <member refid="openscenario__interpreter_8cpp_1ae88f273ba365a5a32444aa015b412bfa" kind="define"><name>INTERPRETER_ERROR_STREAM</name></member>
     <member refid="openscenario__interpreter_8cpp_1ae37d7fe992dc2df99c3c5643f4700199" kind="define"><name>DECLARE_PARAMETER</name></member>

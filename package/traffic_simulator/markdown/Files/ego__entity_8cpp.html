@@ -900,6 +900,7 @@
 <span class="cp">#include</span> <span class="cpf">&lt;quaternion_operation/quaternion_operation.h&gt;</span><span class="cp"></span>
 
 <span class="cp">#include</span> <span class="cpf">&lt;ament_index_cpp/get_package_share_directory.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;concealer/autoware_def.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;memory&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_msgs/msg/waypoints_array.hpp&gt;</span><span class="cp"></span>
@@ -959,7 +960,15 @@
 
 <span class="k">auto</span> <span class="n">getVehicleModelType</span><span class="p">()</span>
 <span class="p">{</span>
+<span class="cp">#ifdef AUTOWARE_ARCHITECTURE_PROPOSAL</span>
   <span class="k">const</span> <span class="k">auto</span> <span class="n">vehicle_model_type</span> <span class="o">=</span> <span class="n">getParameter</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;vehicle_model_type&quot;</span><span class="p">,</span> <span class="s">&quot;IDEAL_STEER&quot;</span><span class="p">);</span>
+<span class="cp">#endif</span>
+<span class="cp">#ifdef AUTOWARE_AUTO</span>
+  <span class="c1">// hard-coded for now</span>
+  <span class="c1">// it would require changes in https://github.com/tier4/lexus_description.iv.universe</span>
+  <span class="c1">// please, let us know if we should do that</span>
+  <span class="k">const</span> <span class="k">auto</span> <span class="n">vehicle_model_type</span> <span class="o">=</span> <span class="s">&quot;IDEAL_STEER&quot;</span><span class="p">;</span>
+<span class="cp">#endif</span>
 
   <span class="n">DEBUG_VALUE</span><span class="p">(</span><span class="n">vehicle_model_type</span><span class="p">);</span>
 
@@ -1077,13 +1086,57 @@
 
 <span class="k">const</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleCommand</span> <span class="n">EgoEntity</span><span class="o">::</span><span class="n">getVehicleCommand</span><span class="p">()</span>
 <span class="p">{</span>
+<span class="cp">#ifdef AUTOWARE_ARCHITECTURE_PROPOSAL</span>
   <span class="k">return</span> <span class="n">ego_entities</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">).</span><span class="n">getVehicleCommand</span><span class="p">();</span>
+<span class="cp">#endif</span>
+<span class="cp">#ifdef AUTOWARE_AUTO</span>
+  <span class="c1">// gathering information and converting it to autoware_vehicle_msgs::msg::VehicleCommand</span>
+  <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleCommand</span> <span class="n">vehicle_command</span><span class="p">;</span>
+
+  <span class="k">auto</span> <span class="n">vehicle_control_command</span> <span class="o">=</span> <span class="n">ego_entities</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">).</span><span class="n">getVehicleControlCommand</span><span class="p">();</span>
+
+  <span class="n">vehicle_command</span><span class="p">.</span><span class="n">header</span><span class="p">.</span><span class="n">stamp</span> <span class="o">=</span> <span class="n">vehicle_control_command</span><span class="p">.</span><span class="n">stamp</span><span class="p">;</span>
+
+  <span class="n">vehicle_command</span><span class="p">.</span><span class="n">control</span><span class="p">.</span><span class="n">steering_angle</span> <span class="o">=</span> <span class="n">vehicle_control_command</span><span class="p">.</span><span class="n">front_wheel_angle_rad</span><span class="p">;</span>
+  <span class="n">vehicle_command</span><span class="p">.</span><span class="n">control</span><span class="p">.</span><span class="n">velocity</span> <span class="o">=</span> <span class="n">vehicle_control_command</span><span class="p">.</span><span class="n">velocity_mps</span><span class="p">;</span>
+  <span class="n">vehicle_command</span><span class="p">.</span><span class="n">control</span><span class="p">.</span><span class="n">acceleration</span> <span class="o">=</span> <span class="n">vehicle_control_command</span><span class="p">.</span><span class="n">long_accel_mps2</span><span class="p">;</span>
+
+  <span class="k">auto</span> <span class="n">vehicle_state_command</span> <span class="o">=</span> <span class="n">ego_entities</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">).</span><span class="n">getVehicleStateCommand</span><span class="p">();</span>
+
+  <span class="c1">// handle gear enum remapping</span>
+  <span class="k">switch</span> <span class="p">(</span><span class="n">vehicle_state_command</span><span class="p">.</span><span class="n">gear</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">case</span> <span class="n">autoware_auto_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleStateReport</span><span class="o">::</span><span class="nl">GEAR_DRIVE</span><span class="p">:</span>
+      <span class="n">vehicle_command</span><span class="p">.</span><span class="n">shift</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Shift</span><span class="o">::</span><span class="n">DRIVE</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="n">autoware_auto_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleStateReport</span><span class="o">::</span><span class="nl">GEAR_REVERSE</span><span class="p">:</span>
+      <span class="n">vehicle_command</span><span class="p">.</span><span class="n">shift</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Shift</span><span class="o">::</span><span class="n">REVERSE</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="n">autoware_auto_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleStateReport</span><span class="o">::</span><span class="nl">GEAR_PARK</span><span class="p">:</span>
+      <span class="n">vehicle_command</span><span class="p">.</span><span class="n">shift</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Shift</span><span class="o">::</span><span class="n">PARKING</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="n">autoware_auto_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleStateReport</span><span class="o">::</span><span class="nl">GEAR_LOW</span><span class="p">:</span>
+      <span class="n">vehicle_command</span><span class="p">.</span><span class="n">shift</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Shift</span><span class="o">::</span><span class="n">LOW</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+    <span class="k">case</span> <span class="n">autoware_auto_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleStateReport</span><span class="o">::</span><span class="nl">GEAR_NEUTRAL</span><span class="p">:</span>
+      <span class="n">vehicle_command</span><span class="p">.</span><span class="n">shift</span><span class="p">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Shift</span><span class="o">::</span><span class="n">NEUTRAL</span><span class="p">;</span>
+      <span class="k">break</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="c1">// these fields are hard-coded because they are not present in AutowareAuto</span>
+  <span class="n">vehicle_command</span><span class="p">.</span><span class="n">header</span><span class="p">.</span><span class="n">frame_id</span> <span class="o">=</span> <span class="s">&quot;&quot;</span><span class="p">;</span>
+  <span class="n">vehicle_command</span><span class="p">.</span><span class="n">control</span><span class="p">.</span><span class="n">steering_angle_velocity</span> <span class="o">=</span> <span class="mf">0.0</span><span class="p">;</span>
+  <span class="n">vehicle_command</span><span class="p">.</span><span class="n">emergency</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+  <span class="k">return</span> <span class="n">vehicle_command</span><span class="p">;</span>
+<span class="cp">#endif</span>
 <span class="p">}</span>
 
 <span class="k">auto</span> <span class="n">EgoEntity</span><span class="o">::</span><span class="n">getCurrentAction</span><span class="p">()</span> <span class="k">const</span> <span class="o">-&gt;</span> <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span>
 <span class="p">{</span>
   <span class="n">std</span><span class="o">::</span><span class="n">stringstream</span> <span class="n">message</span><span class="p">;</span>
   <span class="p">{</span>
+<span class="cp">#ifdef AUTOWARE_ARCHITECTURE_PROPOSAL</span>
+    <span class="c1">// *** getAutowareStatus - FundamentalAPI dependency ***</span>
     <span class="k">const</span> <span class="k">auto</span> <span class="n">state</span><span class="p">{</span><span class="n">ego_entities</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">).</span><span class="n">getAutowareStatus</span><span class="p">().</span><span class="n">autoware_state</span><span class="p">};</span>
 
     <span class="n">message</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">state</span><span class="p">.</span><span class="n">empty</span><span class="p">()</span> <span class="o">?</span> <span class="s">&quot;Starting&quot;</span> <span class="o">:</span> <span class="n">state</span><span class="p">)</span>  <span class="c1">//</span>
@@ -1092,6 +1145,10 @@
             <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">setprecision</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>                  <span class="c1">//</span>
             <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">status_</span> <span class="o">?</span> <span class="n">status_</span><span class="o">-&gt;</span><span class="nl">time</span> <span class="p">:</span> <span class="mi">0</span><span class="p">)</span>         <span class="c1">//</span>
             <span class="o">&lt;&lt;</span> <span class="s">&quot;)&quot;</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="cp">#ifdef AUTOWARE_AUTO</span>
+    <span class="c1">// TODO: implement Autoware.Auto equivalent when state monitoring is there</span>
+<span class="cp">#endif</span>
   <span class="p">}</span>
 
   <span class="k">return</span> <span class="n">message</span><span class="p">.</span><span class="n">str</span><span class="p">();</span>
@@ -1188,9 +1245,21 @@
 <span class="p">{</span>
   <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">WaypointsArray</span> <span class="n">waypoints</span><span class="p">;</span>
 
+<span class="cp">#ifdef AUTOWARE_ARCHITECTURE_PROPOSAL</span>
+  <span class="c1">// Trajectory returned by getTrajectory() is a different message between AAP and AA</span>
   <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">point</span> <span class="p">:</span> <span class="n">ego_entities</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">).</span><span class="n">getTrajectory</span><span class="p">().</span><span class="n">points</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">waypoints</span><span class="p">.</span><span class="n">waypoints</span><span class="p">.</span><span class="n">emplace_back</span><span class="p">(</span><span class="n">point</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">position</span><span class="p">);</span>
   <span class="p">}</span>
+<span class="cp">#endif</span>
+<span class="cp">#ifdef AUTOWARE_AUTO</span>
+  <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">point</span> <span class="p">:</span> <span class="n">ego_entities</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">).</span><span class="n">getTrajectory</span><span class="p">().</span><span class="n">points</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span> <span class="n">waypoint</span><span class="p">;</span>
+    <span class="n">waypoint</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">point</span><span class="p">.</span><span class="n">x</span><span class="p">;</span>
+    <span class="n">waypoint</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">point</span><span class="p">.</span><span class="n">y</span><span class="p">;</span>
+    <span class="n">waypoint</span><span class="p">.</span><span class="n">z</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+    <span class="n">waypoints</span><span class="p">.</span><span class="n">waypoints</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">waypoint</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="cp">#endif</span>
 
   <span class="k">return</span> <span class="n">waypoints</span><span class="p">;</span>
 <span class="p">}</span>
@@ -1233,9 +1302,16 @@
       <span class="k">case</span> <span class="n">VehicleModelType</span><span class="o">::</span><span class="nl">DELAY_STEER</span><span class="p">:</span> <span class="p">{</span>
         <span class="n">Eigen</span><span class="o">::</span><span class="n">VectorXd</span> <span class="nf">input</span><span class="p">(</span><span class="mi">2</span><span class="p">);</span>
 
+<span class="cp">#ifdef AUTOWARE_ARCHITECTURE_PROPOSAL</span>
         <span class="n">input</span> <span class="o">&lt;&lt;</span>  <span class="c1">//</span>
           <span class="n">ego_entities</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">).</span><span class="n">getVehicleCommand</span><span class="p">().</span><span class="n">control</span><span class="p">.</span><span class="n">velocity</span><span class="p">,</span>
           <span class="n">ego_entities</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">).</span><span class="n">getVehicleCommand</span><span class="p">().</span><span class="n">control</span><span class="p">.</span><span class="n">steering_angle</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="cp">#ifdef AUTOWARE_AUTO</span>
+        <span class="n">input</span> <span class="o">&lt;&lt;</span>  <span class="c1">//</span>
+          <span class="n">ego_entities</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">).</span><span class="n">getVehicleControlCommand</span><span class="p">().</span><span class="n">velocity_mps</span><span class="p">,</span>
+          <span class="n">ego_entities</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">).</span><span class="n">getVehicleControlCommand</span><span class="p">().</span><span class="n">front_wheel_angle_rad</span><span class="p">;</span>
+<span class="cp">#endif</span>
 
         <span class="p">(</span><span class="o">*</span><span class="n">vehicle_model_ptr_</span><span class="p">).</span><span class="n">setInput</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
       <span class="p">}</span> <span class="k">break</span><span class="p">;</span>
@@ -1243,12 +1319,23 @@
       <span class="k">case</span> <span class="n">VehicleModelType</span><span class="o">::</span><span class="nl">DELAY_STEER_ACC</span><span class="p">:</span> <span class="p">{</span>
         <span class="n">Eigen</span><span class="o">::</span><span class="n">VectorXd</span> <span class="nf">input</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
 
+<span class="cp">#ifdef AUTOWARE_ARCHITECTURE_PROPOSAL</span>
         <span class="k">using</span> <span class="n">autoware_vehicle_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Shift</span><span class="p">;</span>
 
         <span class="n">input</span> <span class="o">&lt;&lt;</span>  <span class="c1">//</span>
           <span class="n">ego_entities</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">).</span><span class="n">getVehicleCommand</span><span class="p">().</span><span class="n">control</span><span class="p">.</span><span class="n">acceleration</span><span class="p">,</span>
           <span class="n">ego_entities</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">).</span><span class="n">getVehicleCommand</span><span class="p">().</span><span class="n">control</span><span class="p">.</span><span class="n">steering_angle</span><span class="p">,</span>
           <span class="n">ego_entities</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">).</span><span class="n">getVehicleCommand</span><span class="p">().</span><span class="n">shift</span><span class="p">.</span><span class="n">data</span> <span class="o">==</span> <span class="n">Shift</span><span class="o">::</span><span class="n">REVERSE</span> <span class="o">?</span> <span class="mf">-1.0</span> <span class="o">:</span> <span class="mf">1.0</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="cp">#ifdef AUTOWARE_AUTO</span>
+        <span class="n">input</span> <span class="o">&lt;&lt;</span>  <span class="c1">//</span>
+          <span class="n">ego_entities</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">).</span><span class="n">getVehicleControlCommand</span><span class="p">().</span><span class="n">velocity_mps</span><span class="p">,</span>
+          <span class="n">ego_entities</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">).</span><span class="n">getVehicleControlCommand</span><span class="p">().</span><span class="n">front_wheel_angle_rad</span><span class="p">,</span>
+          <span class="n">ego_entities</span><span class="p">.</span><span class="n">at</span><span class="p">(</span><span class="n">name</span><span class="p">).</span><span class="n">getVehicleStateCommand</span><span class="p">().</span><span class="n">gear</span> <span class="o">==</span>
+              <span class="n">autoware_auto_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleStateReport</span><span class="o">::</span><span class="n">GEAR_REVERSE</span>
+            <span class="o">?</span> <span class="mf">-1.0</span>
+            <span class="o">:</span> <span class="mf">1.0</span><span class="p">;</span>
+<span class="cp">#endif</span>
 
         <span class="p">(</span><span class="o">*</span><span class="n">vehicle_model_ptr_</span><span class="p">).</span><span class="n">setInput</span><span class="p">(</span><span class="n">input</span><span class="p">);</span>
       <span class="p">}</span> <span class="k">break</span><span class="p">;</span>
@@ -1353,7 +1440,13 @@
     <span class="k">case</span> <span class="n">VehicleModelType</span><span class="o">::</span><span class="nl">DELAY_STEER</span><span class="p">:</span> <span class="p">{</span>
       <span class="n">Eigen</span><span class="o">::</span><span class="n">VectorXd</span> <span class="nf">v</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
       <span class="p">{</span>
+<span class="cp">#ifdef AUTOWARE_ARCHITECTURE_PROPOSAL</span>
         <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="mi">0</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="cp">#ifdef AUTOWARE_AUTO</span>
+        <span class="c1">// non-zero initial speed prevents behavioral planner from planning</span>
+        <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">;</span>
+<span class="cp">#endif</span>
       <span class="p">}</span>
 
       <span class="p">(</span><span class="o">*</span><span class="n">vehicle_model_ptr_</span><span class="p">).</span><span class="n">setState</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
@@ -1362,7 +1455,13 @@
     <span class="k">case</span> <span class="n">VehicleModelType</span><span class="o">::</span><span class="nl">DELAY_STEER_ACC</span><span class="p">:</span> <span class="p">{</span>
       <span class="n">Eigen</span><span class="o">::</span><span class="n">VectorXd</span> <span class="nf">v</span><span class="p">(</span><span class="mi">6</span><span class="p">);</span>
       <span class="p">{</span>
+<span class="cp">#ifdef AUTOWARE_ARCHITECTURE_PROPOSAL</span>
         <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">value</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">;</span>
+<span class="cp">#endif</span>
+<span class="cp">#ifdef AUTOWARE_AUTO</span>
+        <span class="c1">// non-zero initial speed prevents behavioral planner from planning</span>
+        <span class="n">v</span> <span class="o">&lt;&lt;</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">;</span>
+<span class="cp">#endif</span>
       <span class="p">}</span>
 
       <span class="p">(</span><span class="o">*</span><span class="n">vehicle_model_ptr_</span><span class="p">).</span><span class="n">setState</span><span class="p">(</span><span class="n">v</span><span class="p">);</span>
@@ -1378,7 +1477,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 July 2021 at 00:07:05 UTC</p>
+<p>Updated on  7 July 2021 at 10:21:44 UTC</p>
                 
                   
                 

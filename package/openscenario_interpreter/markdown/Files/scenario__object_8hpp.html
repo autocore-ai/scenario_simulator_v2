@@ -791,6 +791,7 @@
 <span class="cp">#ifndef OPENSCENARIO_INTERPRETER__SYNTAX__SCENARIO_OBJECT_HPP_</span>
 <span class="cp">#define OPENSCENARIO_INTERPRETER__SYNTAX__SCENARIO_OBJECT_HPP_</span>
 
+<span class="cp">#include</span> <span class="cpf">&lt;concealer/autoware_def.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/procedure.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/entity_object.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/entity_ref.hpp&gt;</span><span class="cp"></span>
@@ -869,18 +870,24 @@
         <span class="n">assignController</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">object_controller</span><span class="p">);</span>
         <span class="k">if</span> <span class="p">(</span><span class="n">object_controller</span><span class="p">.</span><span class="n">isEgo</span><span class="p">())</span> <span class="p">{</span>
           <span class="n">attachLidarSensor</span><span class="p">(</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">helper</span><span class="o">::</span><span class="n">constructLidarConfiguration</span><span class="p">(</span>
-            <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">helper</span><span class="o">::</span><span class="n">LidarType</span><span class="o">::</span><span class="n">VLP16</span><span class="p">,</span> <span class="n">name</span>
+            <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">helper</span><span class="o">::</span><span class="n">LidarType</span><span class="o">::</span><span class="n">VLP16</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span>
 <span class="cp">#ifdef AUTOWARE_ARCHITECTURE_PROPOSAL</span>
-            <span class="p">,</span>
             <span class="s">&quot;/sensing/lidar/no_ground/pointcloud&quot;</span>
 <span class="cp">#endif</span>
+<span class="cp">#ifdef AUTOWARE_AUTO</span>
+            <span class="s">&quot;/perception/points_nonground&quot;</span>
+<span class="cp">#endif</span>
             <span class="p">));</span>
+<span class="cp">#ifdef AUTOWARE_ARCHITECTURE_PROPOSAL</span>
           <span class="n">attachDetectionSensor</span><span class="p">(</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">helper</span><span class="o">::</span><span class="n">constructDetectionSensorConfiguration</span><span class="p">(</span>
             <span class="n">name</span><span class="p">,</span>
-<span class="cp">#ifdef AUTOWARE_ARCHITECTURE_PROPOSAL</span>
-            <span class="s">&quot;/perception/object_recognition/objects&quot;</span><span class="p">,</span>
+            <span class="c1">// publishing autoware_perception_msgs::msg::DynamicObjectArray</span>
+            <span class="s">&quot;/perception/object_recognition/objects&quot;</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">));</span>
 <span class="cp">#endif</span>
-            <span class="mf">0.1</span><span class="p">));</span>
+          <span class="c1">// Autoware.Auto does not currently support object prediction</span>
+          <span class="c1">// however it is work-in-progress for Cargo ODD</span>
+          <span class="c1">// msgs are already implemented and autoware_auto_msgs::msg::PredictedObjects will probably be used here</span>
+          <span class="c1">// topic name is yet unknown</span>
         <span class="p">}</span>
       <span class="p">}</span>
       <span class="k">return</span> <span class="n">unspecified</span><span class="p">;</span>
@@ -897,7 +904,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__SCENARIO_OBJECT_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on  7 July 2021 at 00:07:07 UTC</p>
+<p>Updated on  7 July 2021 at 10:21:46 UTC</p>
                 
                   
                 
