@@ -24,6 +24,7 @@
     <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1Storyboard" prot="private" virt="non-virtual">openscenario_interpreter::syntax::Storyboard</derivedcompoundref>
     <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1StoryboardElementStateCondition" prot="private" virt="non-virtual">openscenario_interpreter::syntax::StoryboardElementStateCondition</derivedcompoundref>
     <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1TeleportAction" prot="private" virt="non-virtual">openscenario_interpreter::syntax::TeleportAction</derivedcompoundref>
+    <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalCondition" prot="private" virt="non-virtual">openscenario_interpreter::syntax::TrafficSignalCondition</derivedcompoundref>
     <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalControllerAction" prot="private" virt="non-virtual">openscenario_interpreter::syntax::TrafficSignalControllerAction</derivedcompoundref>
     <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalStateAction" prot="private" virt="non-virtual">openscenario_interpreter::syntax::TrafficSignalStateAction</derivedcompoundref>
     <derivedcompoundref refid="structopenscenario__interpreter_1_1syntax_1_1Vehicle" prot="private" virt="non-virtual">openscenario_interpreter::syntax::Vehicle</derivedcompoundref>
@@ -292,7 +293,7 @@
         <childnode refid="659" relation="private-inheritance">
         </childnode>
       </node>
-      <node id="682">
+      <node id="683">
         <label>openscenario_interpreter::syntax::TrafficSignalControllerAction</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalControllerAction"/>
         <childnode refid="659" relation="private-inheritance">
@@ -340,7 +341,7 @@
         <childnode refid="659" relation="private-inheritance">
         </childnode>
       </node>
-      <node id="684">
+      <node id="685">
         <label>openscenario_interpreter::syntax::Vehicle</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1Vehicle"/>
         <childnode refid="659" relation="private-inheritance">
@@ -364,7 +365,7 @@
         <childnode refid="659" relation="private-inheritance">
         </childnode>
       </node>
-      <node id="683">
+      <node id="684">
         <label>openscenario_interpreter::syntax::TrafficSignalStateAction</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalStateAction"/>
         <childnode refid="659" relation="private-inheritance">
@@ -391,6 +392,12 @@
       <node id="660">
         <label>openscenario_interpreter::syntax::AcquirePositionAction</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1AcquirePositionAction"/>
+        <childnode refid="659" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="682">
+        <label>openscenario_interpreter::syntax::TrafficSignalCondition</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalCondition"/>
         <childnode refid="659" relation="private-inheritance">
         </childnode>
       </node>

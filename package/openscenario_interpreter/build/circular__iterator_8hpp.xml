@@ -48,10 +48,10 @@
         <childnode refid="606" relation="include">
         </childnode>
       </node>
-      <node id="626">
+      <node id="627">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signal_state_action.hpp</label>
         <link refid="traffic__signal__state__action_8hpp_source"/>
-        <childnode refid="623" relation="include">
+        <childnode refid="624" relation="include">
         </childnode>
       </node>
       <node id="612">
@@ -74,10 +74,10 @@
         <childnode refid="611" relation="include">
         </childnode>
       </node>
-      <node id="622">
+      <node id="623">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signal_controller_action.hpp</label>
         <link refid="traffic__signal__controller__action_8hpp_source"/>
-        <childnode refid="623" relation="include">
+        <childnode refid="624" relation="include">
         </childnode>
       </node>
       <node id="581">
@@ -149,9 +149,11 @@
         </childnode>
         <childnode refid="622" relation="include">
         </childnode>
-        <childnode refid="626" relation="include">
+        <childnode refid="623" relation="include">
         </childnode>
         <childnode refid="627" relation="include">
+        </childnode>
+        <childnode refid="628" relation="include">
         </childnode>
       </node>
       <node id="599">
@@ -164,10 +166,10 @@
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/openscenario_interpreter.hpp</label>
         <link refid="openscenario__interpreter_8hpp_source"/>
       </node>
-      <node id="624">
+      <node id="625">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/infrastructure_action.hpp</label>
         <link refid="infrastructure__action_8hpp_source"/>
-        <childnode refid="625" relation="include">
+        <childnode refid="626" relation="include">
         </childnode>
       </node>
       <node id="613">
@@ -232,13 +234,13 @@
         <childnode refid="594" relation="include">
         </childnode>
       </node>
-      <node id="625">
+      <node id="626">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/global_action.hpp</label>
         <link refid="global__action_8hpp_source"/>
         <childnode refid="608" relation="include">
         </childnode>
       </node>
-      <node id="628">
+      <node id="629">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/road_network.hpp</label>
         <link refid="road__network_8hpp_source"/>
         <childnode refid="594" relation="include">
@@ -279,9 +281,9 @@
         <link refid="traffic__signal__controller_8hpp_source"/>
         <childnode refid="583" relation="include">
         </childnode>
-        <childnode refid="622" relation="include">
+        <childnode refid="623" relation="include">
         </childnode>
-        <childnode refid="627" relation="include">
+        <childnode refid="628" relation="include">
         </childnode>
       </node>
       <node id="606">
@@ -296,10 +298,10 @@
         <childnode refid="593" relation="include">
         </childnode>
       </node>
-      <node id="623">
+      <node id="624">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signal_action.hpp</label>
         <link refid="traffic__signal__action_8hpp_source"/>
-        <childnode refid="624" relation="include">
+        <childnode refid="625" relation="include">
         </childnode>
       </node>
       <node id="615">
@@ -322,16 +324,22 @@
         <childnode refid="612" relation="include">
         </childnode>
       </node>
+      <node id="622">
+        <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signal_condition.hpp</label>
+        <link refid="traffic__signal__condition_8hpp_source"/>
+        <childnode refid="602" relation="include">
+        </childnode>
+      </node>
       <node id="594">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/scenario_definition.hpp</label>
         <link refid="scenario__definition_8hpp_source"/>
         <childnode refid="595" relation="include">
         </childnode>
       </node>
-      <node id="627">
+      <node id="628">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signals.hpp</label>
         <link refid="traffic__signals_8hpp_source"/>
-        <childnode refid="628" relation="include">
+        <childnode refid="629" relation="include">
         </childnode>
       </node>
       <node id="587">

@@ -120,24 +120,24 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="825">
+      <node id="828">
         <label>openscenario_interpreter::syntax::UnsignedInteger</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1UnsignedInteger"/>
-        <childnode refid="826" relation="public-inheritance">
+        <childnode refid="829" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="826">
+      <node id="829">
         <label>std_msgs::msg::UInt64</label>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="827">
+      <node id="830">
         <label>openscenario_interpreter::syntax::UnsignedInteger</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1UnsignedInteger"/>
-        <childnode refid="828" relation="public-inheritance">
+        <childnode refid="831" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="828">
+      <node id="831">
         <label>std_msgs::msg::UInt64</label>
       </node>
     </collaborationgraph>
