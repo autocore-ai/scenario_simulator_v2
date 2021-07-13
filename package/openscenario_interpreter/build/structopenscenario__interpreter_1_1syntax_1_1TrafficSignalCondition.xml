@@ -106,25 +106,25 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="793">
+      <node id="821">
         <label>openscenario_interpreter::syntax::TrafficSignalCondition</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalCondition"/>
-        <childnode refid="794" relation="private-inheritance">
+        <childnode refid="822" relation="private-inheritance">
         </childnode>
       </node>
-      <node id="794">
+      <node id="822">
         <label>openscenario_interpreter::Scope</label>
         <link refid="structopenscenario__interpreter_1_1Scope"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="795">
+      <node id="823">
         <label>openscenario_interpreter::syntax::TrafficSignalCondition</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalCondition"/>
-        <childnode refid="796" relation="private-inheritance">
+        <childnode refid="824" relation="private-inheritance">
         </childnode>
       </node>
-      <node id="796">
+      <node id="824">
         <label>openscenario_interpreter::Scope</label>
         <link refid="structopenscenario__interpreter_1_1Scope"/>
       </node>

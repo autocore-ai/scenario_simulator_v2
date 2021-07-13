@@ -807,7 +807,7 @@
     <span class="p">});</span>
 
     <span class="k">if</span> <span class="p">(</span><span class="n">not</span> <span class="n">init</span><span class="p">.</span><span class="n">endsImmediately</span><span class="p">())</span> <span class="p">{</span>
-      <span class="k">throw</span> <span class="n">SemanticError</span><span class="p">(</span><span class="s">&quot;Actions in Init should end immediately.&quot;</span><span class="p">);</span>
+      <span class="k">throw</span> <span class="n">SemanticError</span><span class="p">(</span><span class="s">&quot;Init.Actions should end immediately&quot;</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
@@ -843,35 +843,20 @@
 
   <span class="k">auto</span> <span class="n">run</span><span class="p">()</span>
   <span class="p">{</span>
-    <span class="k">const</span> <span class="k">auto</span> <span class="n">all_ready</span> <span class="o">=</span>
-      <span class="n">std</span><span class="o">::</span><span class="n">all_of</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cbegin</span><span class="p">(</span><span class="n">entities</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">cend</span><span class="p">(</span><span class="n">entities</span><span class="p">),</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">each</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// DEBUG_VALUE(each.first);</span>
-        <span class="c1">// DEBUG_VALUE(each.second.template as&lt;ScenarioObject&gt;().template is&lt;Vehicle&gt;());</span>
-        <span class="c1">// DEBUG_VALUE(each.second.template as&lt;ScenarioObject&gt;().object_controller.isEgo());</span>
-        <span class="c1">// DEBUG_VALUE(not openscenario_interpreter::ready(each.first));</span>
-        <span class="c1">// return each.second.template is&lt;Vehicle&gt;() and                                   //</span>
-        <span class="c1">//        each.second.template as&lt;ScenarioObject&gt;().object_controller.isEgo() and  //</span>
-        <span class="c1">//        not openscenario_interpreter::ready(each.first);</span>
-        <span class="k">return</span> <span class="n">openscenario_interpreter</span><span class="o">::</span><span class="n">ready</span><span class="p">(</span><span class="n">each</span><span class="p">.</span><span class="n">first</span><span class="p">);</span>
-      <span class="p">});</span>
-
-    <span class="c1">// DEBUG_VALUE(getCurrentTime());</span>
-    <span class="c1">// DEBUG_VALUE(all_ready);</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">getCurrentTime</span><span class="p">())</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">engaged</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="nl">story</span> <span class="p">:</span> <span class="o">*</span><span class="k">this</span><span class="p">)</span> <span class="p">{</span>
-          <span class="n">story</span><span class="p">.</span><span class="n">evaluate</span><span class="p">();</span>
-        <span class="p">}</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">all_ready</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">each</span> <span class="p">:</span> <span class="n">entities</span><span class="p">)</span> <span class="p">{</span>
-          <span class="n">engage</span><span class="p">(</span><span class="n">each</span><span class="p">.</span><span class="n">first</span><span class="p">);</span>
-        <span class="p">}</span>
-        <span class="n">engaged</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
-      <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-        <span class="k">throw</span> <span class="n">common</span><span class="o">::</span><span class="n">AutowareError</span><span class="p">(</span>
-          <span class="s">&quot;Autoware does not respond. It is likely that some nodes were corrupted during launch&quot;</span><span class="p">);</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">engaged</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="nl">story</span> <span class="p">:</span> <span class="o">*</span><span class="k">this</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">story</span><span class="p">.</span><span class="n">evaluate</span><span class="p">();</span>
       <span class="p">}</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">all_of</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">cbegin</span><span class="p">(</span><span class="n">entities</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">cend</span><span class="p">(</span><span class="n">entities</span><span class="p">),</span> <span class="p">[</span><span class="o">&amp;</span><span class="p">](</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">each</span><span class="p">)</span> <span class="p">{</span>
+                 <span class="k">return</span> <span class="n">openscenario_interpreter</span><span class="o">::</span><span class="n">ready</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">each</span><span class="p">));</span>
+               <span class="p">}))</span> <span class="p">{</span>
+      <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">each</span> <span class="p">:</span> <span class="n">entities</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">engage</span><span class="p">(</span><span class="n">each</span><span class="p">.</span><span class="n">first</span><span class="p">);</span>
+      <span class="p">}</span>
+      <span class="n">engaged</span> <span class="o">=</span> <span class="nb">true</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+      <span class="k">throw</span> <span class="n">common</span><span class="o">::</span><span class="n">AutowareError</span><span class="p">(</span>
+        <span class="s">&quot;Autoware does not respond. It is likely that some nodes were corrupted during launch&quot;</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">};</span>
@@ -885,7 +870,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__STORYBOARD_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 13 July 2021 at 04:07:06 UTC</p>
+<p>Updated on 13 July 2021 at 04:22:25 UTC</p>
                 
                   
                 

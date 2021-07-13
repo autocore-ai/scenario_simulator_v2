@@ -767,7 +767,7 @@ Simulations are described in a "YAML" based format called a "tier4 scenario form
 Then convert the scenario into an "XML" based format called an "OpenSCENARIO".
 The format has been found at <a href="http://www.openscenario.org/">OpenSCENARIO</a>.</p>
 <h2 id="how-to-use">How to use<a class="headerlink" href="#how-to-use" title="Permanent link">#</a></h2>
-<p><div class="highlight"><pre><span></span><code>ros2 launch scenario_test_runner scenario_test_runner.launch.py workflow:<span class="o">=</span><span class="s1">&#39;$(find-pkg-share scenario_test_runner)/workflow_example.yaml&#39;</span> log_directory:<span class="o">=</span><span class="s1">&#39;/tmp&#39;</span>
+<p><div class="highlight"><pre><span></span><code>ros2 launch scenario_test_runner scenario_test_runner.launch.py workflow:<span class="o">=</span><span class="s1">&#39;$(find-pkg-share scenario_test_runner)/config/workflow_example.yaml&#39;</span> log_directory:<span class="o">=</span><span class="s1">&#39;/tmp&#39;</span>
 </code></pre></div>
 The workflow file defines how to execute scenarios.
 If you want to know how to write the workflow file, read <a href="HowToWriteWorkflowFile">here.</a></p>

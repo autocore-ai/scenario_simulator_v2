@@ -333,19 +333,19 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="799">
+      <node id="827">
         <label>openscenario_interpreter::syntax::Double</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1Double"/>
-        <childnode refid="800" relation="public-inheritance">
+        <childnode refid="828" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="800">
+      <node id="828">
         <label>std_msgs::msg::Float64</label>
       </node>
-      <node id="798">
+      <node id="826">
         <label>openscenario_interpreter::syntax::TrafficSignalController</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalController"/>
-        <childnode refid="799" relation="usage">
+        <childnode refid="827" relation="usage">
           <edgelabel>delay</edgelabel>
         </childnode>
       </node>

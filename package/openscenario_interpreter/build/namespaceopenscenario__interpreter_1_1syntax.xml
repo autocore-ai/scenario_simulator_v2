@@ -65,6 +65,8 @@
     <innerclass refid="structopenscenario__interpreter_1_1syntax_1_1LongitudinalAction" prot="public">openscenario_interpreter::syntax::LongitudinalAction</innerclass>
     <innerclass refid="structopenscenario__interpreter_1_1syntax_1_1Maneuver" prot="public">openscenario_interpreter::syntax::Maneuver</innerclass>
     <innerclass refid="structopenscenario__interpreter_1_1syntax_1_1ManeuverGroup" prot="public">openscenario_interpreter::syntax::ManeuverGroup</innerclass>
+    <innerclass refid="structopenscenario__interpreter_1_1syntax_1_1MiscObject" prot="public">openscenario_interpreter::syntax::MiscObject</innerclass>
+    <innerclass refid="structopenscenario__interpreter_1_1syntax_1_1MiscObjectCategory" prot="public">openscenario_interpreter::syntax::MiscObjectCategory</innerclass>
     <innerclass refid="structopenscenario__interpreter_1_1syntax_1_1ModifyRule" prot="public">openscenario_interpreter::syntax::ModifyRule</innerclass>
     <innerclass refid="structopenscenario__interpreter_1_1syntax_1_1ObjectController" prot="public">openscenario_interpreter::syntax::ObjectController</innerclass>
     <innerclass refid="structopenscenario__interpreter_1_1syntax_1_1ObjectType" prot="public">openscenario_interpreter::syntax::ObjectType</innerclass>
@@ -624,7 +626,6 @@
         </param>
         <param>
           <type>const <ref refid="structopenscenario__interpreter_1_1syntax_1_1CollisionCondition" kindref="compound">CollisionCondition</ref> &amp;</type>
-          <defname>datum</defname>
         </param>
         <briefdescription>
         </briefdescription>
@@ -970,14 +971,14 @@
         </inbodydescription>
         <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/dynamics_shape.hpp" line="97" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/dynamics_shape.cpp" bodystart="54" bodyend="71"/>
       </memberdef>
-      <memberdef kind="function" id="entity__object_8hpp_1a3e42f0a5a4c0bb07b86bf4a144bc6d12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="entity__object_8hpp_1a7fdd942455745f91328d3aeadd7519d4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>typename R</type>
+            <type>typename Result</type>
             <defval>void</defval>
           </param>
           <param>
-            <type>typename F</type>
+            <type>typename Function</type>
           </param>
           <param>
             <type>typename...</type>
@@ -985,13 +986,13 @@
             <defname>Ts</defname>
           </param>
         </templateparamlist>
-        <type>decltype(auto)</type>
-        <definition>decltype(auto) openscenario_interpreter::syntax::apply</definition>
-        <argsstring>(F &amp;&amp;f, const EntityObject &amp;entity_object, Ts &amp;&amp;... xs)</argsstring>
+        <type>auto</type>
+        <definition>auto openscenario_interpreter::syntax::apply</definition>
+        <argsstring>(Function &amp;&amp;function, const EntityObject &amp;entity_object, Ts &amp;&amp;... xs) -&gt; Result</argsstring>
         <name>apply</name>
         <param>
-          <type>F &amp;&amp;</type>
-          <declname>f</declname>
+          <type>Function &amp;&amp;</type>
+          <declname>function</declname>
         </param>
         <param>
           <type>const <ref refid="structopenscenario__interpreter_1_1syntax_1_1EntityObject" kindref="compound">EntityObject</ref> &amp;</type>
@@ -1007,7 +1008,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/entity_object.hpp" line="56" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/entity_object.hpp" bodystart="56" bodyend="76"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/entity_object.hpp" line="57" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/entity_object.hpp" bodystart="57" bodyend="79"/>
       </memberdef>
       <memberdef kind="function" id="event_8hpp_1a880f802ba6ab49f0d0c8896a6ef3b4c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>nlohmann::json &amp;</type>
@@ -1155,6 +1156,48 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/maneuver_group.hpp" line="101" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/maneuver_group.cpp" bodystart="21" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="misc__object__category_8hpp_1aa9e5ea47fab0ea251b2ac3bca22d9c3b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto openscenario_interpreter::syntax::operator&gt;&gt;</definition>
+        <argsstring>(std::istream &amp;, MiscObjectCategory &amp;) -&gt; std::istream &amp;</argsstring>
+        <name>operator&gt;&gt;</name>
+        <param>
+          <type>std::istream &amp;</type>
+          <defname>is</defname>
+        </param>
+        <param>
+          <type><ref refid="structopenscenario__interpreter_1_1syntax_1_1MiscObjectCategory" kindref="compound">MiscObjectCategory</ref> &amp;</type>
+          <defname>datum</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/misc_object_category.hpp" line="92" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/misc_object_category.cpp" bodystart="23" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="misc__object__category_8hpp_1ab2eaf00f730b1e78e1055e99f49fcd78" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>auto</type>
+        <definition>auto openscenario_interpreter::syntax::operator&lt;&lt;</definition>
+        <argsstring>(std::ostream &amp;, const MiscObjectCategory &amp;) -&gt; std::ostream &amp;</argsstring>
+        <name>operator&lt;&lt;</name>
+        <param>
+          <type>std::ostream &amp;</type>
+          <defname>os</defname>
+        </param>
+        <param>
+          <type>const <ref refid="structopenscenario__interpreter_1_1syntax_1_1MiscObjectCategory" kindref="compound">MiscObjectCategory</ref> &amp;</type>
+          <defname>datum</defname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/misc_object_category.hpp" line="94" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/misc_object_category.cpp" bodystart="68" bodyend="98"/>
       </memberdef>
       <memberdef kind="function" id="openscenario_8hpp_1a667d0ba496f58cfc3f7630f0a1011f37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::ostream &amp;</type>
@@ -1695,7 +1738,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/scenario_object.hpp" line="124" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/scenario_object.cpp" bodystart="21" bodyend="27"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/scenario_object.hpp" line="127" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/scenario_object.cpp" bodystart="21" bodyend="27"/>
       </memberdef>
       <memberdef kind="function" id="speed__target__value__type_8hpp_1a1d5cd8d70adcde34ab5fa4a61553fca1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::istream &amp;</type>
@@ -1778,7 +1821,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/storyboard.hpp" line="127" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/storyboard.cpp" bodystart="21" bodyend="21"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/storyboard.hpp" line="112" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/storyboard.cpp" bodystart="21" bodyend="21"/>
       </memberdef>
       <memberdef kind="function" id="storyboard_8hpp_1ab084ae991d90ffdeb239b1329c908f07" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>nlohmann::json &amp;</type>
@@ -1799,7 +1842,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/storyboard.hpp" line="129" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/storyboard.cpp" bodystart="23" bodyend="38"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/storyboard.hpp" line="114" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/storyboard.cpp" bodystart="23" bodyend="38"/>
       </memberdef>
       <memberdef kind="function" id="storyboard__element__state_8hpp_1a97e91c0ae29ed25a31f04bff0add6ceb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::istream &amp;</type>
@@ -2051,7 +2094,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/vehicle.hpp" line="132" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/vehicle.cpp" bodystart="21" bodyend="35"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/vehicle.hpp" line="97" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/vehicle.cpp" bodystart="21" bodyend="35"/>
       </memberdef>
       <memberdef kind="function" id="vehicle__category_8hpp_1a938917a99573db7278756b763a10dc6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::istream &amp;</type>
@@ -2093,7 +2136,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/vehicle_category.hpp" line="72" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/vehicle_category.cpp" bodystart="62" bodyend="85"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/vehicle_category.hpp" line="73" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/vehicle_category.cpp" bodystart="62" bodyend="85"/>
       </memberdef>
       <memberdef kind="function" id="axle_8cpp_1af307d3bd8d6a203b841e1bc6ebef0f0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>

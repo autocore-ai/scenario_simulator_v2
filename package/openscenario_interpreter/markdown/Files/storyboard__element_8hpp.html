@@ -1044,7 +1044,9 @@
 <span class="cm">       *</span>
 <span class="cm">       * -------------------------------------------------------------------- */</span>
       <span class="k">case</span> <span class="n">StoryboardElementState</span><span class="o">::</span><span class="nl">runningState</span><span class="p">:</span>
-        <span class="n">run</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="n">getCurrentTime</span><span class="p">())</span> <span class="p">{</span>
+          <span class="n">run</span><span class="p">();</span>
+        <span class="p">}</span>
         <span class="k">return</span> <span class="n">changeStateIf</span><span class="p">(</span><span class="n">accomplished</span><span class="p">(),</span> <span class="n">end_transition</span><span class="p">);</span>
 
       <span class="cm">/* ---- End --------------------------------------------------------------</span>
@@ -1127,7 +1129,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__STORYBOARD_ELEMENT_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 13 July 2021 at 04:07:06 UTC</p>
+<p>Updated on 13 July 2021 at 04:22:25 UTC</p>
                 
                   
                 

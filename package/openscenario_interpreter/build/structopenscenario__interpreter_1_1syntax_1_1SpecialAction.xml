@@ -15,24 +15,24 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="695">
+      <node id="723">
         <label>std::integral_constant&lt; int, Value &gt;</label>
       </node>
-      <node id="694">
+      <node id="722">
         <label>openscenario_interpreter::syntax::SpecialAction&lt; Value &gt;</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1SpecialAction"/>
-        <childnode refid="695" relation="public-inheritance">
+        <childnode refid="723" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="697">
+      <node id="725">
         <label>std::integral_constant&lt; int, Value &gt;</label>
       </node>
-      <node id="696">
+      <node id="724">
         <label>openscenario_interpreter::syntax::SpecialAction&lt; Value &gt;</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1SpecialAction"/>
-        <childnode refid="697" relation="public-inheritance">
+        <childnode refid="725" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

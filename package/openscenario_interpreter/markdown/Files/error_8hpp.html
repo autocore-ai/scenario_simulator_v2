@@ -744,6 +744,20 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#define-print" class="md-nav__link">
+    define PRINT
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#define-line" class="md-nav__link">
+    define LINE
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#define-invalid_numeric_literal_specified" class="md-nav__link">
     define INVALID_NUMERIC_LITERAL_SPECIFIED
   </a>
@@ -828,6 +842,14 @@
 </tr>
 <tr>
 <td></td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Files/error_8hpp#define-print">PRINT</a></strong>(...)</td>
+</tr>
+<tr>
+<td></td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Files/error_8hpp#define-line">LINE</a></strong>()</td>
+</tr>
+<tr>
+<td></td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Files/error_8hpp#define-invalid_numeric_literal_specified">INVALID_NUMERIC_LITERAL_SPECIFIED</a></strong>(VALUE)</td>
 </tr>
 </tbody>
@@ -874,6 +896,16 @@
 <span class="p">)</span> <span class="n">SyntaxError</span><span class="p">(</span>                                             \
     <span class="s">&quot;Unexpected value &quot;</span><span class="p">,</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">TYPE</span><span class="o">::</span><span class="n">value_type</span><span class="o">&gt;</span><span class="p">(</span><span class="n">VALUE</span><span class="p">),</span> <span class="s">&quot; was assigned to type &quot;</span> <span class="err">#</span><span class="n">TYPE</span><span class="p">)</span>
 </code></pre></div>
+<h3 id="define-print">define PRINT<a class="headerlink" href="#define-print" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#define PRINT(</span>
+    <span class="p">...</span>
+<span class="p">)</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;; &quot;</span> <span class="err">#</span><span class="n">__VA_ARGS__</span> <span class="s">&quot; = &quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">boolalpha</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="n">__VA_ARGS__</span><span class="p">)</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span>
+</code></pre></div>
+<h3 id="define-line">define LINE<a class="headerlink" href="#define-line" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="cp">#define LINE(</span>
+
+<span class="p">)</span> <span class="n">std</span><span class="o">::</span><span class="n">cout</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;; </span><span class="se">\x1b</span><span class="s">[33m&quot;</span> <span class="n">__FILE__</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[31m:</span><span class="se">\x1b</span><span class="s">[36m&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">__LINE__</span> <span class="o">&lt;&lt;</span> <span class="s">&quot;</span><span class="se">\x1b</span><span class="s">[0m&quot;</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">endl</span>
+</code></pre></div>
 <h3 id="define-invalid_numeric_literal_specified">define INVALID_NUMERIC_LITERAL_SPECIFIED<a class="headerlink" href="#define-invalid_numeric_literal_specified" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="cp">#define INVALID_NUMERIC_LITERAL_SPECIFIED(</span>
     <span class="n">VALUE</span>
@@ -903,6 +935,12 @@
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/utility/demangle.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;scenario_simulator_exception/exception.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;stdexcept&gt;</span><span class="cp"></span>
+
+<span class="cp">#define LINE() \</span>
+<span class="cp">  std::cout &lt;&lt; &quot;; \x1b[33m&quot; __FILE__ &quot;\x1b[31m:\x1b[36m&quot; &lt;&lt; __LINE__ &lt;&lt; &quot;\x1b[0m&quot; &lt;&lt; std::endl</span>
+
+<span class="cp">#define PRINT(...) \</span>
+<span class="cp">  std::cout &lt;&lt; &quot;; &quot; #__VA_ARGS__ &quot; = &quot; &lt;&lt; std::boolalpha &lt;&lt; (__VA_ARGS__) &lt;&lt; std::endl</span>
 
 <span class="k">namespace</span> <span class="nn">openscenario_interpreter</span>
 <span class="p">{</span>
@@ -947,7 +985,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__ERROR_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 13 July 2021 at 04:07:06 UTC</p>
+<p>Updated on 13 July 2021 at 04:22:25 UTC</p>
                 
                   
                 

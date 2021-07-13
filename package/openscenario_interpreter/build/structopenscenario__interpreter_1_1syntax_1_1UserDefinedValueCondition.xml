@@ -118,14 +118,14 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="846">
+      <node id="874">
         <label>openscenario_interpreter::syntax::Rule</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1Rule"/>
       </node>
-      <node id="845">
+      <node id="873">
         <label>openscenario_interpreter::syntax::UserDefinedValueCondition</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1UserDefinedValueCondition"/>
-        <childnode refid="846" relation="usage">
+        <childnode refid="874" relation="usage">
           <edgelabel>compare</edgelabel>
         </childnode>
       </node>

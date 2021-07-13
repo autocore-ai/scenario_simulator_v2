@@ -350,7 +350,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/storyboard_element.hpp" line="148" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/storyboard_element.hpp" bodystart="148" bodyend="295"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/storyboard_element.hpp" line="148" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/storyboard_element.hpp" bodystart="148" bodyend="297"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-static-func">
@@ -535,24 +535,24 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="761">
+      <node id="789">
         <label>std::shared_ptr&lt; Expression  &gt;</label>
       </node>
-      <node id="759">
+      <node id="787">
         <label>openscenario_interpreter::syntax::StoryboardElement&lt; T &gt;</label>
         <link refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement"/>
-        <childnode refid="760" relation="usage">
+        <childnode refid="788" relation="usage">
           <edgelabel>current_state</edgelabel>
         </childnode>
       </node>
-      <node id="760">
+      <node id="788">
         <label>openscenario_interpreter::Pointer&lt; Expression &gt;</label>
         <link refid="classopenscenario__interpreter_1_1Pointer"/>
-        <childnode refid="761" relation="public-inheritance">
+        <childnode refid="789" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/storyboard_element.hpp" line="31" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/storyboard_element.hpp" bodystart="30" bodyend="296"/>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/storyboard_element.hpp" line="31" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/storyboard_element.hpp" bodystart="30" bodyend="298"/>
     <listofallmembers>
       <member refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement_1a3d6376cdd71d856ebe66fe010e33b1d9" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::StoryboardElement</scope><name>BOILERPLATE</name></member>
       <member refid="classopenscenario__interpreter_1_1syntax_1_1StoryboardElement_1a8fd935130dd8bf3ab092b306e5539892" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::StoryboardElement</scope><name>BOILERPLATE</name></member>

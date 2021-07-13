@@ -4,581 +4,581 @@
     <compoundname>parameter_declarations.cpp</compoundname>
     <includes refid="parameter__declarations_8hpp" local="no">openscenario_interpreter/syntax/parameter_declarations.hpp</includes>
     <incdepgraph>
-      <node id="19178">
+      <node id="19385">
         <label>list</label>
       </node>
-      <node id="19187">
+      <node id="19394">
         <label>scenario_simulator_exception/exception.hpp</label>
       </node>
-      <node id="19183">
+      <node id="19390">
         <label>iomanip</label>
       </node>
-      <node id="19173">
+      <node id="19380">
         <label>functional</label>
       </node>
-      <node id="19175">
+      <node id="19382">
         <label>limits</label>
       </node>
-      <node id="19174">
+      <node id="19381">
         <label>iterator</label>
       </node>
-      <node id="19207">
+      <node id="19414">
         <label>openscenario_interpreter/type_traits/has_stream_output_operator.hpp</label>
         <link refid="has__stream__output__operator_8hpp_source"/>
-        <childnode refid="19206" relation="include">
+        <childnode refid="19413" relation="include">
         </childnode>
-        <childnode refid="19191" relation="include">
+        <childnode refid="19398" relation="include">
         </childnode>
       </node>
-      <node id="19223">
+      <node id="19430">
         <label>boost/lexical_cast.hpp</label>
       </node>
-      <node id="19184">
+      <node id="19391">
         <label>openscenario_interpreter/utility/demangle.hpp</label>
         <link refid="demangle_8hpp_source"/>
-        <childnode refid="19185" relation="include">
+        <childnode refid="19392" relation="include">
         </childnode>
-        <childnode refid="19186" relation="include">
+        <childnode refid="19393" relation="include">
         </childnode>
       </node>
-      <node id="19237">
+      <node id="19444">
         <label>openscenario_interpreter/syntax/traffic_signal_state.hpp</label>
         <link refid="traffic__signal__state_8hpp_source"/>
-        <childnode refid="19238" relation="include">
+        <childnode refid="19445" relation="include">
         </childnode>
-        <childnode refid="19218" relation="include">
+        <childnode refid="19425" relation="include">
         </childnode>
-        <childnode refid="19240" relation="include">
+        <childnode refid="19447" relation="include">
         </childnode>
-        <childnode refid="19243" relation="include">
+        <childnode refid="19450" relation="include">
         </childnode>
-        <childnode refid="19227" relation="include">
+        <childnode refid="19434" relation="include">
         </childnode>
       </node>
-      <node id="19217">
+      <node id="19424">
         <label>openscenario_interpreter/syntax/entity_ref.hpp</label>
         <link refid="entity__ref_8hpp_source"/>
-        <childnode refid="19218" relation="include">
+        <childnode refid="19425" relation="include">
         </childnode>
-        <childnode refid="19199" relation="include">
+        <childnode refid="19406" relation="include">
         </childnode>
       </node>
-      <node id="19240">
+      <node id="19447">
         <label>openscenario_interpreter/syntax/arrow.hpp</label>
         <link refid="arrow_8hpp_source"/>
-        <childnode refid="19241" relation="include">
+        <childnode refid="19448" relation="include">
         </childnode>
-        <childnode refid="19206" relation="include">
+        <childnode refid="19413" relation="include">
         </childnode>
-        <childnode refid="19242" relation="include">
+        <childnode refid="19449" relation="include">
         </childnode>
       </node>
-      <node id="19195">
+      <node id="19402">
         <label>openscenario_interpreter/type_traits/if_has_member_function_description.hpp</label>
         <link refid="if__has__member__function__description_8hpp_source"/>
-        <childnode refid="19196" relation="include">
+        <childnode refid="19403" relation="include">
         </childnode>
       </node>
-      <node id="19213">
+      <node id="19420">
         <label>pugixml.hpp</label>
       </node>
-      <node id="19177">
+      <node id="19384">
         <label>openscenario_interpreter/object.hpp</label>
         <link refid="object_8hpp_source"/>
-        <childnode refid="19178" relation="include">
+        <childnode refid="19385" relation="include">
         </childnode>
-        <childnode refid="19179" relation="include">
+        <childnode refid="19386" relation="include">
         </childnode>
-        <childnode refid="19192" relation="include">
+        <childnode refid="19399" relation="include">
         </childnode>
-        <childnode refid="19199" relation="include">
+        <childnode refid="19406" relation="include">
         </childnode>
       </node>
-      <node id="19179">
+      <node id="19386">
         <label>openscenario_interpreter/expression.hpp</label>
         <link refid="expression_8hpp_source"/>
-        <childnode refid="19180" relation="include">
+        <childnode refid="19387" relation="include">
         </childnode>
       </node>
-      <node id="19235">
+      <node id="19442">
         <label>openscenario_interpreter/iterator/circular_iterator.hpp</label>
         <link refid="circular__iterator_8hpp_source"/>
-        <childnode refid="19174" relation="include">
+        <childnode refid="19381" relation="include">
         </childnode>
-        <childnode refid="19192" relation="include">
+        <childnode refid="19399" relation="include">
         </childnode>
       </node>
-      <node id="19188">
+      <node id="19395">
         <label>stdexcept</label>
       </node>
-      <node id="19194">
+      <node id="19401">
         <label>openscenario_interpreter/type_traits/has_member_function_current_state.hpp</label>
         <link refid="has__member__function__current__state_8hpp_source"/>
-        <childnode refid="19191" relation="include">
+        <childnode refid="19398" relation="include">
         </childnode>
       </node>
-      <node id="19225">
+      <node id="19432">
         <label>openscenario_interpreter/syntax/integer.hpp</label>
         <link refid="integer_8hpp_source"/>
-        <childnode refid="19223" relation="include">
+        <childnode refid="19430" relation="include">
         </childnode>
-        <childnode refid="19182" relation="include">
+        <childnode refid="19389" relation="include">
         </childnode>
-        <childnode refid="19226" relation="include">
+        <childnode refid="19433" relation="include">
         </childnode>
-        <childnode refid="19185" relation="include">
+        <childnode refid="19392" relation="include">
         </childnode>
       </node>
-      <node id="19226">
+      <node id="19433">
         <label>std_msgs/msg/int64.hpp</label>
       </node>
-      <node id="19215">
+      <node id="19422">
         <label>openscenario_interpreter/scope.hpp</label>
         <link refid="scope_8hpp_source"/>
-        <childnode refid="19216" relation="include">
+        <childnode refid="19423" relation="include">
         </childnode>
-        <childnode refid="19173" relation="include">
+        <childnode refid="19380" relation="include">
         </childnode>
-        <childnode refid="19175" relation="include">
+        <childnode refid="19382" relation="include">
         </childnode>
-        <childnode refid="19181" relation="include">
+        <childnode refid="19388" relation="include">
         </childnode>
-        <childnode refid="19217" relation="include">
+        <childnode refid="19424" relation="include">
         </childnode>
-        <childnode refid="19234" relation="include">
+        <childnode refid="19441" relation="include">
         </childnode>
-        <childnode refid="19214" relation="include">
+        <childnode refid="19421" relation="include">
         </childnode>
-        <childnode refid="19199" relation="include">
+        <childnode refid="19406" relation="include">
         </childnode>
-        <childnode refid="19244" relation="include">
+        <childnode refid="19451" relation="include">
         </childnode>
       </node>
-      <node id="19185">
+      <node id="19392">
         <label>string</label>
       </node>
-      <node id="19222">
+      <node id="19429">
         <label>openscenario_interpreter/syntax/double.hpp</label>
         <link refid="double_8hpp_source"/>
-        <childnode refid="19223" relation="include">
+        <childnode refid="19430" relation="include">
         </childnode>
-        <childnode refid="19175" relation="include">
+        <childnode refid="19382" relation="include">
         </childnode>
-        <childnode refid="19182" relation="include">
+        <childnode refid="19389" relation="include">
         </childnode>
-        <childnode refid="19224" relation="include">
+        <childnode refid="19431" relation="include">
         </childnode>
-        <childnode refid="19185" relation="include">
+        <childnode refid="19392" relation="include">
         </childnode>
       </node>
-      <node id="19242">
+      <node id="19449">
         <label>traffic_simulator/traffic_lights/traffic_light_state.hpp</label>
       </node>
-      <node id="19191">
+      <node id="19398">
         <label>openscenario_interpreter/type_traits/void_t.hpp</label>
         <link refid="void__t_8hpp_source"/>
-        <childnode refid="19192" relation="include">
+        <childnode refid="19399" relation="include">
         </childnode>
       </node>
-      <node id="19180">
+      <node id="19387">
         <label>openscenario_interpreter/pointer.hpp</label>
         <link refid="pointer_8hpp_source"/>
-        <childnode refid="19181" relation="include">
+        <childnode refid="19388" relation="include">
         </childnode>
-        <childnode refid="19182" relation="include">
+        <childnode refid="19389" relation="include">
         </childnode>
-        <childnode refid="19189" relation="include">
+        <childnode refid="19396" relation="include">
         </childnode>
-        <childnode refid="19193" relation="include">
+        <childnode refid="19400" relation="include">
         </childnode>
-        <childnode refid="19195" relation="include">
+        <childnode refid="19402" relation="include">
         </childnode>
-        <childnode refid="19197" relation="include">
+        <childnode refid="19404" relation="include">
         </childnode>
-        <childnode refid="19200" relation="include">
+        <childnode refid="19407" relation="include">
         </childnode>
-        <childnode refid="19202" relation="include">
+        <childnode refid="19409" relation="include">
         </childnode>
-        <childnode refid="19209" relation="include">
+        <childnode refid="19416" relation="include">
         </childnode>
-        <childnode refid="19186" relation="include">
+        <childnode refid="19393" relation="include">
         </childnode>
-        <childnode refid="19199" relation="include">
+        <childnode refid="19406" relation="include">
         </childnode>
       </node>
-      <node id="19203">
+      <node id="19410">
         <label>openscenario_interpreter/console/escape_sequence.hpp</label>
         <link refid="escape__sequence_8hpp_source"/>
-        <childnode refid="19204" relation="include">
+        <childnode refid="19411" relation="include">
         </childnode>
-        <childnode refid="19185" relation="include">
+        <childnode refid="19392" relation="include">
         </childnode>
       </node>
-      <node id="19233">
+      <node id="19440">
         <label>regex</label>
       </node>
-      <node id="19200">
+      <node id="19407">
         <label>openscenario_interpreter/type_traits/if_has_member_function_start.hpp</label>
         <link refid="if__has__member__function__start_8hpp_source"/>
-        <childnode refid="19201" relation="include">
+        <childnode refid="19408" relation="include">
         </childnode>
       </node>
-      <node id="19210">
+      <node id="19417">
         <label>openscenario_interpreter/type_traits/must_be_default_constructible.hpp</label>
         <link refid="must__be__default__constructible_8hpp_source"/>
-        <childnode refid="19182" relation="include">
+        <childnode refid="19389" relation="include">
         </childnode>
-        <childnode refid="19192" relation="include">
+        <childnode refid="19399" relation="include">
         </childnode>
       </node>
-      <node id="19227">
+      <node id="19434">
         <label>openscenario_interpreter/syntax/string.hpp</label>
         <link refid="string_8hpp_source"/>
-        <childnode refid="19185" relation="include">
+        <childnode refid="19392" relation="include">
         </childnode>
       </node>
-      <node id="19239">
+      <node id="19446">
         <label>traffic_simulator/api/api.hpp</label>
       </node>
-      <node id="19212">
+      <node id="19419">
         <label>ostream</label>
       </node>
-      <node id="19231">
+      <node id="19438">
         <label>std_msgs/msg/u_int16.hpp</label>
       </node>
-      <node id="19196">
+      <node id="19403">
         <label>openscenario_interpreter/type_traits/has_member_function_description.hpp</label>
         <link refid="has__member__function__description_8hpp_source"/>
-        <childnode refid="19191" relation="include">
+        <childnode refid="19398" relation="include">
         </childnode>
       </node>
-      <node id="19182">
+      <node id="19389">
         <label>openscenario_interpreter/error.hpp</label>
         <link refid="error_8hpp_source"/>
-        <childnode refid="19183" relation="include">
+        <childnode refid="19390" relation="include">
         </childnode>
-        <childnode refid="19184" relation="include">
+        <childnode refid="19391" relation="include">
         </childnode>
-        <childnode refid="19187" relation="include">
+        <childnode refid="19394" relation="include">
         </childnode>
-        <childnode refid="19188" relation="include">
+        <childnode refid="19395" relation="include">
         </childnode>
       </node>
-      <node id="19243">
+      <node id="19450">
         <label>openscenario_interpreter/syntax/color.hpp</label>
         <link refid="color_8hpp_source"/>
-        <childnode refid="19241" relation="include">
+        <childnode refid="19448" relation="include">
         </childnode>
-        <childnode refid="19206" relation="include">
+        <childnode refid="19413" relation="include">
         </childnode>
-        <childnode refid="19242" relation="include">
+        <childnode refid="19449" relation="include">
         </childnode>
       </node>
-      <node id="19197">
+      <node id="19404">
         <label>openscenario_interpreter/type_traits/if_has_member_function_evaluate.hpp</label>
         <link refid="if__has__member__function__evaluate_8hpp_source"/>
-        <childnode refid="19198" relation="include">
+        <childnode refid="19405" relation="include">
         </childnode>
-        <childnode refid="19199" relation="include">
+        <childnode refid="19406" relation="include">
         </childnode>
       </node>
-      <node id="19220">
+      <node id="19427">
         <label>openscenario_interpreter/syntax/parameter_type.hpp</label>
         <link refid="parameter__type_8hpp_source"/>
-        <childnode refid="19206" relation="include">
+        <childnode refid="19413" relation="include">
         </childnode>
-        <childnode refid="19221" relation="include">
+        <childnode refid="19428" relation="include">
         </childnode>
-        <childnode refid="19222" relation="include">
+        <childnode refid="19429" relation="include">
         </childnode>
-        <childnode refid="19225" relation="include">
+        <childnode refid="19432" relation="include">
         </childnode>
-        <childnode refid="19227" relation="include">
+        <childnode refid="19434" relation="include">
         </childnode>
-        <childnode refid="19228" relation="include">
+        <childnode refid="19435" relation="include">
         </childnode>
-        <childnode refid="19230" relation="include">
+        <childnode refid="19437" relation="include">
         </childnode>
       </node>
-      <node id="19218">
+      <node id="19425">
         <label>openscenario_interpreter/reader/attribute.hpp</label>
         <link refid="attribute_8hpp_source"/>
-        <childnode refid="19219" relation="include">
+        <childnode refid="19426" relation="include">
         </childnode>
-        <childnode refid="19173" relation="include">
+        <childnode refid="19380" relation="include">
         </childnode>
-        <childnode refid="19220" relation="include">
+        <childnode refid="19427" relation="include">
         </childnode>
-        <childnode refid="19232" relation="include">
+        <childnode refid="19439" relation="include">
         </childnode>
-        <childnode refid="19211" relation="include">
+        <childnode refid="19418" relation="include">
         </childnode>
-        <childnode refid="19233" relation="include">
+        <childnode refid="19440" relation="include">
         </childnode>
-        <childnode refid="19185" relation="include">
+        <childnode refid="19392" relation="include">
         </childnode>
-        <childnode refid="19214" relation="include">
+        <childnode refid="19421" relation="include">
         </childnode>
       </node>
-      <node id="19238">
+      <node id="19445">
         <label>openscenario_interpreter/procedure.hpp</label>
         <link refid="procedure_8hpp_source"/>
-        <childnode refid="19175" relation="include">
+        <childnode refid="19382" relation="include">
         </childnode>
-        <childnode refid="19181" relation="include">
+        <childnode refid="19388" relation="include">
         </childnode>
-        <childnode refid="19182" relation="include">
+        <childnode refid="19389" relation="include">
         </childnode>
-        <childnode refid="19239" relation="include">
+        <childnode refid="19446" relation="include">
         </childnode>
-        <childnode refid="19199" relation="include">
+        <childnode refid="19406" relation="include">
         </childnode>
       </node>
-      <node id="19171">
+      <node id="19378">
         <label>openscenario_interpreter/syntax/parameter_declarations.hpp</label>
         <link refid="parameter__declarations_8hpp_source"/>
-        <childnode refid="19172" relation="include">
+        <childnode refid="19379" relation="include">
         </childnode>
-        <childnode refid="19215" relation="include">
+        <childnode refid="19422" relation="include">
         </childnode>
-        <childnode refid="19245" relation="include">
+        <childnode refid="19452" relation="include">
         </childnode>
-        <childnode refid="19244" relation="include">
+        <childnode refid="19451" relation="include">
         </childnode>
       </node>
-      <node id="19219">
+      <node id="19426">
         <label>ament_index_cpp/get_package_share_directory.hpp</label>
       </node>
-      <node id="19186">
+      <node id="19393">
         <label>typeinfo</label>
       </node>
-      <node id="19201">
+      <node id="19408">
         <label>openscenario_interpreter/type_traits/has_member_function_start.hpp</label>
         <link refid="has__member__function__start_8hpp_source"/>
-        <childnode refid="19191" relation="include">
+        <childnode refid="19398" relation="include">
         </childnode>
       </node>
-      <node id="19224">
+      <node id="19431">
         <label>std_msgs/msg/float64.hpp</label>
       </node>
-      <node id="19193">
+      <node id="19400">
         <label>openscenario_interpreter/type_traits/if_has_member_function_current_state.hpp</label>
         <link refid="if__has__member__function__current__state_8hpp_source"/>
-        <childnode refid="19182" relation="include">
+        <childnode refid="19389" relation="include">
         </childnode>
-        <childnode refid="19194" relation="include">
+        <childnode refid="19401" relation="include">
         </childnode>
       </node>
-      <node id="19190">
+      <node id="19397">
         <label>openscenario_interpreter/type_traits/has_member_function_accomplished.hpp</label>
         <link refid="has__member__function__accomplished_8hpp_source"/>
-        <childnode refid="19191" relation="include">
+        <childnode refid="19398" relation="include">
         </childnode>
       </node>
-      <node id="19228">
+      <node id="19435">
         <label>openscenario_interpreter/syntax/unsigned_integer.hpp</label>
         <link refid="unsigned__integer_8hpp_source"/>
-        <childnode refid="19223" relation="include">
+        <childnode refid="19430" relation="include">
         </childnode>
-        <childnode refid="19182" relation="include">
+        <childnode refid="19389" relation="include">
         </childnode>
-        <childnode refid="19229" relation="include">
+        <childnode refid="19436" relation="include">
         </childnode>
-        <childnode refid="19185" relation="include">
+        <childnode refid="19392" relation="include">
         </childnode>
       </node>
-      <node id="19205">
+      <node id="19412">
         <label>unistd.h</label>
       </node>
-      <node id="19244">
+      <node id="19451">
         <label>vector</label>
       </node>
-      <node id="19221">
+      <node id="19428">
         <label>openscenario_interpreter/syntax/boolean.hpp</label>
         <link refid="boolean_8hpp_source"/>
-        <childnode refid="19183" relation="include">
+        <childnode refid="19390" relation="include">
         </childnode>
-        <childnode refid="19206" relation="include">
+        <childnode refid="19413" relation="include">
         </childnode>
-        <childnode refid="19182" relation="include">
+        <childnode refid="19389" relation="include">
         </childnode>
-        <childnode refid="19177" relation="include">
+        <childnode refid="19384" relation="include">
         </childnode>
-        <childnode refid="19185" relation="include">
+        <childnode refid="19392" relation="include">
         </childnode>
       </node>
-      <node id="19216">
+      <node id="19423">
         <label>boost/filesystem.hpp</label>
       </node>
-      <node id="19211">
+      <node id="19418">
         <label>openscenario_interpreter/utility/pugi_extension.hpp</label>
         <link refid="pugi__extension_8hpp_source"/>
-        <childnode refid="19212" relation="include">
+        <childnode refid="19419" relation="include">
         </childnode>
-        <childnode refid="19213" relation="include">
+        <childnode refid="19420" relation="include">
         </childnode>
       </node>
-      <node id="19199">
+      <node id="19406">
         <label>utility</label>
       </node>
-      <node id="19232">
+      <node id="19439">
         <label>openscenario_interpreter/utility/highlighter.hpp</label>
         <link refid="highlighter_8hpp_source"/>
-        <childnode refid="19206" relation="include">
+        <childnode refid="19413" relation="include">
         </childnode>
-        <childnode refid="19207" relation="include">
+        <childnode refid="19414" relation="include">
         </childnode>
-        <childnode refid="19185" relation="include">
+        <childnode refid="19392" relation="include">
         </childnode>
-        <childnode refid="19199" relation="include">
+        <childnode refid="19406" relation="include">
         </childnode>
       </node>
-      <node id="19176">
+      <node id="19383">
         <label>openscenario_interpreter/iterator/size.hpp</label>
         <link refid="size_8hpp_source"/>
-        <childnode refid="19174" relation="include">
+        <childnode refid="19381" relation="include">
         </childnode>
       </node>
-      <node id="19198">
+      <node id="19405">
         <label>openscenario_interpreter/type_traits/has_member_function_evaluate.hpp</label>
         <link refid="has__member__function__evaluate_8hpp_source"/>
-        <childnode refid="19191" relation="include">
+        <childnode refid="19398" relation="include">
         </childnode>
       </node>
-      <node id="19234">
+      <node id="19441">
         <label>openscenario_interpreter/syntax/traffic_signal_controller.hpp</label>
         <link refid="traffic__signal__controller_8hpp_source"/>
-        <childnode refid="19235" relation="include">
+        <childnode refid="19442" relation="include">
         </childnode>
-        <childnode refid="19222" relation="include">
+        <childnode refid="19429" relation="include">
         </childnode>
-        <childnode refid="19236" relation="include">
+        <childnode refid="19443" relation="include">
         </childnode>
-        <childnode refid="19227" relation="include">
+        <childnode refid="19434" relation="include">
         </childnode>
       </node>
-      <node id="19236">
+      <node id="19443">
         <label>openscenario_interpreter/syntax/phase.hpp</label>
         <link refid="phase_8hpp_source"/>
-        <childnode refid="19172" relation="include">
+        <childnode refid="19379" relation="include">
         </childnode>
-        <childnode refid="19222" relation="include">
+        <childnode refid="19429" relation="include">
         </childnode>
-        <childnode refid="19227" relation="include">
+        <childnode refid="19434" relation="include">
         </childnode>
-        <childnode refid="19237" relation="include">
+        <childnode refid="19444" relation="include">
         </childnode>
       </node>
-      <node id="19206">
+      <node id="19413">
         <label>iostream</label>
       </node>
-      <node id="19229">
+      <node id="19436">
         <label>std_msgs/msg/u_int64.hpp</label>
       </node>
-      <node id="19214">
+      <node id="19421">
         <label>unordered_map</label>
       </node>
-      <node id="19241">
+      <node id="19448">
         <label>boost/optional.hpp</label>
       </node>
-      <node id="19172">
+      <node id="19379">
         <label>openscenario_interpreter/reader/element.hpp</label>
         <link refid="element_8hpp_source"/>
-        <childnode refid="19173" relation="include">
+        <childnode refid="19380" relation="include">
         </childnode>
-        <childnode refid="19174" relation="include">
+        <childnode refid="19381" relation="include">
         </childnode>
-        <childnode refid="19175" relation="include">
+        <childnode refid="19382" relation="include">
         </childnode>
-        <childnode refid="19176" relation="include">
+        <childnode refid="19383" relation="include">
         </childnode>
-        <childnode refid="19177" relation="include">
+        <childnode refid="19384" relation="include">
         </childnode>
-        <childnode refid="19210" relation="include">
+        <childnode refid="19417" relation="include">
         </childnode>
-        <childnode refid="19211" relation="include">
+        <childnode refid="19418" relation="include">
         </childnode>
-        <childnode refid="19185" relation="include">
+        <childnode refid="19392" relation="include">
         </childnode>
-        <childnode refid="19214" relation="include">
+        <childnode refid="19421" relation="include">
         </childnode>
-        <childnode refid="19199" relation="include">
+        <childnode refid="19406" relation="include">
         </childnode>
       </node>
-      <node id="19245">
+      <node id="19452">
         <label>openscenario_interpreter/syntax/parameter_declaration.hpp</label>
         <link refid="parameter__declaration_8hpp_source"/>
-        <childnode refid="19218" relation="include">
+        <childnode refid="19425" relation="include">
         </childnode>
-        <childnode refid="19185" relation="include">
+        <childnode refid="19392" relation="include">
         </childnode>
-        <childnode refid="19244" relation="include">
+        <childnode refid="19451" relation="include">
         </childnode>
       </node>
-      <node id="19189">
+      <node id="19396">
         <label>openscenario_interpreter/type_traits/if_has_member_function_accomplished.hpp</label>
         <link refid="if__has__member__function__accomplished_8hpp_source"/>
-        <childnode refid="19190" relation="include">
+        <childnode refid="19397" relation="include">
         </childnode>
       </node>
-      <node id="19202">
+      <node id="19409">
         <label>openscenario_interpreter/type_traits/if_has_stream_output_operator.hpp</label>
         <link refid="if__has__stream__output__operator_8hpp_source"/>
-        <childnode refid="19203" relation="include">
+        <childnode refid="19410" relation="include">
         </childnode>
-        <childnode refid="19207" relation="include">
+        <childnode refid="19414" relation="include">
         </childnode>
-        <childnode refid="19184" relation="include">
+        <childnode refid="19391" relation="include">
         </childnode>
-        <childnode refid="19208" relation="include">
+        <childnode refid="19415" relation="include">
         </childnode>
       </node>
-      <node id="19192">
+      <node id="19399">
         <label>type_traits</label>
       </node>
-      <node id="19204">
+      <node id="19411">
         <label>openscenario_interpreter/console/is_console.hpp</label>
         <link refid="is__console_8hpp_source"/>
-        <childnode refid="19205" relation="include">
+        <childnode refid="19412" relation="include">
         </childnode>
-        <childnode refid="19206" relation="include">
+        <childnode refid="19413" relation="include">
         </childnode>
       </node>
-      <node id="19230">
+      <node id="19437">
         <label>openscenario_interpreter/syntax/unsigned_short.hpp</label>
         <link refid="unsigned__short_8hpp_source"/>
-        <childnode refid="19223" relation="include">
+        <childnode refid="19430" relation="include">
         </childnode>
-        <childnode refid="19206" relation="include">
+        <childnode refid="19413" relation="include">
         </childnode>
-        <childnode refid="19182" relation="include">
+        <childnode refid="19389" relation="include">
         </childnode>
-        <childnode refid="19231" relation="include">
+        <childnode refid="19438" relation="include">
         </childnode>
-        <childnode refid="19185" relation="include">
+        <childnode refid="19392" relation="include">
         </childnode>
       </node>
-      <node id="19208">
+      <node id="19415">
         <label>openscenario_interpreter/utility/indent.hpp</label>
         <link refid="indent_8hpp_source"/>
-        <childnode refid="19206" relation="include">
+        <childnode refid="19413" relation="include">
         </childnode>
-        <childnode refid="19185" relation="include">
+        <childnode refid="19392" relation="include">
         </childnode>
       </node>
-      <node id="19170">
+      <node id="19377">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/parameter_declarations.cpp</label>
         <link refid="parameter__declarations_8cpp"/>
-        <childnode refid="19171" relation="include">
+        <childnode refid="19378" relation="include">
         </childnode>
       </node>
-      <node id="19181">
+      <node id="19388">
         <label>memory</label>
       </node>
-      <node id="19209">
+      <node id="19416">
         <label>openscenario_interpreter/utility/pair.hpp</label>
         <link refid="pair_8hpp_source"/>
-        <childnode refid="19199" relation="include">
+        <childnode refid="19406" relation="include">
         </childnode>
       </node>
     </incdepgraph>

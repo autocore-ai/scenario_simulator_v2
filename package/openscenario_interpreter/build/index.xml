@@ -583,6 +583,39 @@
     <member refid="structopenscenario__interpreter_1_1syntax_1_1ManeuverGroup_1a95e977d3a588029c37f2851db98c39fa" kind="function"><name>ready</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1ManeuverGroup_1a827c5aac0cc13285e805092e927b7d8d" kind="function"><name>stopTriggered</name></member>
   </compound>
+  <compound refid="structopenscenario__interpreter_1_1syntax_1_1MiscObject" kind="struct"><name>openscenario_interpreter::syntax::MiscObject</name>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObject_1a856fa06dc5675d183d7920da51a10456" kind="variable"><name>mass</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObject_1a32d2414d755d5e5f906641e9ef0bba97" kind="variable"><name>misc_object_category</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObject_1abb0a0297cc9b43661190039af5fceb1d" kind="variable"><name>name</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObject_1a8a24879e0b9b12ac48e160e5787acfa4" kind="variable"><name>parameter_declarations</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObject_1a6c3267c58f24891aaacf0eabfa2f4e69" kind="variable"><name>bounding_box</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObject_1acccadc43f19c788e15d847613709cd2a" kind="variable"><name>properties</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObject_1a53536cea3f2a51a5d289b41e0097dda8" kind="function"><name>MiscObject</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObject_1a073719f3ff1f78ece06743f3be5db415" kind="function"><name>operator openscenario_msgs::msg::MiscObjectParameters</name></member>
+  </compound>
+  <compound refid="structopenscenario__interpreter_1_1syntax_1_1MiscObjectCategory" kind="struct"><name>openscenario_interpreter::syntax::MiscObjectCategory</name>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObjectCategory_1a76b707add6bfa4e0494fcc98fe2bcc9a" kind="enum"><name>value_type</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObjectCategory_1a76b707add6bfa4e0494fcc98fe2bcc9aa13dcdf00459958cef9b52190ad7ab7aa" kind="enumvalue"><name>barrier</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObjectCategory_1a76b707add6bfa4e0494fcc98fe2bcc9aa67818a483af2854ecb271d30fd2195d6" kind="enumvalue"><name>building</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObjectCategory_1a76b707add6bfa4e0494fcc98fe2bcc9aa6c643f27bd69b178c1fbcc9a99ba3650" kind="enumvalue"><name>crosswalk</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObjectCategory_1a76b707add6bfa4e0494fcc98fe2bcc9aaad47b02e78aaa6f88a72280c5cda0945" kind="enumvalue"><name>gantry</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObjectCategory_1a76b707add6bfa4e0494fcc98fe2bcc9aa514ff25dc2d53812eac579e9cc4b5306" kind="enumvalue"><name>none</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObjectCategory_1a76b707add6bfa4e0494fcc98fe2bcc9aadfbb7da20b01ada59f97c06d682d0dee" kind="enumvalue"><name>obstacle</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObjectCategory_1a76b707add6bfa4e0494fcc98fe2bcc9aae8f92db7dd4af239b7ec26ae82fbd4b4" kind="enumvalue"><name>parkingSpace</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObjectCategory_1a76b707add6bfa4e0494fcc98fe2bcc9aa773a21620b21e59c58d34f82d3bc734e" kind="enumvalue"><name>patch</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObjectCategory_1a76b707add6bfa4e0494fcc98fe2bcc9aa41cafddc31bef30c353022ec53afc638" kind="enumvalue"><name>pole</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObjectCategory_1a76b707add6bfa4e0494fcc98fe2bcc9aacc7ef3a76ae28f41f63dae161e1f05cd" kind="enumvalue"><name>railing</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObjectCategory_1a76b707add6bfa4e0494fcc98fe2bcc9aad520d3c5511b79b8e70352f83225086b" kind="enumvalue"><name>roadMark</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObjectCategory_1a76b707add6bfa4e0494fcc98fe2bcc9aa7aab9f832fa4f7eb80ac8a7c5511e9dc" kind="enumvalue"><name>soundBarrier</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObjectCategory_1a76b707add6bfa4e0494fcc98fe2bcc9aafb8ddfb6d7a1f288207e401fc28e9084" kind="enumvalue"><name>streetLamp</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObjectCategory_1a76b707add6bfa4e0494fcc98fe2bcc9aa17af19079518e53fcabbc55223b402f9" kind="enumvalue"><name>trafficIsland</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObjectCategory_1a76b707add6bfa4e0494fcc98fe2bcc9aa90da5c782149b5fdd0dcdd9db7062ed3" kind="enumvalue"><name>tree</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObjectCategory_1a76b707add6bfa4e0494fcc98fe2bcc9aae41404ebceb0bf8e45de7704c98c3fe2" kind="enumvalue"><name>vegetation</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObjectCategory_1a76b707add6bfa4e0494fcc98fe2bcc9aa296fe2afdae4ba09fee9045b864aa30b" kind="enumvalue"><name>wind</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObjectCategory_1ac74e9fc58c772f74aeef881b7e0b1ddf" kind="variable"><name>value</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObjectCategory_1abf1c9ae5739c5e4679ae581aed79f2ba" kind="function"><name>MiscObjectCategory</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1MiscObjectCategory_1ae6ea40ecbcfa7dd0bb6b8da07b2cdd7a" kind="function"><name>operator value_type</name></member>
+  </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1ModifyRule" kind="struct"><name>openscenario_interpreter::syntax::ModifyRule</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1ModifyRule_1ae528af21fd9fb90ffb4e1967a53b0d8a" kind="function"><name>ModifyRule</name></member>
   </compound>
@@ -605,7 +638,7 @@
     <member refid="structopenscenario__interpreter_1_1syntax_1_1OpenScenario_1a939c9966c8b71f30b3a5114bd5f7694c" kind="variable"><name>file_header</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1OpenScenario_1ab0985325769fa68349b168707863f5af" kind="variable"><name>category</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1OpenScenario_1af5ff4af7c8407015c667dd8306e39529" kind="variable"><name>frame</name></member>
-    <member refid="structopenscenario__interpreter_1_1syntax_1_1OpenScenario_1a68205732df987b1e1c0d70a765f58d68" kind="function"><name>load</name></member>
+    <member refid="structopenscenario__interpreter_1_1syntax_1_1OpenScenario_1a5b87f592db81201cbd4cfdf77652a7a8" kind="function"><name>load</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1OpenScenario_1ae656f619922d2da04d022fe4b8d023e9" kind="function"><name>OpenScenario</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1OpenScenario_1a09e3c24104962c7ebe545312ce106c85" kind="function"><name>complete</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1OpenScenario_1ab26d389a861a5785195ab9af9e0b7cff" kind="function"><name>evaluate</name></member>
@@ -621,6 +654,14 @@
     <member refid="structopenscenario__interpreter_1_1syntax_1_1Orientation_1acfeaafa8c0c9daf78b2153ab1206afb4" kind="function"><name>Orientation</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1Orientation_1a98f57e41cb35b6c76b12e72a61304a0e" kind="function"><name>Orientation</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1Orientation_1a351bce1394d3616fb893a120a4e74c89" kind="function"><name>operator geometry_msgs::msg::Vector3</name></member>
+  </compound>
+  <compound refid="structopenscenario__interpreter_1_1utility_1_1overloaded" kind="struct"><name>openscenario_interpreter::utility::overloaded</name>
+  </compound>
+  <compound refid="structopenscenario__interpreter_1_1utility_1_1overloaded_3_01T_01_4" kind="struct"><name>openscenario_interpreter::utility::overloaded&lt; T &gt;</name>
+    <member refid="structopenscenario__interpreter_1_1utility_1_1overloaded_3_01T_01_4_1a14c262f1f784337c15c442efd57ba36f" kind="function"><name>overloaded</name></member>
+  </compound>
+  <compound refid="structopenscenario__interpreter_1_1utility_1_1overloaded_3_01T_00_01U_00_01Ts_8_8_8_01_4" kind="struct"><name>openscenario_interpreter::utility::overloaded&lt; T, U, Ts... &gt;</name>
+    <member refid="structopenscenario__interpreter_1_1utility_1_1overloaded_3_01T_00_01U_00_01Ts_8_8_8_01_4_1aa6f4f298cc925defe32a2070ce1b94ba" kind="function"><name>overloaded</name></member>
   </compound>
   <compound refid="structopenscenario__interpreter_1_1syntax_1_1OverrideControllerValueAction" kind="struct"><name>openscenario_interpreter::syntax::OverrideControllerValueAction</name>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1OverrideControllerValueAction_1a7815eeeacb7631c5d9da4ee488479b64" kind="function"><name>OverrideControllerValueAction</name></member>
@@ -888,8 +929,6 @@
     <member refid="structopenscenario__interpreter_1_1syntax_1_1ScenarioObject_1a8c4dd5571feb30ca2743813fb7f03039" kind="variable"><name>name</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1ScenarioObject_1abb66691bc1c92b5114c716bba9cf353f" kind="variable"><name>object_controller</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1ScenarioObject_1a1ad48457bfcda58d525b09469200f6be" kind="function"><name>ScenarioObject</name></member>
-    <member refid="structopenscenario__interpreter_1_1syntax_1_1ScenarioObject_1afddff6de6c8e2e0add25eaebe71d9895" kind="function"><name>operator()</name></member>
-    <member refid="structopenscenario__interpreter_1_1syntax_1_1ScenarioObject_1ae107a59386ca2d99b72b23b8a6e1c439" kind="function"><name>operator()</name></member>
     <member refid="structopenscenario__interpreter_1_1syntax_1_1ScenarioObject_1ae1530005ce0670fd0f46fd7713325053" kind="function"><name>evaluate</name></member>
   </compound>
   <compound refid="structopenscenario__interpreter_1_1Scope" kind="struct"><name>openscenario_interpreter::Scope</name>
@@ -1430,7 +1469,7 @@
     <member refid="dynamics__dimension_8hpp_1adb3e4f5fd1fca3204f105c749a7a5b1c" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="dynamics__shape_8hpp_1a8e617d1da8ea9b2021ee237d3b1a35c9" kind="function"><name>operator&gt;&gt;</name></member>
     <member refid="dynamics__shape_8hpp_1a481caf80d4ae35008d069ff0b2fb51b0" kind="function"><name>operator&lt;&lt;</name></member>
-    <member refid="entity__object_8hpp_1a3e42f0a5a4c0bb07b86bf4a144bc6d12" kind="function"><name>apply</name></member>
+    <member refid="entity__object_8hpp_1a7fdd942455745f91328d3aeadd7519d4" kind="function"><name>apply</name></member>
     <member refid="event_8hpp_1a880f802ba6ab49f0d0c8896a6ef3b4c4" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="init_8hpp_1a63a6dd0d6bc6a1f9d07661bad51f1df5" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="init__actions_8hpp_1a6142eca5e872ce25f3afd49c670681f3" kind="function"><name>operator&lt;&lt;</name></member>
@@ -1438,6 +1477,8 @@
     <member refid="integer_8hpp_1ae8d238a42b1119c999c19d4995cb583f" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="maneuver_8hpp_1aeb54773d873ed99ab847680db686ab93" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="maneuver__group_8hpp_1afc9b254aae01ecd6631a1ef64bcffb68" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="misc__object__category_8hpp_1aa9e5ea47fab0ea251b2ac3bca22d9c3b" kind="function"><name>operator&gt;&gt;</name></member>
+    <member refid="misc__object__category_8hpp_1ab2eaf00f730b1e78e1055e99f49fcd78" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="openscenario_8hpp_1a667d0ba496f58cfc3f7630f0a1011f37" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="openscenario_8hpp_1ab3fbaf7955e61dfc5dc1c5cd46d5dce9" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="parameter__declaration_8hpp_1a5631e2df39464499eec4d43f4e4e0da5" kind="function"><name>operator&lt;&lt;</name></member>
@@ -1501,6 +1542,7 @@
     <member refid="highlighter_8hpp_1af81f10f7f1e17c9902bbf16aacd27aef" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="highlighter_8hpp_1a5e91c16382f82f8194b9b0099f7b005b" kind="function"><name>highlight</name></member>
     <member refid="indent_8hpp_1af0ef5cc56e13db48fd07567224d65ead" kind="function"><name>operator&lt;&lt;</name></member>
+    <member refid="overload_8hpp_1ae56014c583da8514e5579623f1c5c042" kind="function"><name>overload</name></member>
     <member refid="pair_8hpp_1ac4fd1e75262a488daba8d453d669cd1b" kind="function"><name>COMPOSE</name></member>
     <member refid="pair_8hpp_1afaacd771095114af4d4f24e0e2242c2c" kind="function"><name>COMPOSE</name></member>
     <member refid="pair_8hpp_1aa910cd1875d00f885dc3be7d15cec406" kind="function"><name>COMPOSE</name></member>
@@ -1516,6 +1558,8 @@
   <compound refid="is__console_8hpp" kind="file"><name>is_console.hpp</name>
   </compound>
   <compound refid="error_8hpp" kind="file"><name>error.hpp</name>
+    <member refid="error_8hpp_1aa529f66e1dbb67cfe79dd28f51baed5a" kind="define"><name>LINE</name></member>
+    <member refid="error_8hpp_1a15bb631053a1fce9c5470701900984c7" kind="define"><name>PRINT</name></member>
     <member refid="error_8hpp_1a911b5755380bbae471e6f8766b2a342b" kind="define"><name>INVALID_NUMERIC_LITERAL_SPECIFIED</name></member>
     <member refid="error_8hpp_1a9be8ee6629f41fa56e1dd04fb9dbad47" kind="define"><name>UNSUPPORTED_ENUMERATION_VALUE_SPECIFIED</name></member>
     <member refid="error_8hpp_1a7452037427f36552b186821326eb1e19" kind="define"><name>UNEXPECTED_ENUMERATION_VALUE_SPECIFIED</name></member>
@@ -1679,6 +1723,10 @@
   <compound refid="maneuver_8hpp" kind="file"><name>maneuver.hpp</name>
   </compound>
   <compound refid="maneuver__group_8hpp" kind="file"><name>maneuver_group.hpp</name>
+  </compound>
+  <compound refid="misc__object_8hpp" kind="file"><name>misc_object.hpp</name>
+  </compound>
+  <compound refid="misc__object__category_8hpp" kind="file"><name>misc_object_category.hpp</name>
   </compound>
   <compound refid="modify__rule_8hpp" kind="file"><name>modify_rule.hpp</name>
     <member refid="modify__rule_8hpp_1a54779976125115e9d24a1c8e23a010c9" kind="define"><name>ELEMENT</name></member>
@@ -1879,6 +1927,8 @@
   </compound>
   <compound refid="indent_8hpp" kind="file"><name>indent.hpp</name>
   </compound>
+  <compound refid="overload_8hpp" kind="file"><name>overload.hpp</name>
+  </compound>
   <compound refid="pair_8hpp" kind="file"><name>pair.hpp</name>
     <member refid="pair_8hpp_1a1ba4b89b92b6e9833cc0175a6c73096e" kind="define"><name>COMPOSE</name></member>
   </compound>
@@ -1971,6 +2021,11 @@
   <compound refid="maneuver_8cpp" kind="file"><name>maneuver.cpp</name>
   </compound>
   <compound refid="maneuver__group_8cpp" kind="file"><name>maneuver_group.cpp</name>
+  </compound>
+  <compound refid="misc__object__category_8cpp" kind="file"><name>misc_object_category.cpp</name>
+    <member refid="misc__object__category_8cpp_1a9c8f164b1af96f53e82a3e558461f33f" kind="define"><name>BOILERPLATE</name></member>
+    <member refid="misc__object__category_8cpp_1a9c8f164b1af96f53e82a3e558461f33f" kind="define"><name>BOILERPLATE</name></member>
+    <member refid="misc__object__category_8cpp_1a042387daeb4ef49d52ad4fb5f73a8f40" kind="define"><name>BOILERPLATE</name></member>
   </compound>
   <compound refid="open__scenario_8cpp" kind="file"><name>open_scenario.cpp</name>
   </compound>

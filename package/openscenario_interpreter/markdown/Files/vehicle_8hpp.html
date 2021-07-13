@@ -797,54 +797,19 @@
 <span class="cm"> * -------------------------------------------------------------------------- */</span>
 <span class="k">struct</span> <span class="nc">Vehicle</span> <span class="o">:</span> <span class="k">private</span> <span class="n">Scope</span>  <span class="c1">// for ParameterDeclarations</span>
 <span class="p">{</span>
-  <span class="cm">/* ---- name -----------------------------------------------------------------</span>
-<span class="cm">   *</span>
-<span class="cm">   *  Name of the vehicle type.</span>
-<span class="cm">   *</span>
-<span class="cm">   * ------------------------------------------------------------------------ */</span>
-  <span class="k">const</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
+  <span class="k">const</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>  <span class="c1">// Name of the vehicle type.</span>
 
-  <span class="cm">/* ---- vehicleCategory ------------------------------------------------------</span>
-<span class="cm">   *</span>
-<span class="cm">   *  Category of the vehicle (bicycle, train,...).</span>
-<span class="cm">   *</span>
-<span class="cm">   * ------------------------------------------------------------------------ */</span>
-  <span class="k">const</span> <span class="n">VehicleCategory</span> <span class="n">vehicle_category</span><span class="p">;</span>
+  <span class="k">const</span> <span class="n">VehicleCategory</span> <span class="n">vehicle_category</span><span class="p">;</span>  <span class="c1">// Category of the vehicle (bicycle, train,...).</span>
 
-  <span class="cm">/* ---- ParameterDeclarations ------------------------------------------------</span>
-<span class="cm">   *</span>
-<span class="cm">   *  Definition of additional parameters.</span>
-<span class="cm">   *</span>
-<span class="cm">   * ------------------------------------------------------------------------ */</span>
-  <span class="k">const</span> <span class="n">ParameterDeclarations</span> <span class="n">parameter_declarations</span><span class="p">;</span>
+  <span class="k">const</span> <span class="n">ParameterDeclarations</span> <span class="n">parameter_declarations</span><span class="p">;</span>  <span class="c1">// Definition of additional parameters.</span>
 
-  <span class="cm">/* ---- BoundingBox ----------------------------------------------------------</span>
-<span class="cm">   *</span>
-<span class="cm">   *  The three dimensional bounding box that encloses the vehicle.</span>
-<span class="cm">   *</span>
-<span class="cm">   * ------------------------------------------------------------------------ */</span>
-  <span class="k">const</span> <span class="n">BoundingBox</span> <span class="n">bounding_box</span><span class="p">;</span>
+  <span class="k">const</span> <span class="n">BoundingBox</span> <span class="n">bounding_box</span><span class="p">;</span>  <span class="c1">// The three dimensional bounding box that encloses the vehicle.</span>
 
-  <span class="cm">/* ---- Performance ----------------------------------------------------------</span>
-<span class="cm">   *</span>
-<span class="cm">   *  Performance properties of the vehicle.</span>
-<span class="cm">   *</span>
-<span class="cm">   * ------------------------------------------------------------------------ */</span>
-  <span class="k">const</span> <span class="n">Performance</span> <span class="n">performance</span><span class="p">;</span>
+  <span class="k">const</span> <span class="n">Performance</span> <span class="n">performance</span><span class="p">;</span>  <span class="c1">// Performance properties of the vehicle.</span>
 
-  <span class="cm">/* ---- Axles ----------------------------------------------------------------</span>
-<span class="cm">   *</span>
-<span class="cm">   *  A set of axles (front, rear, additional) and their geometric locations.</span>
-<span class="cm">   *</span>
-<span class="cm">   * ------------------------------------------------------------------------ */</span>
-  <span class="k">const</span> <span class="n">Axles</span> <span class="n">axles</span><span class="p">;</span>
+  <span class="k">const</span> <span class="n">Axles</span> <span class="n">axles</span><span class="p">;</span>  <span class="c1">// A set of axles (front, rear, additional) and their geometric locations.</span>
 
-  <span class="cm">/* ---- Properties -----------------------------------------------------------</span>
-<span class="cm">   *</span>
-<span class="cm">   *  Additional properties as name value pairs.</span>
-<span class="cm">   *</span>
-<span class="cm">   * ------------------------------------------------------------------------ */</span>
-  <span class="n">Properties</span> <span class="n">properties</span><span class="p">;</span>
+  <span class="n">Properties</span> <span class="n">properties</span><span class="p">;</span>  <span class="c1">// Additional properties as name value pairs.</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
   <span class="k">explicit</span> <span class="n">Vehicle</span><span class="p">(</span><span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">outer_scope</span><span class="p">)</span>
@@ -888,7 +853,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__VEHICLE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 13 July 2021 at 04:07:06 UTC</p>
+<p>Updated on 13 July 2021 at 04:22:25 UTC</p>
                 
                   
                 
