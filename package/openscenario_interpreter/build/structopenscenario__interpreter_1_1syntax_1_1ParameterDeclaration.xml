@@ -126,14 +126,14 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="517">
+      <node id="515">
         <label>openscenario_interpreter::syntax::ParameterType</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1ParameterType"/>
       </node>
-      <node id="516">
+      <node id="514">
         <label>openscenario_interpreter::syntax::ParameterDeclaration</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1ParameterDeclaration"/>
-        <childnode refid="517" relation="usage">
+        <childnode refid="515" relation="usage">
           <edgelabel>parameter_type</edgelabel>
         </childnode>
       </node>

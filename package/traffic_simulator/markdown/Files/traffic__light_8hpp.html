@@ -801,8 +801,8 @@
     <span class="k">return</span> <span class="n">arrow_phase_</span><span class="p">.</span><span class="n">setPhase</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">forward</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">xs</span><span class="p">)</span><span class="o">&gt;</span><span class="p">(</span><span class="n">xs</span><span class="p">)...);</span>
   <span class="p">}</span>
 
-  <span class="kt">void</span> <span class="n">setColor</span><span class="p">(</span><span class="n">TrafficLightColor</span> <span class="n">color</span><span class="p">);</span>
-  <span class="kt">void</span> <span class="nf">setArrow</span><span class="p">(</span><span class="n">TrafficLightArrow</span> <span class="n">arrow</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="n">setColor</span><span class="p">(</span><span class="k">const</span> <span class="n">TrafficLightColor</span> <span class="n">color</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">setArrow</span><span class="p">(</span><span class="k">const</span> <span class="n">TrafficLightArrow</span> <span class="n">arrow</span><span class="p">);</span>
 
   <span class="kt">double</span> <span class="nf">getColorPhaseDuration</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
   <span class="kt">double</span> <span class="nf">getArrowPhaseDuration</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
@@ -812,8 +812,8 @@
   <span class="n">TrafficLightArrow</span> <span class="nf">getArrow</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
   <span class="n">TrafficLightColor</span> <span class="nf">getColor</span><span class="p">()</span> <span class="k">const</span><span class="p">;</span>
 
-  <span class="k">const</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span> <span class="nf">getPosition</span><span class="p">(</span><span class="k">const</span> <span class="n">TrafficLightColor</span> <span class="o">&amp;</span> <span class="n">color</span><span class="p">);</span>
-  <span class="k">const</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span> <span class="nf">getPosition</span><span class="p">(</span><span class="k">const</span> <span class="n">TrafficLightArrow</span> <span class="o">&amp;</span> <span class="n">arrow</span><span class="p">);</span>
+  <span class="k">const</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span> <span class="o">&amp;</span> <span class="nf">getPosition</span><span class="p">(</span><span class="k">const</span> <span class="n">TrafficLightColor</span> <span class="o">&amp;</span> <span class="n">color</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
+  <span class="k">const</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span> <span class="o">&amp;</span> <span class="nf">getPosition</span><span class="p">(</span><span class="k">const</span> <span class="n">TrafficLightArrow</span> <span class="o">&amp;</span> <span class="n">arrow</span><span class="p">)</span> <span class="k">const</span><span class="p">;</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
   <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">setPosition</span><span class="p">(</span><span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span><span class="p">)</span>
@@ -861,7 +861,7 @@
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__TRAFFIC_LIGHTS__TRAFFIC_LIGHT_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 July 2021 at 00:07:19 UTC</p>
+<p>Updated on 15 July 2021 at 02:04:50 UTC</p>
                 
                   
                 

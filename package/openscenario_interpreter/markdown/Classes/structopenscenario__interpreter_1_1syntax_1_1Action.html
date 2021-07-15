@@ -812,7 +812,7 @@
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1Action#function-stop">stop</a></strong>()</td>
 </tr>
 <tr>
-<td>template \&lt;typename... Ts></br>decltype(auto)</td>
+<td>template \&lt;typename... Ts></br>auto</td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1Action#function-run">run</a></strong>(Ts &amp;&amp;... xs)</td>
 </tr>
 <tr>
@@ -821,7 +821,7 @@
 </tr>
 <tr>
 <td>template \&lt;typename Node ,typename Scope ></br></td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1Action#function-action">Action</a></strong>(const Node &amp; node, <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope">Scope</a> &amp; scope, std::size_t maximum_execution_count)</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1Action#function-action">Action</a></strong>(const Node &amp; node, <a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1Scope">Scope</a> &amp; scope)</td>
 </tr>
 </tbody>
 </table>
@@ -880,7 +880,7 @@
 </tr>
 <tr>
 <td>constexpr</td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/classopenscenario__interpreter_1_1syntax_1_1StoryboardElement#function-storyboardelement">StoryboardElement</a></strong>(std::size_t maximum_execution_count =1)</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/classopenscenario__interpreter_1_1syntax_1_1StoryboardElement#function-storyboardelement">StoryboardElement</a></strong>(const std::size_t maximum_execution_count =0)</td>
 </tr>
 <tr>
 <td></td>
@@ -997,7 +997,7 @@
 </code></pre></div>
 <h3 id="function-run">function run<a class="headerlink" href="#function-run" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span><span class="p">...</span> <span class="n">Ts</span><span class="o">&gt;</span>
-<span class="kr">inline</span> <span class="k">decltype</span><span class="p">(</span><span class="k">auto</span><span class="p">)</span> <span class="n">run</span><span class="p">(</span>
+<span class="kr">inline</span> <span class="k">auto</span> <span class="n">run</span><span class="p">(</span>
     <span class="n">Ts</span> <span class="o">&amp;&amp;</span><span class="p">...</span> <span class="n">xs</span>
 <span class="p">)</span>
 </code></pre></div>
@@ -1009,8 +1009,7 @@
 <span class="k">typename</span> <span class="nc">Scope</span> <span class="o">&gt;</span>
 <span class="kr">inline</span> <span class="k">explicit</span> <span class="n">Action</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span>
-    <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">scope</span><span class="p">,</span>
-    <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">maximum_execution_count</span>
+    <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">scope</span>
 <span class="p">)</span>
 </code></pre></div>
 <h2 id="public-attributes-documentation">Public Attributes Documentation<a class="headerlink" href="#public-attributes-documentation" title="Permanent link">#</a></h2>
@@ -1021,7 +1020,7 @@
 <div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">String</span> <span class="n">name</span><span class="p">;</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 July 2021 at 00:07:21 UTC</p>
+<p>Updated on 15 July 2021 at 02:04:52 UTC</p>
                 
                   
                 

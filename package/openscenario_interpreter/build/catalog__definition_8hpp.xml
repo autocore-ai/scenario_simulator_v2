@@ -4,26 +4,26 @@
     <compoundname>catalog_definition.hpp</compoundname>
     <includedby refid="open__scenario__category_8hpp" local="no">/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/open_scenario_category.hpp</includedby>
     <invincdepgraph>
-      <node id="3520">
+      <node id="3539">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/openscenario_interpreter.hpp</label>
         <link refid="openscenario__interpreter_8hpp_source"/>
       </node>
-      <node id="3519">
+      <node id="3538">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/openscenario.hpp</label>
         <link refid="openscenario_8hpp_source"/>
-        <childnode refid="3520" relation="include">
+        <childnode refid="3539" relation="include">
         </childnode>
       </node>
-      <node id="3518">
+      <node id="3537">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/open_scenario_category.hpp</label>
         <link refid="open__scenario__category_8hpp_source"/>
-        <childnode refid="3519" relation="include">
+        <childnode refid="3538" relation="include">
         </childnode>
       </node>
-      <node id="3517">
+      <node id="3536">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/catalog_definition.hpp</label>
         <link refid="catalog__definition_8hpp"/>
-        <childnode refid="3518" relation="include">
+        <childnode refid="3537" relation="include">
         </childnode>
       </node>
     </invincdepgraph>

@@ -834,6 +834,13 @@
 
   <span class="k">using</span> <span class="n">StoryboardElement</span><span class="o">::</span><span class="n">evaluate</span><span class="p">;</span>
 
+  <span class="kt">void</span> <span class="nf">start</span><span class="p">()</span>
+  <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="nl">each</span> <span class="p">:</span> <span class="o">*</span><span class="k">this</span><span class="p">)</span> <span class="p">{</span>
+      <span class="n">each</span><span class="p">.</span><span class="n">as</span><span class="o">&lt;</span><span class="n">Maneuver</span><span class="o">&gt;</span><span class="p">().</span><span class="n">changeStateIf</span><span class="p">(</span><span class="nb">true</span><span class="p">,</span> <span class="n">standby_state</span><span class="p">);</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+
   <span class="kt">void</span> <span class="nf">stop</span><span class="p">()</span>
   <span class="p">{</span>
     <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="nl">each</span> <span class="p">:</span> <span class="o">*</span><span class="k">this</span><span class="p">)</span> <span class="p">{</span>
@@ -857,7 +864,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__MANEUVER_GROUP_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 July 2021 at 00:07:21 UTC</p>
+<p>Updated on 15 July 2021 at 02:04:52 UTC</p>
                 
                   
                 

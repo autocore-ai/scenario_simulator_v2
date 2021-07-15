@@ -11,109 +11,109 @@
     <includedby refid="traffic__controller_8cpp" local="no">/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/traffic/traffic_controller.cpp</includedby>
     <includedby refid="traffic__sink_8cpp" local="no">/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/traffic/traffic_sink.cpp</includedby>
     <incdepgraph>
-      <node id="3290">
+      <node id="3316">
         <label>functional</label>
       </node>
-      <node id="3289">
+      <node id="3315">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic/traffic_sink.hpp</label>
         <link refid="traffic__sink_8hpp"/>
-        <childnode refid="3290" relation="include">
+        <childnode refid="3316" relation="include">
         </childnode>
-        <childnode refid="3291" relation="include">
+        <childnode refid="3317" relation="include">
         </childnode>
-        <childnode refid="3292" relation="include">
+        <childnode refid="3318" relation="include">
         </childnode>
-        <childnode refid="3293" relation="include">
+        <childnode refid="3319" relation="include">
         </childnode>
-        <childnode refid="3294" relation="include">
+        <childnode refid="3320" relation="include">
         </childnode>
       </node>
-      <node id="3291">
+      <node id="3317">
         <label>geometry_msgs/msg/pose.hpp</label>
       </node>
-      <node id="3292">
+      <node id="3318">
         <label>string</label>
       </node>
-      <node id="3293">
+      <node id="3319">
         <label>traffic_simulator/traffic/traffic_module_base.hpp</label>
         <link refid="traffic__module__base_8hpp_source"/>
       </node>
-      <node id="3294">
+      <node id="3320">
         <label>vector</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="3297">
+      <node id="3323">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/api/api.hpp</label>
         <link refid="api_8hpp_source"/>
       </node>
-      <node id="3303">
+      <node id="3329">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/traveled_distance_metric.hpp</label>
         <link refid="traveled__distance__metric_8hpp_source"/>
-        <childnode refid="3299" relation="include">
+        <childnode refid="3325" relation="include">
         </childnode>
       </node>
-      <node id="3301">
+      <node id="3327">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/momentary_stop_metric.hpp</label>
         <link refid="momentary__stop__metric_8hpp_source"/>
-        <childnode refid="3299" relation="include">
+        <childnode refid="3325" relation="include">
         </childnode>
       </node>
-      <node id="3295">
+      <node id="3321">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/traffic/traffic_sink.hpp</label>
         <link refid="traffic__sink_8hpp"/>
-        <childnode refid="3296" relation="include">
+        <childnode refid="3322" relation="include">
         </childnode>
-        <childnode refid="3304" relation="include">
+        <childnode refid="3330" relation="include">
         </childnode>
-        <childnode refid="3305" relation="include">
+        <childnode refid="3331" relation="include">
         </childnode>
       </node>
-      <node id="3298">
+      <node id="3324">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metric_base.hpp</label>
         <link refid="metric__base_8hpp_source"/>
-        <childnode refid="3299" relation="include">
+        <childnode refid="3325" relation="include">
         </childnode>
-        <childnode refid="3300" relation="include">
+        <childnode refid="3326" relation="include">
         </childnode>
-        <childnode refid="3301" relation="include">
+        <childnode refid="3327" relation="include">
         </childnode>
-        <childnode refid="3302" relation="include">
+        <childnode refid="3328" relation="include">
         </childnode>
-        <childnode refid="3303" relation="include">
+        <childnode refid="3329" relation="include">
         </childnode>
       </node>
-      <node id="3296">
+      <node id="3322">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/entity_manager.hpp</label>
         <link refid="entity__manager_8hpp_source"/>
-        <childnode refid="3297" relation="include">
+        <childnode refid="3323" relation="include">
         </childnode>
-        <childnode refid="3298" relation="include">
+        <childnode refid="3324" relation="include">
         </childnode>
-        <childnode refid="3300" relation="include">
+        <childnode refid="3326" relation="include">
         </childnode>
       </node>
-      <node id="3302">
+      <node id="3328">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/reaction_time_metric.hpp</label>
         <link refid="reaction__time__metric_8hpp_source"/>
-        <childnode refid="3299" relation="include">
+        <childnode refid="3325" relation="include">
         </childnode>
       </node>
-      <node id="3300">
+      <node id="3326">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metrics_manager.hpp</label>
         <link refid="metrics__manager_8hpp_source"/>
-        <childnode refid="3297" relation="include">
+        <childnode refid="3323" relation="include">
         </childnode>
       </node>
-      <node id="3304">
+      <node id="3330">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/traffic/traffic_controller.cpp</label>
         <link refid="traffic__controller_8cpp"/>
       </node>
-      <node id="3299">
+      <node id="3325">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/metrics/metrics.hpp</label>
         <link refid="metrics_8hpp_source"/>
       </node>
-      <node id="3305">
+      <node id="3331">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/traffic/traffic_sink.cpp</label>
         <link refid="traffic__sink_8cpp"/>
       </node>

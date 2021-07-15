@@ -32,6 +32,17 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
+      <node id="487">
+        <label>T</label>
+      </node>
+      <node id="486">
+        <label>openscenario_interpreter::utility::overloaded&lt; T &gt;</label>
+        <link refid="structopenscenario__interpreter_1_1utility_1_1overloaded_3_01T_01_4"/>
+        <childnode refid="487" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="489">
         <label>T</label>
       </node>
@@ -39,17 +50,6 @@
         <label>openscenario_interpreter::utility::overloaded&lt; T &gt;</label>
         <link refid="structopenscenario__interpreter_1_1utility_1_1overloaded_3_01T_01_4"/>
         <childnode refid="489" relation="public-inheritance">
-        </childnode>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
-      <node id="491">
-        <label>T</label>
-      </node>
-      <node id="490">
-        <label>openscenario_interpreter::utility::overloaded&lt; T &gt;</label>
-        <link refid="structopenscenario__interpreter_1_1utility_1_1overloaded_3_01T_01_4"/>
-        <childnode refid="491" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

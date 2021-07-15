@@ -749,6 +749,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#function-arrow_1" class="md-nav__link">
+    function Arrow
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -803,7 +810,7 @@
 <tbody>
 <tr>
 <td>enum</td>
-<td left="left" noArrow_="noArrow," right_="right," straight_="straight,"><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1Arrow#enum-value_type">value_type</a></strong></td>
+<td none="none" right_="right," straight_="straight,"><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1Arrow#enum-value_type">value_type</a></strong></td>
 </tr>
 </tbody>
 </table>
@@ -821,12 +828,16 @@
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1Arrow#function-operator-value_type">operator value_type</a></strong>() const</td>
 </tr>
 <tr>
-<td></td>
+<td>constexpr</td>
 <td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1Arrow#function-operator-traffic_simulatortrafficlightarrow">operator traffic_simulator::TrafficLightArrow</a></strong>() const</td>
 </tr>
 <tr>
 <td>constexpr</td>
-<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1Arrow#function-arrow">Arrow</a></strong>(value_type value =noArrow)</td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1Arrow#function-arrow">Arrow</a></strong>(value_type value =none)</td>
+</tr>
+<tr>
+<td></td>
+<td><strong><a href="/scenario_simulator_v2/package/openscenario_interpreter/markdown/Classes/structopenscenario__interpreter_1_1syntax_1_1Arrow#function-arrow">Arrow</a></strong>(const traffic_simulator::TrafficLightArrow &amp; arrow)</td>
 </tr>
 </tbody>
 </table>
@@ -867,8 +878,8 @@
 <td></td>
 </tr>
 <tr>
-<td>noArrow</td>
-<td></td>
+<td>none</td>
+<td>0</td>
 <td></td>
 </tr>
 <tr>
@@ -883,11 +894,16 @@
 <div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">constexpr</span> <span class="k">operator</span> <span class="n">value_type</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>
 <h3 id="function-operator-traffic_simulatortrafficlightarrow">function operator traffic_simulator::TrafficLightArrow<a class="headerlink" href="#function-operator-traffic_simulatortrafficlightarrow" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">operator</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">TrafficLightArrow</span><span class="p">()</span> <span class="k">const</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">constexpr</span> <span class="k">operator</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">TrafficLightArrow</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>
 <h3 id="function-arrow">function Arrow<a class="headerlink" href="#function-arrow" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">constexpr</span> <span class="n">Arrow</span><span class="p">(</span>
-    <span class="n">value_type</span> <span class="n">value</span> <span class="o">=</span><span class="n">noArrow</span>
+    <span class="n">value_type</span> <span class="n">value</span> <span class="o">=</span><span class="n">none</span>
+<span class="p">)</span>
+</code></pre></div>
+<h3 id="function-arrow_1">function Arrow<a class="headerlink" href="#function-arrow_1" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">explicit</span> <span class="n">Arrow</span><span class="p">(</span>
+    <span class="k">const</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">TrafficLightArrow</span> <span class="o">&amp;</span> <span class="n">arrow</span>
 <span class="p">)</span>
 </code></pre></div>
 <h2 id="public-attributes-documentation">Public Attributes Documentation<a class="headerlink" href="#public-attributes-documentation" title="Permanent link">#</a></h2>
@@ -895,7 +911,7 @@
 <div class="highlight"><pre><span></span><code><span class="k">enum</span> <span class="nc">openscenario_interpreter</span><span class="o">::</span><span class="n">syntax</span><span class="o">::</span><span class="n">Arrow</span><span class="o">::</span><span class="n">value_type</span> <span class="n">value</span><span class="p">;</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 July 2021 at 00:07:21 UTC</p>
+<p>Updated on 15 July 2021 at 02:04:52 UTC</p>
                 
                   
                 

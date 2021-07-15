@@ -95,66 +95,66 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="678">
+      <node id="676">
         <label>std::shared_ptr&lt; Expression  &gt;</label>
       </node>
-      <node id="675">
+      <node id="673">
         <label>openscenario_interpreter::syntax::ScenarioObject</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1ScenarioObject"/>
+        <childnode refid="674" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="675">
+        <label>Group</label>
+        <link refid="classopenscenario__interpreter_1_1Pointer"/>
         <childnode refid="676" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="677">
-        <label>Group</label>
-        <link refid="classopenscenario__interpreter_1_1Pointer"/>
-        <childnode refid="678" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="676">
+      <node id="674">
         <label>openscenario_interpreter::syntax::EntityObject</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1EntityObject"/>
-        <childnode refid="677" relation="public-inheritance">
+        <childnode refid="675" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="683">
+      <node id="681">
         <label>openscenario_interpreter::syntax::ObjectController</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1ObjectController"/>
-        <childnode refid="684" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="685">
-        <label>std::shared_ptr&lt; T &gt;</label>
-      </node>
-      <node id="682">
-        <label>std::shared_ptr&lt; Expression  &gt;</label>
-      </node>
-      <node id="679">
-        <label>openscenario_interpreter::syntax::ScenarioObject</label>
-        <link refid="structopenscenario__interpreter_1_1syntax_1_1ScenarioObject"/>
-        <childnode refid="680" relation="public-inheritance">
-        </childnode>
-        <childnode refid="683" relation="usage">
-          <edgelabel>object_controller</edgelabel>
-        </childnode>
-      </node>
-      <node id="684">
-        <label>ComplexType</label>
-        <link refid="classopenscenario__interpreter_1_1Pointer"/>
-        <childnode refid="685" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="681">
-        <label>Group</label>
-        <link refid="classopenscenario__interpreter_1_1Pointer"/>
         <childnode refid="682" relation="public-inheritance">
         </childnode>
       </node>
+      <node id="683">
+        <label>std::shared_ptr&lt; T &gt;</label>
+      </node>
       <node id="680">
+        <label>std::shared_ptr&lt; Expression  &gt;</label>
+      </node>
+      <node id="677">
+        <label>openscenario_interpreter::syntax::ScenarioObject</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1ScenarioObject"/>
+        <childnode refid="678" relation="public-inheritance">
+        </childnode>
+        <childnode refid="681" relation="usage">
+          <edgelabel>object_controller</edgelabel>
+        </childnode>
+      </node>
+      <node id="682">
+        <label>ComplexType</label>
+        <link refid="classopenscenario__interpreter_1_1Pointer"/>
+        <childnode refid="683" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="679">
+        <label>Group</label>
+        <link refid="classopenscenario__interpreter_1_1Pointer"/>
+        <childnode refid="680" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="678">
         <label>openscenario_interpreter::syntax::EntityObject</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1EntityObject"/>
-        <childnode refid="681" relation="public-inheritance">
+        <childnode refid="679" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

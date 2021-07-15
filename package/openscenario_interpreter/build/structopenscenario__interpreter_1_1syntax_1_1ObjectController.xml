@@ -80,36 +80,36 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="457">
+      <node id="455">
         <label>openscenario_interpreter::syntax::ObjectController</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1ObjectController"/>
-        <childnode refid="458" relation="public-inheritance">
+        <childnode refid="456" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="459">
+      <node id="457">
         <label>std::shared_ptr&lt; T &gt;</label>
       </node>
-      <node id="458">
+      <node id="456">
         <label>ComplexType</label>
         <link refid="classopenscenario__interpreter_1_1Pointer"/>
-        <childnode refid="459" relation="public-inheritance">
+        <childnode refid="457" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="460">
+      <node id="458">
         <label>openscenario_interpreter::syntax::ObjectController</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1ObjectController"/>
-        <childnode refid="461" relation="public-inheritance">
+        <childnode refid="459" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="462">
+      <node id="460">
         <label>std::shared_ptr&lt; T &gt;</label>
       </node>
-      <node id="461">
+      <node id="459">
         <label>ComplexType</label>
         <link refid="classopenscenario__interpreter_1_1Pointer"/>
-        <childnode refid="462" relation="public-inheritance">
+        <childnode refid="460" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

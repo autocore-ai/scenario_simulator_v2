@@ -69,7 +69,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signal_controller_action.hpp" line="66" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signal_controller_action.hpp" bodystart="66" bodyend="78"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signal_controller_action.hpp" line="66" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signal_controller_action.hpp" bodystart="66" bodyend="77"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -97,7 +97,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signal_controller_action.hpp" line="80" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signal_controller_action.hpp" bodystart="80" bodyend="80"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signal_controller_action.hpp" line="79" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signal_controller_action.hpp" bodystart="79" bodyend="79"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -105,30 +105,30 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="829">
+      <node id="830">
         <label>openscenario_interpreter::syntax::TrafficSignalControllerAction</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalControllerAction"/>
-        <childnode refid="830" relation="private-inheritance">
+        <childnode refid="831" relation="private-inheritance">
         </childnode>
       </node>
-      <node id="830">
+      <node id="831">
         <label>openscenario_interpreter::Scope</label>
         <link refid="structopenscenario__interpreter_1_1Scope"/>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="831">
+      <node id="832">
         <label>openscenario_interpreter::syntax::TrafficSignalControllerAction</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalControllerAction"/>
-        <childnode refid="832" relation="private-inheritance">
+        <childnode refid="833" relation="private-inheritance">
         </childnode>
       </node>
-      <node id="832">
+      <node id="833">
         <label>openscenario_interpreter::Scope</label>
         <link refid="structopenscenario__interpreter_1_1Scope"/>
       </node>
     </collaborationgraph>
-    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signal_controller_action.hpp" line="39" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signal_controller_action.hpp" bodystart="38" bodyend="81"/>
+    <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signal_controller_action.hpp" line="39" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/traffic_signal_controller_action.hpp" bodystart="38" bodyend="80"/>
     <listofallmembers>
       <member refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalControllerAction_1a34c3ae02150d8034f05b297d77f31f40" prot="public" virt="non-virtual"><scope>openscenario_interpreter::syntax::TrafficSignalControllerAction</scope><name>accomplished</name></member>
       <member refid="structopenscenario__interpreter_1_1Scope_1a71adbadb72f848f4dd4d08ea00bb351e" prot="private" virt="non-virtual"><scope>openscenario_interpreter::syntax::TrafficSignalControllerAction</scope><name>Actor</name></member>

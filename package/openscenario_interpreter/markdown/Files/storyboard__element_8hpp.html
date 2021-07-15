@@ -843,6 +843,8 @@
 <span class="cp">#define OPENSCENARIO_INTERPRETER__SYNTAX__STORYBOARD_ELEMENT_HPP_</span>
 
 <span class="cp">#include</span> <span class="cpf">&lt;boost/mpl/and.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;cstddef&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;limits&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/storyboard_element_state.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;type_traits&gt;</span><span class="cp"></span>
@@ -863,7 +865,7 @@
 
   <span class="n">Element</span> <span class="n">current_state</span><span class="p">;</span>
 
-  <span class="k">explicit</span> <span class="k">constexpr</span> <span class="n">StoryboardElement</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">maximum_execution_count</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+  <span class="k">explicit</span> <span class="k">constexpr</span> <span class="n">StoryboardElement</span><span class="p">(</span><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">size_t</span> <span class="n">maximum_execution_count</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span>
   <span class="o">:</span> <span class="n">maximum_execution_count</span><span class="p">(</span><span class="n">maximum_execution_count</span><span class="p">),</span>
     <span class="n">current_execution_count</span><span class="p">(</span><span class="mi">0</span><span class="p">),</span>
     <span class="n">current_state</span><span class="p">(</span><span class="n">standby_state</span><span class="p">)</span>
@@ -1129,7 +1131,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__STORYBOARD_ELEMENT_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 July 2021 at 00:07:21 UTC</p>
+<p>Updated on 15 July 2021 at 02:04:52 UTC</p>
                 
                   
                 

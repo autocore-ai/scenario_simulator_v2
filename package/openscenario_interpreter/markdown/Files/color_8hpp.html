@@ -750,7 +750,7 @@
 </tbody>
 </table>
 <h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">#</a></h2>
-<div class="highlight"><pre><span></span><code><span class="c1">// Copyright 2015-2020 Tier IV, Inc. All rights reserved.</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Copyright 2015-2021 Tier IV, Inc. All rights reserved.</span>
 <span class="c1">//</span>
 <span class="c1">// Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span>
 <span class="c1">// you may not use this file except in compliance with the License.</span>
@@ -778,20 +778,44 @@
 <span class="k">struct</span> <span class="nc">Color</span>
 <span class="p">{</span>
   <span class="k">enum</span> <span class="nc">value_type</span> <span class="p">{</span>
-    <span class="n">noColor</span><span class="p">,</span>
+    <span class="n">none</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span>
+
+    <span class="c1">// NOTE: Sorted lexicographically.</span>
     <span class="n">green</span><span class="p">,</span>
     <span class="n">red</span><span class="p">,</span>
     <span class="n">yellow</span><span class="p">,</span>
   <span class="p">}</span> <span class="n">value</span><span class="p">;</span>
 
-  <span class="k">constexpr</span> <span class="n">Color</span><span class="p">(</span><span class="n">value_type</span> <span class="n">value</span> <span class="o">=</span> <span class="n">noColor</span><span class="p">)</span> <span class="o">:</span> <span class="n">value</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">{}</span>
+  <span class="k">constexpr</span> <span class="n">Color</span><span class="p">(</span><span class="n">value_type</span> <span class="n">value</span> <span class="o">=</span> <span class="n">none</span><span class="p">)</span> <span class="o">:</span> <span class="n">value</span><span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">{}</span>
+
+  <span class="k">explicit</span> <span class="n">Color</span><span class="p">(</span><span class="k">const</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">TrafficLightColor</span> <span class="o">&amp;</span> <span class="n">color</span><span class="p">)</span>
+  <span class="o">:</span> <span class="n">value</span><span class="p">([](</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">color</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">switch</span> <span class="p">(</span><span class="n">color</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">TrafficLightColor</span><span class="o">::</span><span class="nl">GREEN</span><span class="p">:</span>
+          <span class="k">return</span> <span class="n">Color</span><span class="o">::</span><span class="n">green</span><span class="p">;</span>
+
+        <span class="k">case</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">TrafficLightColor</span><span class="o">::</span><span class="nl">RED</span><span class="p">:</span>
+          <span class="k">return</span> <span class="n">Color</span><span class="o">::</span><span class="n">red</span><span class="p">;</span>
+
+        <span class="k">case</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">TrafficLightColor</span><span class="o">::</span><span class="nl">YELLOW</span><span class="p">:</span>
+          <span class="k">return</span> <span class="n">Color</span><span class="o">::</span><span class="n">yellow</span><span class="p">;</span>
+
+        <span class="k">case</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">TrafficLightColor</span><span class="o">::</span><span class="nl">NONE</span><span class="p">:</span>
+          <span class="c1">// [[fallthrough]];</span>
+
+        <span class="k">default</span><span class="o">:</span>
+          <span class="k">return</span> <span class="n">Color</span><span class="o">::</span><span class="n">none</span><span class="p">;</span>
+      <span class="p">}</span>
+    <span class="p">}(</span><span class="n">color</span><span class="p">))</span>
+  <span class="p">{</span>
+  <span class="p">}</span>
 
   <span class="k">constexpr</span> <span class="k">operator</span> <span class="n">value_type</span><span class="p">()</span> <span class="k">const</span> <span class="k">noexcept</span> <span class="p">{</span> <span class="k">return</span> <span class="n">value</span><span class="p">;</span> <span class="p">}</span>
 
-  <span class="k">operator</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">TrafficLightColor</span><span class="p">()</span> <span class="k">const</span>
+  <span class="k">constexpr</span> <span class="k">operator</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">TrafficLightColor</span><span class="p">()</span> <span class="k">const</span>
   <span class="p">{</span>
     <span class="k">switch</span> <span class="p">(</span><span class="n">value</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">case</span> <span class="nl">noColor</span><span class="p">:</span>
+      <span class="k">case</span> <span class="nl">none</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">TrafficLightColor</span><span class="o">::</span><span class="n">NONE</span><span class="p">;</span>
 
       <span class="k">case</span> <span class="nl">green</span><span class="p">:</span>
@@ -809,11 +833,14 @@
   <span class="p">}</span>
 <span class="p">};</span>
 
-<span class="k">static_assert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">is_trivially_copy_constructible</span><span class="o">&lt;</span><span class="n">Color</span><span class="o">&gt;::</span><span class="n">value</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
 <span class="k">static_assert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">is_trivially_copy_assignable</span><span class="o">&lt;</span><span class="n">Color</span><span class="o">&gt;::</span><span class="n">value</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
+
+<span class="k">static_assert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">is_trivially_copy_constructible</span><span class="o">&lt;</span><span class="n">Color</span><span class="o">&gt;::</span><span class="n">value</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
+
 <span class="k">static_assert</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">is_standard_layout</span><span class="o">&lt;</span><span class="n">Color</span><span class="o">&gt;::</span><span class="n">value</span><span class="p">,</span> <span class="s">&quot;&quot;</span><span class="p">);</span>
 
 <span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span><span class="p">,</span> <span class="n">Color</span> <span class="o">&amp;</span><span class="p">);</span>
+
 <span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">istream</span> <span class="o">&amp;</span><span class="p">,</span> <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">Color</span><span class="o">&gt;</span> <span class="o">&amp;</span><span class="p">);</span>
 
 <span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span> <span class="k">operator</span><span class="o">&lt;&lt;</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;</span><span class="p">,</span> <span class="k">const</span> <span class="n">Color</span> <span class="o">&amp;</span><span class="p">);</span>
@@ -823,7 +850,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__COLOR_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 July 2021 at 00:07:21 UTC</p>
+<p>Updated on 15 July 2021 at 02:04:52 UTC</p>
                 
                   
                 

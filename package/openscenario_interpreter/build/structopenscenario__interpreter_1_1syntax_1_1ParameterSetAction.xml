@@ -96,6 +96,18 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
+      <node id="531">
+        <label>openscenario_interpreter::syntax::ParameterSetAction</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1ParameterSetAction"/>
+        <childnode refid="532" relation="private-inheritance">
+        </childnode>
+      </node>
+      <node id="532">
+        <label>openscenario_interpreter::Scope</label>
+        <link refid="structopenscenario__interpreter_1_1Scope"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
       <node id="533">
         <label>openscenario_interpreter::syntax::ParameterSetAction</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1ParameterSetAction"/>
@@ -103,18 +115,6 @@
         </childnode>
       </node>
       <node id="534">
-        <label>openscenario_interpreter::Scope</label>
-        <link refid="structopenscenario__interpreter_1_1Scope"/>
-      </node>
-    </inheritancegraph>
-    <collaborationgraph>
-      <node id="535">
-        <label>openscenario_interpreter::syntax::ParameterSetAction</label>
-        <link refid="structopenscenario__interpreter_1_1syntax_1_1ParameterSetAction"/>
-        <childnode refid="536" relation="private-inheritance">
-        </childnode>
-      </node>
-      <node id="536">
         <label>openscenario_interpreter::Scope</label>
         <link refid="structopenscenario__interpreter_1_1Scope"/>
       </node>

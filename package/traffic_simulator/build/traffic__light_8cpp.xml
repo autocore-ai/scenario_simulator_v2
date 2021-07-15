@@ -11,349 +11,349 @@
     <includes local="no">utility</includes>
     <includes local="no">vector</includes>
     <incdepgraph>
-      <node id="6638">
+      <node id="6692">
         <label>scenario_simulator_exception/exception.hpp</label>
       </node>
-      <node id="6688">
+      <node id="6742">
         <label>traffic_simulator/traffic_lights/traffic_light_state.hpp</label>
         <link refid="traffic__light__state_8hpp_source"/>
-        <childnode refid="6689" relation="include">
+        <childnode refid="6743" relation="include">
         </childnode>
-        <childnode refid="6647" relation="include">
+        <childnode refid="6701" relation="include">
         </childnode>
-        <childnode refid="6648" relation="include">
+        <childnode refid="6702" relation="include">
         </childnode>
       </node>
-      <node id="6637">
+      <node id="6691">
         <label>limits</label>
       </node>
-      <node id="6666">
+      <node id="6720">
         <label>geometry_msgs/msg/pose_stamped.hpp</label>
       </node>
-      <node id="6644">
+      <node id="6698">
         <label>std_msgs/msg/color_rgba.hpp</label>
       </node>
-      <node id="6665">
+      <node id="6719">
         <label>geographic_msgs/msg/geo_point.hpp</label>
       </node>
-      <node id="6658">
+      <node id="6712">
         <label>lanelet2_routing/RoutingGraph.h</label>
       </node>
-      <node id="6649">
+      <node id="6703">
         <label>traffic_simulator/traffic_lights/traffic_light_phase.hpp</label>
         <link refid="traffic__light__phase_8hpp_source"/>
-        <childnode refid="6637" relation="include">
+        <childnode refid="6691" relation="include">
         </childnode>
-        <childnode refid="6638" relation="include">
+        <childnode refid="6692" relation="include">
         </childnode>
-        <childnode refid="6650" relation="include">
+        <childnode refid="6704" relation="include">
         </childnode>
-        <childnode refid="6686" relation="include">
+        <childnode refid="6740" relation="include">
         </childnode>
-        <childnode refid="6685" relation="include">
+        <childnode refid="6739" relation="include">
         </childnode>
       </node>
-      <node id="6653">
+      <node id="6707">
         <label>lanelet2_core/geometry/Lanelet.h</label>
       </node>
-      <node id="6671">
+      <node id="6725">
         <label>openscenario_msgs/msg/entity_status.hpp</label>
       </node>
-      <node id="6689">
+      <node id="6743">
         <label>autoware_perception_msgs/msg/lamp_state.hpp</label>
       </node>
-      <node id="6681">
+      <node id="6735">
         <label>geometry_msgs/msg/pose.hpp</label>
       </node>
-      <node id="6636">
+      <node id="6690">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/traffic_lights/traffic_light.cpp</label>
         <link refid="traffic__light_8cpp"/>
-        <childnode refid="6637" relation="include">
+        <childnode refid="6691" relation="include">
         </childnode>
-        <childnode refid="6638" relation="include">
+        <childnode refid="6692" relation="include">
         </childnode>
-        <childnode refid="6639" relation="include">
+        <childnode refid="6693" relation="include">
         </childnode>
-        <childnode refid="6640" relation="include">
+        <childnode refid="6694" relation="include">
         </childnode>
-        <childnode refid="6645" relation="include">
+        <childnode refid="6699" relation="include">
         </childnode>
-        <childnode refid="6687" relation="include">
+        <childnode refid="6741" relation="include">
         </childnode>
-        <childnode refid="6686" relation="include">
+        <childnode refid="6740" relation="include">
         </childnode>
-        <childnode refid="6685" relation="include">
+        <childnode refid="6739" relation="include">
         </childnode>
       </node>
-      <node id="6641">
+      <node id="6695">
         <label>cassert</label>
       </node>
-      <node id="6648">
+      <node id="6702">
         <label>stdexcept</label>
       </node>
-      <node id="6683">
+      <node id="6737">
         <label>openscenario_msgs/msg/hermite_curve.hpp</label>
       </node>
-      <node id="6639">
+      <node id="6693">
         <label>string</label>
       </node>
-      <node id="6669">
+      <node id="6723">
         <label>lanelet2_extension_psim/utility/utilities.hpp</label>
       </node>
-      <node id="6673">
+      <node id="6727">
         <label>traffic_simulator/hdmap_utils/cache.hpp</label>
         <link refid="cache_8hpp_source"/>
-        <childnode refid="6664" relation="include">
+        <childnode refid="6718" relation="include">
         </childnode>
-        <childnode refid="6674" relation="include">
+        <childnode refid="6728" relation="include">
         </childnode>
-        <childnode refid="6675" relation="include">
+        <childnode refid="6729" relation="include">
         </childnode>
-        <childnode refid="6638" relation="include">
+        <childnode refid="6692" relation="include">
         </childnode>
-        <childnode refid="6676" relation="include">
+        <childnode refid="6730" relation="include">
         </childnode>
-        <childnode refid="6687" relation="include">
+        <childnode refid="6741" relation="include">
         </childnode>
-        <childnode refid="6685" relation="include">
+        <childnode refid="6739" relation="include">
         </childnode>
       </node>
-      <node id="6643">
+      <node id="6697">
         <label>map</label>
       </node>
-      <node id="6679">
+      <node id="6733">
         <label>traffic_simulator/math/hermite_curve.hpp</label>
         <link refid="hermite__curve_8hpp_source"/>
-        <childnode refid="6680" relation="include">
+        <childnode refid="6734" relation="include">
         </childnode>
-        <childnode refid="6664" relation="include">
+        <childnode refid="6718" relation="include">
         </childnode>
-        <childnode refid="6674" relation="include">
+        <childnode refid="6728" relation="include">
         </childnode>
-        <childnode refid="6681" relation="include">
+        <childnode refid="6735" relation="include">
         </childnode>
-        <childnode refid="6682" relation="include">
+        <childnode refid="6736" relation="include">
         </childnode>
-        <childnode refid="6683" relation="include">
+        <childnode refid="6737" relation="include">
         </childnode>
-        <childnode refid="6684" relation="include">
+        <childnode refid="6738" relation="include">
         </childnode>
-        <childnode refid="6685" relation="include">
+        <childnode refid="6739" relation="include">
         </childnode>
       </node>
-      <node id="6640">
+      <node id="6694">
         <label>traffic_simulator/color_utils/color_utils.hpp</label>
         <link refid="color__utils_8hpp_source"/>
-        <childnode refid="6641" relation="include">
+        <childnode refid="6695" relation="include">
         </childnode>
-        <childnode refid="6642" relation="include">
+        <childnode refid="6696" relation="include">
         </childnode>
-        <childnode refid="6643" relation="include">
+        <childnode refid="6697" relation="include">
         </childnode>
-        <childnode refid="6644" relation="include">
+        <childnode refid="6698" relation="include">
         </childnode>
-        <childnode refid="6639" relation="include">
+        <childnode refid="6693" relation="include">
         </childnode>
       </node>
-      <node id="6672">
+      <node id="6726">
         <label>rclcpp/rclcpp.hpp</label>
       </node>
-      <node id="6657">
+      <node id="6711">
         <label>lanelet2_routing/RoutingCost.h</label>
       </node>
-      <node id="6662">
+      <node id="6716">
         <label>tf2_geometry_msgs/tf2_geometry_msgs.h</label>
       </node>
-      <node id="6650">
+      <node id="6704">
         <label>traffic_simulator/hdmap_utils/hdmap_utils.hpp</label>
         <link refid="hdmap__utils_8hpp_source"/>
-        <childnode refid="6651" relation="include">
+        <childnode refid="6705" relation="include">
         </childnode>
-        <childnode refid="6652" relation="include">
+        <childnode refid="6706" relation="include">
         </childnode>
-        <childnode refid="6653" relation="include">
+        <childnode refid="6707" relation="include">
         </childnode>
-        <childnode refid="6654" relation="include">
+        <childnode refid="6708" relation="include">
         </childnode>
-        <childnode refid="6655" relation="include">
+        <childnode refid="6709" relation="include">
         </childnode>
-        <childnode refid="6656" relation="include">
+        <childnode refid="6710" relation="include">
         </childnode>
-        <childnode refid="6657" relation="include">
+        <childnode refid="6711" relation="include">
         </childnode>
-        <childnode refid="6658" relation="include">
+        <childnode refid="6712" relation="include">
         </childnode>
-        <childnode refid="6659" relation="include">
+        <childnode refid="6713" relation="include">
         </childnode>
-        <childnode refid="6660" relation="include">
+        <childnode refid="6714" relation="include">
         </childnode>
-        <childnode refid="6661" relation="include">
+        <childnode refid="6715" relation="include">
         </childnode>
-        <childnode refid="6662" relation="include">
+        <childnode refid="6716" relation="include">
         </childnode>
-        <childnode refid="6663" relation="include">
+        <childnode refid="6717" relation="include">
         </childnode>
-        <childnode refid="6664" relation="include">
+        <childnode refid="6718" relation="include">
         </childnode>
-        <childnode refid="6665" relation="include">
+        <childnode refid="6719" relation="include">
         </childnode>
-        <childnode refid="6666" relation="include">
+        <childnode refid="6720" relation="include">
         </childnode>
-        <childnode refid="6667" relation="include">
+        <childnode refid="6721" relation="include">
         </childnode>
-        <childnode refid="6668" relation="include">
+        <childnode refid="6722" relation="include">
         </childnode>
-        <childnode refid="6669" relation="include">
+        <childnode refid="6723" relation="include">
         </childnode>
-        <childnode refid="6643" relation="include">
+        <childnode refid="6697" relation="include">
         </childnode>
-        <childnode refid="6670" relation="include">
+        <childnode refid="6724" relation="include">
         </childnode>
-        <childnode refid="6671" relation="include">
+        <childnode refid="6725" relation="include">
         </childnode>
-        <childnode refid="6672" relation="include">
+        <childnode refid="6726" relation="include">
         </childnode>
-        <childnode refid="6639" relation="include">
+        <childnode refid="6693" relation="include">
         </childnode>
-        <childnode refid="6673" relation="include">
+        <childnode refid="6727" relation="include">
         </childnode>
-        <childnode refid="6679" relation="include">
+        <childnode refid="6733" relation="include">
         </childnode>
-        <childnode refid="6688" relation="include">
+        <childnode refid="6742" relation="include">
         </childnode>
-        <childnode refid="6687" relation="include">
+        <childnode refid="6741" relation="include">
         </childnode>
-        <childnode refid="6686" relation="include">
+        <childnode refid="6740" relation="include">
         </childnode>
-        <childnode refid="6685" relation="include">
+        <childnode refid="6739" relation="include">
         </childnode>
-        <childnode refid="6690" relation="include">
+        <childnode refid="6744" relation="include">
         </childnode>
       </node>
-      <node id="6677">
+      <node id="6731">
         <label>exception</label>
       </node>
-      <node id="6651">
+      <node id="6705">
         <label>geometry_msgs/msg/vector3.h</label>
       </node>
-      <node id="6682">
+      <node id="6736">
         <label>geometry_msgs/msg/vector3.hpp</label>
       </node>
-      <node id="6646">
+      <node id="6700">
         <label>autoware_perception_msgs/msg/traffic_light_state.hpp</label>
       </node>
-      <node id="6656">
+      <node id="6710">
         <label>lanelet2_routing/Route.h</label>
       </node>
-      <node id="6668">
+      <node id="6722">
         <label>lanelet2_extension_psim/utility/query.hpp</label>
       </node>
-      <node id="6680">
+      <node id="6734">
         <label>quaternion_operation/quaternion_operation.h</label>
       </node>
-      <node id="6667">
+      <node id="6721">
         <label>lanelet2_extension_psim/utility/message_conversion.hpp</label>
       </node>
-      <node id="6674">
+      <node id="6728">
         <label>geometry_msgs/msg/point.hpp</label>
       </node>
-      <node id="6642">
+      <node id="6696">
         <label>cstdio</label>
       </node>
-      <node id="6678">
+      <node id="6732">
         <label>openscenario_msgs/msg/catmull_rom_spline.hpp</label>
       </node>
-      <node id="6685">
+      <node id="6739">
         <label>vector</label>
       </node>
-      <node id="6686">
+      <node id="6740">
         <label>utility</label>
       </node>
-      <node id="6684">
+      <node id="6738">
         <label>traffic_simulator/math/polynomial_solver.hpp</label>
         <link refid="polynomial__solver_8hpp_source"/>
-        <childnode refid="6685" relation="include">
+        <childnode refid="6739" relation="include">
         </childnode>
       </node>
-      <node id="6660">
+      <node id="6714">
         <label>lanelet2_traffic_rules/TrafficRulesFactory.h</label>
       </node>
-      <node id="6676">
+      <node id="6730">
         <label>traffic_simulator/math/catmull_rom_spline.hpp</label>
         <link refid="catmull__rom__spline_8hpp_source"/>
-        <childnode refid="6677" relation="include">
+        <childnode refid="6731" relation="include">
         </childnode>
-        <childnode refid="6674" relation="include">
+        <childnode refid="6728" relation="include">
         </childnode>
-        <childnode refid="6678" relation="include">
+        <childnode refid="6732" relation="include">
         </childnode>
-        <childnode refid="6639" relation="include">
+        <childnode refid="6693" relation="include">
         </childnode>
-        <childnode refid="6679" relation="include">
+        <childnode refid="6733" relation="include">
         </childnode>
-        <childnode refid="6686" relation="include">
+        <childnode refid="6740" relation="include">
         </childnode>
-        <childnode refid="6685" relation="include">
+        <childnode refid="6739" relation="include">
         </childnode>
       </node>
-      <node id="6655">
+      <node id="6709">
         <label>lanelet2_core/primitives/LaneletSequence.h</label>
       </node>
-      <node id="6647">
+      <node id="6701">
         <label>iostream</label>
       </node>
-      <node id="6652">
+      <node id="6706">
         <label>lanelet2_core/LaneletMap.h</label>
       </node>
-      <node id="6687">
+      <node id="6741">
         <label>unordered_map</label>
       </node>
-      <node id="6645">
+      <node id="6699">
         <label>traffic_simulator/traffic_lights/traffic_light.hpp</label>
         <link refid="traffic__light_8hpp_source"/>
-        <childnode refid="6646" relation="include">
+        <childnode refid="6700" relation="include">
         </childnode>
-        <childnode refid="6647" relation="include">
+        <childnode refid="6701" relation="include">
         </childnode>
-        <childnode refid="6637" relation="include">
+        <childnode refid="6691" relation="include">
         </childnode>
-        <childnode refid="6648" relation="include">
+        <childnode refid="6702" relation="include">
         </childnode>
-        <childnode refid="6640" relation="include">
+        <childnode refid="6694" relation="include">
         </childnode>
-        <childnode refid="6649" relation="include">
+        <childnode refid="6703" relation="include">
         </childnode>
-        <childnode refid="6688" relation="include">
+        <childnode refid="6742" relation="include">
         </childnode>
-        <childnode refid="6687" relation="include">
+        <childnode refid="6741" relation="include">
         </childnode>
-        <childnode refid="6686" relation="include">
+        <childnode refid="6740" relation="include">
         </childnode>
-        <childnode refid="6685" relation="include">
+        <childnode refid="6739" relation="include">
         </childnode>
       </node>
-      <node id="6663">
+      <node id="6717">
         <label>autoware_auto_msgs/msg/had_map_bin.hpp</label>
       </node>
-      <node id="6690">
+      <node id="6744">
         <label>visualization_msgs/msg/marker_array.hpp</label>
       </node>
-      <node id="6675">
+      <node id="6729">
         <label>mutex</label>
       </node>
-      <node id="6654">
+      <node id="6708">
         <label>lanelet2_core/primitives/BasicRegulatoryElements.h</label>
       </node>
-      <node id="6659">
+      <node id="6713">
         <label>lanelet2_routing/RoutingGraphContainer.h</label>
       </node>
-      <node id="6664">
+      <node id="6718">
         <label>boost/optional.hpp</label>
       </node>
-      <node id="6661">
+      <node id="6715">
         <label>tf2/LinearMath/Matrix3x3.h</label>
       </node>
-      <node id="6670">
+      <node id="6724">
         <label>memory</label>
       </node>
     </incdepgraph>
@@ -402,8 +402,8 @@
 <codeline lineno="37"><highlight class="normal"><sp/><sp/>arrow_phase_.setState(TrafficLightArrow::NONE);</highlight></codeline>
 <codeline lineno="38"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>TrafficLight::setColor(TrafficLightColor<sp/>color)<sp/>{<sp/>color_phase_.setState(color);<sp/>}</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>TrafficLight::setArrow(TrafficLightArrow<sp/>arrow)<sp/>{<sp/>arrow_phase_.setState(arrow);<sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>TrafficLight::setColor(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TrafficLightColor<sp/>color)<sp/>{<sp/>color_phase_.setState(color);<sp/>}</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>TrafficLight::setArrow(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TrafficLightArrow<sp/>arrow)<sp/>{<sp/>arrow_phase_.setState(arrow);<sp/>}</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"></highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TrafficLight::getColorPhaseDuration()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>color_phase_.getPhaseDuration();<sp/>}</highlight></codeline>
 <codeline lineno="44"><highlight class="normal"></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>TrafficLight::getArrowPhaseDuration()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>arrow_phase_.getPhaseDuration();<sp/>}</highlight></codeline>
@@ -422,16 +422,16 @@
 <codeline lineno="57"><highlight class="normal"><sp/><sp/>color_changed_<sp/>=<sp/>(previous_color<sp/>!=<sp/>getColor());</highlight></codeline>
 <codeline lineno="58"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="59"><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>geometry_msgs::msg::Point<sp/>TrafficLight::getPosition(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TrafficLightColor<sp/>&amp;<sp/>color)</highlight></codeline>
-<codeline lineno="61"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>geometry_msgs::msg::Point<sp/>&amp;<sp/>TrafficLight::getPosition(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TrafficLightColor<sp/>&amp;<sp/>color)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="61"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="62"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(color_positions_.count(color)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>THROW_SEMANTIC_ERROR(</highlight><highlight class="stringliteral">&quot;target<sp/>color<sp/>does<sp/>not<sp/>exist&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="64"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="65"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>color_positions_.at(color);</highlight></codeline>
 <codeline lineno="66"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="67"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>geometry_msgs::msg::Point<sp/>TrafficLight::getPosition(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TrafficLightArrow<sp/>&amp;<sp/>arrow)</highlight></codeline>
-<codeline lineno="69"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>geometry_msgs::msg::Point<sp/>&amp;<sp/>TrafficLight::getPosition(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>TrafficLightArrow<sp/>&amp;<sp/>arrow)</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="69"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(arrow_positions_.count(arrow)<sp/>==<sp/>0)<sp/>{</highlight></codeline>
 <codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>THROW_SEMANTIC_ERROR(</highlight><highlight class="stringliteral">&quot;target<sp/>arrow<sp/>does<sp/>not<sp/>exist&quot;</highlight><highlight class="normal">);</highlight></codeline>
 <codeline lineno="72"><highlight class="normal"><sp/><sp/>}</highlight></codeline>

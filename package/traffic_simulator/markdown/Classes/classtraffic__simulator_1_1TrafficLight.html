@@ -879,7 +879,7 @@
 </tr>
 <tr>
 <td>void</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLight#function-setcolor">setColor</a></strong>(TrafficLightColor color)</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLight#function-setcolor">setColor</a></strong>(const TrafficLightColor color)</td>
 </tr>
 <tr>
 <td>template \&lt;typename... Ts></br>decltype(auto)</td>
@@ -887,19 +887,19 @@
 </tr>
 <tr>
 <td>void</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLight#function-setarrow">setArrow</a></strong>(TrafficLightArrow arrow)</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLight#function-setarrow">setArrow</a></strong>(const TrafficLightArrow arrow)</td>
 </tr>
 <tr>
 <td></td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLight#function-operator-autoware_perception_msgsmsgtrafficlightstate">operator autoware_perception_msgs::msg::TrafficLightState</a></strong>() const</td>
 </tr>
 <tr>
-<td>const geometry_msgs::msg::Point</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLight#function-getposition">getPosition</a></strong>(const TrafficLightColor &amp; color)</td>
+<td>const geometry_msgs::msg::Point &amp;</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLight#function-getposition">getPosition</a></strong>(const TrafficLightColor &amp; color) const</td>
 </tr>
 <tr>
-<td>const geometry_msgs::msg::Point</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLight#function-getposition">getPosition</a></strong>(const TrafficLightArrow &amp; arrow)</td>
+<td>const geometry_msgs::msg::Point &amp;</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1TrafficLight#function-getposition">getPosition</a></strong>(const TrafficLightArrow &amp; arrow) const</td>
 </tr>
 <tr>
 <td>double</td>
@@ -966,7 +966,7 @@
 </code></pre></div>
 <h3 id="function-setcolor">function setColor<a class="headerlink" href="#function-setcolor" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">setColor</span><span class="p">(</span>
-    <span class="n">TrafficLightColor</span> <span class="n">color</span>
+    <span class="k">const</span> <span class="n">TrafficLightColor</span> <span class="n">color</span>
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="function-setarrowphase">function setArrowPhase<a class="headerlink" href="#function-setarrowphase" title="Permanent link">#</a></h3>
@@ -977,21 +977,21 @@
 </code></pre></div>
 <h3 id="function-setarrow">function setArrow<a class="headerlink" href="#function-setarrow" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">setArrow</span><span class="p">(</span>
-    <span class="n">TrafficLightArrow</span> <span class="n">arrow</span>
+    <span class="k">const</span> <span class="n">TrafficLightArrow</span> <span class="n">arrow</span>
 <span class="p">)</span>
 </code></pre></div>
 <h3 id="function-operator-autoware_perception_msgsmsgtrafficlightstate">function operator autoware_perception_msgs::msg::TrafficLightState<a class="headerlink" href="#function-operator-autoware_perception_msgsmsgtrafficlightstate" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="k">explicit</span> <span class="k">operator</span> <span class="n">autoware_perception_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">TrafficLightState</span><span class="p">()</span> <span class="k">const</span>
 </code></pre></div>
 <h3 id="function-getposition">function getPosition<a class="headerlink" href="#function-getposition" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span> <span class="n">getPosition</span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span> <span class="o">&amp;</span> <span class="n">getPosition</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">TrafficLightColor</span> <span class="o">&amp;</span> <span class="n">color</span>
-<span class="p">)</span>
+<span class="p">)</span> <span class="k">const</span>
 </code></pre></div>
 <h3 id="function-getposition_1">function getPosition<a class="headerlink" href="#function-getposition_1" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span> <span class="n">getPosition</span><span class="p">(</span>
+<div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span> <span class="o">&amp;</span> <span class="n">getPosition</span><span class="p">(</span>
     <span class="k">const</span> <span class="n">TrafficLightArrow</span> <span class="o">&amp;</span> <span class="n">arrow</span>
-<span class="p">)</span>
+<span class="p">)</span> <span class="k">const</span>
 </code></pre></div>
 <h3 id="function-getcolorphaseduration">function getColorPhaseDuration<a class="headerlink" href="#function-getcolorphaseduration" title="Permanent link">#</a></h3>
 <div class="highlight"><pre><span></span><code><span class="kt">double</span> <span class="n">getColorPhaseDuration</span><span class="p">()</span> <span class="k">const</span>
@@ -1023,7 +1023,7 @@
 <div class="highlight"><pre><span></span><code><span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">id</span><span class="p">;</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 July 2021 at 00:07:18 UTC</p>
+<p>Updated on 15 July 2021 at 02:04:49 UTC</p>
                 
                   
                 

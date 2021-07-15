@@ -54,36 +54,36 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
-      <node id="817">
+      <node id="816">
         <label>std::shared_ptr&lt; Expression  &gt;</label>
       </node>
-      <node id="815">
+      <node id="814">
         <label>openscenario_interpreter::syntax::TrafficSignalAction</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalAction"/>
-        <childnode refid="816" relation="public-inheritance">
+        <childnode refid="815" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="816">
+      <node id="815">
         <label>ComplexType</label>
         <link refid="classopenscenario__interpreter_1_1Pointer"/>
-        <childnode refid="817" relation="public-inheritance">
+        <childnode refid="816" relation="public-inheritance">
         </childnode>
       </node>
     </inheritancegraph>
     <collaborationgraph>
-      <node id="820">
+      <node id="819">
         <label>std::shared_ptr&lt; Expression  &gt;</label>
       </node>
-      <node id="818">
+      <node id="817">
         <label>openscenario_interpreter::syntax::TrafficSignalAction</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1TrafficSignalAction"/>
-        <childnode refid="819" relation="public-inheritance">
+        <childnode refid="818" relation="public-inheritance">
         </childnode>
       </node>
-      <node id="819">
+      <node id="818">
         <label>ComplexType</label>
         <link refid="classopenscenario__interpreter_1_1Pointer"/>
-        <childnode refid="820" relation="public-inheritance">
+        <childnode refid="819" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

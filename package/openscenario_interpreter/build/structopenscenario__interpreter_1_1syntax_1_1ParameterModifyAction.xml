@@ -96,44 +96,44 @@
     <detaileddescription>
     </detaileddescription>
     <inheritancegraph>
+      <node id="520">
+        <label>openscenario_interpreter::syntax::ParameterModifyAction</label>
+        <link refid="structopenscenario__interpreter_1_1syntax_1_1ParameterModifyAction"/>
+        <childnode refid="521" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="521">
+        <label>openscenario_interpreter::Scope</label>
+        <link refid="structopenscenario__interpreter_1_1Scope"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="526">
+        <label>std::shared_ptr&lt; Expression  &gt;</label>
+      </node>
       <node id="522">
         <label>openscenario_interpreter::syntax::ParameterModifyAction</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1ParameterModifyAction"/>
         <childnode refid="523" relation="public-inheritance">
+        </childnode>
+        <childnode refid="524" relation="usage">
+          <edgelabel>rule</edgelabel>
+        </childnode>
+      </node>
+      <node id="525">
+        <label>Element</label>
+        <link refid="classopenscenario__interpreter_1_1Pointer"/>
+        <childnode refid="526" relation="public-inheritance">
         </childnode>
       </node>
       <node id="523">
         <label>openscenario_interpreter::Scope</label>
         <link refid="structopenscenario__interpreter_1_1Scope"/>
       </node>
-    </inheritancegraph>
-    <collaborationgraph>
-      <node id="528">
-        <label>std::shared_ptr&lt; Expression  &gt;</label>
-      </node>
       <node id="524">
-        <label>openscenario_interpreter::syntax::ParameterModifyAction</label>
-        <link refid="structopenscenario__interpreter_1_1syntax_1_1ParameterModifyAction"/>
-        <childnode refid="525" relation="public-inheritance">
-        </childnode>
-        <childnode refid="526" relation="usage">
-          <edgelabel>rule</edgelabel>
-        </childnode>
-      </node>
-      <node id="527">
-        <label>Element</label>
-        <link refid="classopenscenario__interpreter_1_1Pointer"/>
-        <childnode refid="528" relation="public-inheritance">
-        </childnode>
-      </node>
-      <node id="525">
-        <label>openscenario_interpreter::Scope</label>
-        <link refid="structopenscenario__interpreter_1_1Scope"/>
-      </node>
-      <node id="526">
         <label>openscenario_interpreter::syntax::ModifyRule</label>
         <link refid="structopenscenario__interpreter_1_1syntax_1_1ModifyRule"/>
-        <childnode refid="527" relation="public-inheritance">
+        <childnode refid="525" relation="public-inheritance">
         </childnode>
       </node>
     </collaborationgraph>

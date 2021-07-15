@@ -496,38 +496,6 @@
         </inbodydescription>
         <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="112" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="procedure_8hpp_1adb39984ea605a57041da3b7c230e9721" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type></type>
-        <definition>openscenario_interpreter::FORWARD_TO_SIMULATION_API</definition>
-        <argsstring>(getTrafficLightArrow)</argsstring>
-        <name>FORWARD_TO_SIMULATION_API</name>
-        <param>
-          <type>getTrafficLightArrow</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="113" column="1"/>
-      </memberdef>
-      <memberdef kind="function" id="procedure_8hpp_1ae6a2f099fe029bf23c057611c697a8f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type></type>
-        <definition>openscenario_interpreter::FORWARD_TO_SIMULATION_API</definition>
-        <argsstring>(getTrafficLightColor)</argsstring>
-        <name>FORWARD_TO_SIMULATION_API</name>
-        <param>
-          <type>getTrafficLightColor</type>
-        </param>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="114" column="1"/>
-      </memberdef>
       <memberdef kind="function" id="procedure_8hpp_1a551a0463ef5bdc5b2a6f97c5ac59fe73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>openscenario_interpreter::FORWARD_TO_SIMULATION_API</definition>
@@ -542,7 +510,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="115" column="1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="113" column="1"/>
       </memberdef>
       <memberdef kind="function" id="procedure_8hpp_1a62d34d771dca82679d91a190e325c291" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -558,7 +526,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="116" column="1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="114" column="1"/>
       </memberdef>
       <memberdef kind="function" id="procedure_8hpp_1ade3277f3839472ad16147eff2155ca7f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -574,7 +542,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="117" column="1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="115" column="1"/>
       </memberdef>
       <memberdef kind="function" id="procedure_8hpp_1a217f0c1eb488d8974687bb0dc0e5e474" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -590,7 +558,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="118" column="1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="116" column="1"/>
       </memberdef>
       <memberdef kind="function" id="procedure_8hpp_1a71b9de4f582f3561521063650e8b3f75" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -606,7 +574,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="119" column="1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="117" column="1"/>
       </memberdef>
       <memberdef kind="function" id="procedure_8hpp_1a970262fb484d0a2aeb6bf184b84f02e8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -622,7 +590,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="120" column="1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="118" column="1"/>
       </memberdef>
       <memberdef kind="function" id="procedure_8hpp_1ab27f4de97d09a09210c41f6bc9a5a146" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -638,7 +606,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="121" column="1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="119" column="1"/>
       </memberdef>
       <memberdef kind="function" id="procedure_8hpp_1a51127def1842ffbe4505a8fbb454984c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -654,7 +622,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="122" column="1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="120" column="1"/>
       </memberdef>
       <memberdef kind="function" id="procedure_8hpp_1a08ea72ba81ebe010886260b55dd63886" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -670,7 +638,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="123" column="1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="121" column="1"/>
       </memberdef>
       <memberdef kind="function" id="procedure_8hpp_1a68ab9f827866bb6832e68e2e693d1359" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -686,7 +654,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="124" column="1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="122" column="1"/>
       </memberdef>
       <memberdef kind="function" id="procedure_8hpp_1ad291122bcec8c3c3f13fa11949ca3832" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -702,7 +670,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="125" column="1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="123" column="1"/>
       </memberdef>
       <memberdef kind="function" id="procedure_8hpp_1ab2f9073994d30d56ec514a27477bdfcb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -718,7 +686,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="126" column="1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="124" column="1"/>
       </memberdef>
       <memberdef kind="function" id="procedure_8hpp_1acd8baec617e870c1e3e6d70d9c260825" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -734,7 +702,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="127" column="1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="125" column="1"/>
       </memberdef>
       <memberdef kind="function" id="procedure_8hpp_1a7a5a3465b55618f8805c6d9117fa9c6c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -750,7 +718,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="128" column="1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="126" column="1"/>
       </memberdef>
       <memberdef kind="function" id="procedure_8hpp_1a960e11b54bc500f8f00b9584cfce03fd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
@@ -766,18 +734,56 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="129" column="1"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="127" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="procedure_8hpp_1a7379d6c9aea6e199b7de50c3c65b7e33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="procedure_8hpp_1ac4c7c7fd255a5445dc3a3da1ef8bd004" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>openscenario_interpreter::RENAME</definition>
-        <argsstring>(reachPosition, isReachedPosition)</argsstring>
+        <argsstring>(assignController, setDriverModel)</argsstring>
         <name>RENAME</name>
         <param>
-          <type>reachPosition</type>
+          <type>assignController</type>
         </param>
         <param>
-          <type>isReachedPosition</type>
+          <type>setDriverModel</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="139" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="procedure_8hpp_1a1dee3cff32f2addf19f76556f18d3911" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>openscenario_interpreter::RENAME</definition>
+        <argsstring>(getTrafficSignalArrow, getTrafficLightArrow)</argsstring>
+        <name>RENAME</name>
+        <param>
+          <type>getTrafficSignalArrow</type>
+        </param>
+        <param>
+          <type>getTrafficLightArrow</type>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="140" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="procedure_8hpp_1ab010632d78e3df015ad09c9cdcf050b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>openscenario_interpreter::RENAME</definition>
+        <argsstring>(getTrafficSignalColor, getTrafficLightColor)</argsstring>
+        <name>RENAME</name>
+        <param>
+          <type>getTrafficSignalColor</type>
+        </param>
+        <param>
+          <type>getTrafficLightColor</type>
         </param>
         <briefdescription>
         </briefdescription>
@@ -787,16 +793,16 @@
         </inbodydescription>
         <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="141" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="procedure_8hpp_1a99bec18a84b494e3b5af3ea9aa74eeb7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="procedure_8hpp_1a32cdac9ef9613789a52b86bea396fd28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>openscenario_interpreter::RENAME</definition>
-        <argsstring>(setDriverModel, assignController)</argsstring>
+        <argsstring>(isReachedPosition, reachPosition)</argsstring>
         <name>RENAME</name>
         <param>
-          <type>setDriverModel</type>
+          <type>isReachedPosition</type>
         </param>
         <param>
-          <type>assignController</type>
+          <type>reachPosition</type>
         </param>
         <briefdescription>
         </briefdescription>
@@ -806,16 +812,16 @@
         </inbodydescription>
         <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/procedure.hpp" line="142" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="procedure_8hpp_1a8a763aba7c8250464db3a7351cd4cc7d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="procedure_8hpp_1ae0c5436293284cccacad7418ca3dc31c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type></type>
         <definition>openscenario_interpreter::RENAME</definition>
-        <argsstring>(toMapPose, toWorldPosition)</argsstring>
+        <argsstring>(toWorldPosition, toMapPose)</argsstring>
         <name>RENAME</name>
         <param>
-          <type>toMapPose</type>
+          <type>toWorldPosition</type>
         </param>
         <param>
-          <type>toWorldPosition</type>
+          <type>toMapPose</type>
         </param>
         <briefdescription>
         </briefdescription>

@@ -762,22 +762,28 @@
   <span class="n">map_frame_</span><span class="p">(</span><span class="n">map_frame</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="nl">id</span> <span class="p">:</span> <span class="p">(</span><span class="o">*</span><span class="n">hdmap_utils_ptr</span><span class="p">).</span><span class="n">getTrafficLightIds</span><span class="p">())</span> <span class="p">{</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">TrafficLight</span><span class="o">&gt;</span> <span class="n">light_ptr</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">make_shared</span><span class="o">&lt;</span><span class="n">TrafficLight</span><span class="o">&gt;</span><span class="p">(</span><span class="n">id</span><span class="p">);</span>
-    <span class="k">auto</span> <span class="n">red_position</span> <span class="o">=</span> <span class="n">hdmap_utils_ptr</span><span class="o">-&gt;</span><span class="n">getTrafficLightBulbPosition</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">TrafficLightColor</span><span class="o">::</span><span class="n">RED</span><span class="p">);</span>
+    <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">TrafficLightColor</span><span class="p">,</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span><span class="o">&gt;</span> <span class="n">color_positions</span><span class="p">;</span>
+
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">red_position</span> <span class="o">=</span>
+      <span class="n">hdmap_utils_ptr</span><span class="o">-&gt;</span><span class="n">getTrafficLightBulbPosition</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">TrafficLightColor</span><span class="o">::</span><span class="n">RED</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">red_position</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">light_ptr</span><span class="o">-&gt;</span><span class="n">setPosition</span><span class="p">(</span><span class="n">TrafficLightColor</span><span class="o">::</span><span class="n">RED</span><span class="p">,</span> <span class="n">red_position</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
+      <span class="n">color_positions</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">TrafficLightColor</span><span class="o">::</span><span class="n">RED</span><span class="p">,</span> <span class="n">red_position</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
     <span class="p">}</span>
-    <span class="k">auto</span> <span class="n">yellow_position</span> <span class="o">=</span>
+
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">yellow_position</span> <span class="o">=</span>
       <span class="n">hdmap_utils_ptr</span><span class="o">-&gt;</span><span class="n">getTrafficLightBulbPosition</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">TrafficLightColor</span><span class="o">::</span><span class="n">YELLOW</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">yellow_position</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">light_ptr</span><span class="o">-&gt;</span><span class="n">setPosition</span><span class="p">(</span><span class="n">TrafficLightColor</span><span class="o">::</span><span class="n">YELLOW</span><span class="p">,</span> <span class="n">yellow_position</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
+      <span class="n">color_positions</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">TrafficLightColor</span><span class="o">::</span><span class="n">YELLOW</span><span class="p">,</span> <span class="n">yellow_position</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
     <span class="p">}</span>
-    <span class="k">auto</span> <span class="n">green_position</span> <span class="o">=</span>
+
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">green_position</span> <span class="o">=</span>
       <span class="n">hdmap_utils_ptr</span><span class="o">-&gt;</span><span class="n">getTrafficLightBulbPosition</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">TrafficLightColor</span><span class="o">::</span><span class="n">GREEN</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">green_position</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">light_ptr</span><span class="o">-&gt;</span><span class="n">setPosition</span><span class="p">(</span><span class="n">TrafficLightColor</span><span class="o">::</span><span class="n">GREEN</span><span class="p">,</span> <span class="n">green_position</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
+      <span class="n">color_positions</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">TrafficLightColor</span><span class="o">::</span><span class="n">GREEN</span><span class="p">,</span> <span class="n">green_position</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
     <span class="p">}</span>
-    <span class="n">traffic_lights_</span><span class="p">.</span><span class="n">insert</span><span class="p">({</span><span class="n">id</span><span class="p">,</span> <span class="n">light_ptr</span><span class="p">});</span>
+
+    <span class="n">traffic_lights_</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span>
+      <span class="n">std</span><span class="o">::</span><span class="n">piecewise_construct</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">make_tuple</span><span class="p">(</span><span class="n">id</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">make_tuple</span><span class="p">(</span><span class="n">id</span><span class="p">,</span> <span class="n">color_positions</span><span class="p">));</span>
   <span class="p">}</span>
 <span class="p">}</span>
 
@@ -807,9 +813,12 @@
 <span class="kt">void</span> <span class="n">TrafficLightManager</span><span class="o">::</span><span class="n">drawMarkers</span><span class="p">()</span> <span class="k">const</span>
 <span class="p">{</span>
   <span class="n">visualization_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">MarkerArray</span> <span class="n">msg</span><span class="p">;</span>
+
   <span class="k">const</span> <span class="k">auto</span> <span class="n">now</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">clock_ptr_</span><span class="p">).</span><span class="n">now</span><span class="p">();</span>
+
   <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">light</span> <span class="p">:</span> <span class="n">traffic_lights_</span><span class="p">)</span> <span class="p">{</span>
-    <span class="k">const</span> <span class="k">auto</span> <span class="n">color</span> <span class="o">=</span> <span class="n">light</span><span class="p">.</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">getColor</span><span class="p">();</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">color</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">light</span><span class="p">).</span><span class="n">getColor</span><span class="p">();</span>
+
     <span class="k">if</span> <span class="p">(</span><span class="n">color</span> <span class="o">!=</span> <span class="n">TrafficLightColor</span><span class="o">::</span><span class="n">NONE</span><span class="p">)</span> <span class="p">{</span>
       <span class="n">visualization_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Marker</span> <span class="n">marker</span><span class="p">;</span>
       <span class="n">marker</span><span class="p">.</span><span class="n">header</span><span class="p">.</span><span class="n">stamp</span> <span class="o">=</span> <span class="n">now</span><span class="p">;</span>
@@ -818,7 +827,7 @@
       <span class="n">marker</span><span class="p">.</span><span class="n">ns</span> <span class="o">=</span> <span class="s">&quot;bulb&quot;</span><span class="p">;</span>
       <span class="n">marker</span><span class="p">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">light</span><span class="p">.</span><span class="n">first</span><span class="p">;</span>
       <span class="n">marker</span><span class="p">.</span><span class="n">type</span> <span class="o">=</span> <span class="n">marker</span><span class="p">.</span><span class="n">SPHERE</span><span class="p">;</span>
-      <span class="n">marker</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">light</span><span class="p">.</span><span class="n">second</span><span class="o">-&gt;</span><span class="n">getPosition</span><span class="p">(</span><span class="n">color</span><span class="p">);</span>
+      <span class="n">marker</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">light</span><span class="p">).</span><span class="n">getPosition</span><span class="p">(</span><span class="n">color</span><span class="p">);</span>
       <span class="n">marker</span><span class="p">.</span><span class="n">pose</span><span class="p">.</span><span class="n">orientation</span> <span class="o">=</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Quaternion</span><span class="p">();</span>
       <span class="n">marker</span><span class="p">.</span><span class="n">scale</span><span class="p">.</span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">;</span>
       <span class="n">marker</span><span class="p">.</span><span class="n">scale</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="mf">0.3</span><span class="p">;</span>
@@ -827,6 +836,7 @@
       <span class="n">msg</span><span class="p">.</span><span class="n">markers</span><span class="p">.</span><span class="n">push_back</span><span class="p">(</span><span class="n">marker</span><span class="p">);</span>
     <span class="p">}</span>
   <span class="p">}</span>
+
   <span class="n">marker_pub_</span><span class="o">-&gt;</span><span class="n">publish</span><span class="p">(</span><span class="n">msg</span><span class="p">);</span>
 <span class="p">}</span>
 
@@ -836,7 +846,9 @@
 
   <span class="k">if</span> <span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">any_of</span><span class="p">(</span>
         <span class="n">std</span><span class="o">::</span><span class="n">begin</span><span class="p">(</span><span class="n">traffic_lights_</span><span class="p">),</span> <span class="n">std</span><span class="o">::</span><span class="n">end</span><span class="p">(</span><span class="n">traffic_lights_</span><span class="p">),</span>
-        <span class="p">[](</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">traffic_light</span><span class="p">)</span> <span class="p">{</span> <span class="k">return</span> <span class="p">(</span><span class="o">*</span><span class="n">traffic_light</span><span class="p">.</span><span class="n">second</span><span class="p">).</span><span class="n">colorChanged</span><span class="p">();</span> <span class="p">}))</span> <span class="p">{</span>
+        <span class="p">[](</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="n">id_and_traffic_light</span><span class="p">)</span> <span class="p">{</span>
+          <span class="k">return</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">id_and_traffic_light</span><span class="p">).</span><span class="n">colorChanged</span><span class="p">();</span>
+        <span class="p">}))</span> <span class="p">{</span>
     <span class="n">deleteAllMarkers</span><span class="p">();</span>
   <span class="p">}</span>
 
@@ -845,7 +857,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 July 2021 at 00:07:19 UTC</p>
+<p>Updated on 15 July 2021 at 02:04:50 UTC</p>
                 
                   
                 

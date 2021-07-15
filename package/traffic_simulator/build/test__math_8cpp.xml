@@ -10,159 +10,159 @@
     <includes refid="polynomial__solver_8hpp" local="no">traffic_simulator/math/polynomial_solver.hpp</includes>
     <includes refid="uuid_8hpp" local="no">traffic_simulator/math/uuid.hpp</includes>
     <incdepgraph>
-      <node id="6844">
+      <node id="6899">
         <label>traffic_simulator/math/bounding_box.hpp</label>
         <link refid="bounding__box_8hpp_source"/>
-        <childnode refid="6845" relation="include">
+        <childnode refid="6900" relation="include">
         </childnode>
-        <childnode refid="6846" relation="include">
+        <childnode refid="6901" relation="include">
         </childnode>
-        <childnode refid="6847" relation="include">
+        <childnode refid="6902" relation="include">
         </childnode>
-        <childnode refid="6848" relation="include">
+        <childnode refid="6903" relation="include">
         </childnode>
-        <childnode refid="6849" relation="include">
+        <childnode refid="6904" relation="include">
         </childnode>
-        <childnode refid="6850" relation="include">
+        <childnode refid="6905" relation="include">
         </childnode>
-        <childnode refid="6851" relation="include">
+        <childnode refid="6906" relation="include">
         </childnode>
-        <childnode refid="6852" relation="include">
+        <childnode refid="6907" relation="include">
         </childnode>
-        <childnode refid="6853" relation="include">
+        <childnode refid="6908" relation="include">
         </childnode>
-        <childnode refid="6854" relation="include">
+        <childnode refid="6909" relation="include">
         </childnode>
       </node>
-      <node id="6852">
+      <node id="6907">
         <label>geometry_msgs/msg/pose.hpp</label>
       </node>
-      <node id="6867">
+      <node id="6922">
         <label>traffic_simulator/math/uuid.hpp</label>
         <link refid="uuid_8hpp"/>
-        <childnode refid="6859" relation="include">
+        <childnode refid="6914" relation="include">
         </childnode>
       </node>
-      <node id="6863">
+      <node id="6918">
         <label>openscenario_msgs/msg/hermite_curve.hpp</label>
       </node>
-      <node id="6859">
+      <node id="6914">
         <label>string</label>
       </node>
-      <node id="6860">
+      <node id="6915">
         <label>traffic_simulator/math/hermite_curve.hpp</label>
         <link refid="hermite__curve_8hpp_source"/>
-        <childnode refid="6861" relation="include">
+        <childnode refid="6916" relation="include">
         </childnode>
-        <childnode refid="6851" relation="include">
+        <childnode refid="6906" relation="include">
         </childnode>
-        <childnode refid="6857" relation="include">
+        <childnode refid="6912" relation="include">
         </childnode>
-        <childnode refid="6852" relation="include">
+        <childnode refid="6907" relation="include">
         </childnode>
-        <childnode refid="6862" relation="include">
+        <childnode refid="6917" relation="include">
         </childnode>
-        <childnode refid="6863" relation="include">
+        <childnode refid="6918" relation="include">
         </childnode>
-        <childnode refid="6864" relation="include">
+        <childnode refid="6919" relation="include">
         </childnode>
-        <childnode refid="6854" relation="include">
+        <childnode refid="6909" relation="include">
         </childnode>
       </node>
-      <node id="6853">
+      <node id="6908">
         <label>openscenario_msgs/msg/bounding_box.hpp</label>
       </node>
-      <node id="6856">
+      <node id="6911">
         <label>exception</label>
       </node>
-      <node id="6850">
+      <node id="6905">
         <label>boost/geometry/geometries/point_xy.hpp</label>
       </node>
-      <node id="6845">
+      <node id="6900">
         <label>boost/assert.hpp</label>
       </node>
-      <node id="6862">
+      <node id="6917">
         <label>geometry_msgs/msg/vector3.hpp</label>
       </node>
-      <node id="6846">
+      <node id="6901">
         <label>boost/assign/list_of.hpp</label>
       </node>
-      <node id="6842">
+      <node id="6897">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/test/src/test_math.cpp</label>
         <link refid="test__math_8cpp"/>
-        <childnode refid="6843" relation="include">
+        <childnode refid="6898" relation="include">
         </childnode>
-        <childnode refid="6844" relation="include">
+        <childnode refid="6899" relation="include">
         </childnode>
-        <childnode refid="6855" relation="include">
+        <childnode refid="6910" relation="include">
         </childnode>
-        <childnode refid="6866" relation="include">
+        <childnode refid="6921" relation="include">
         </childnode>
-        <childnode refid="6860" relation="include">
+        <childnode refid="6915" relation="include">
         </childnode>
-        <childnode refid="6864" relation="include">
+        <childnode refid="6919" relation="include">
         </childnode>
-        <childnode refid="6867" relation="include">
+        <childnode refid="6922" relation="include">
         </childnode>
       </node>
-      <node id="6861">
+      <node id="6916">
         <label>quaternion_operation/quaternion_operation.h</label>
       </node>
-      <node id="6857">
+      <node id="6912">
         <label>geometry_msgs/msg/point.hpp</label>
       </node>
-      <node id="6858">
+      <node id="6913">
         <label>openscenario_msgs/msg/catmull_rom_spline.hpp</label>
       </node>
-      <node id="6854">
+      <node id="6909">
         <label>vector</label>
       </node>
-      <node id="6843">
+      <node id="6898">
         <label>gtest/gtest.h</label>
       </node>
-      <node id="6865">
+      <node id="6920">
         <label>utility</label>
       </node>
-      <node id="6864">
+      <node id="6919">
         <label>traffic_simulator/math/polynomial_solver.hpp</label>
         <link refid="polynomial__solver_8hpp_source"/>
-        <childnode refid="6854" relation="include">
+        <childnode refid="6909" relation="include">
         </childnode>
       </node>
-      <node id="6855">
+      <node id="6910">
         <label>traffic_simulator/math/catmull_rom_spline.hpp</label>
         <link refid="catmull__rom__spline_8hpp_source"/>
-        <childnode refid="6856" relation="include">
+        <childnode refid="6911" relation="include">
         </childnode>
-        <childnode refid="6857" relation="include">
+        <childnode refid="6912" relation="include">
         </childnode>
-        <childnode refid="6858" relation="include">
+        <childnode refid="6913" relation="include">
         </childnode>
-        <childnode refid="6859" relation="include">
+        <childnode refid="6914" relation="include">
         </childnode>
-        <childnode refid="6860" relation="include">
+        <childnode refid="6915" relation="include">
         </childnode>
-        <childnode refid="6865" relation="include">
+        <childnode refid="6920" relation="include">
         </childnode>
-        <childnode refid="6854" relation="include">
+        <childnode refid="6909" relation="include">
         </childnode>
       </node>
-      <node id="6848">
+      <node id="6903">
         <label>boost/geometry/algorithms/disjoint.hpp</label>
       </node>
-      <node id="6851">
+      <node id="6906">
         <label>boost/optional.hpp</label>
       </node>
-      <node id="6849">
+      <node id="6904">
         <label>boost/geometry/geometries/linestring.hpp</label>
       </node>
-      <node id="6847">
+      <node id="6902">
         <label>boost/geometry.hpp</label>
       </node>
-      <node id="6866">
+      <node id="6921">
         <label>traffic_simulator/math/distance.hpp</label>
         <link refid="distance_8hpp"/>
-        <childnode refid="6852" relation="include">
+        <childnode refid="6907" relation="include">
         </childnode>
       </node>
     </incdepgraph>
