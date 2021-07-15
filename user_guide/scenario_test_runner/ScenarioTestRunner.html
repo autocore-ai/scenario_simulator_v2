@@ -450,8 +450,42 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-to-use" class="md-nav__link">
-    How to use
+  <a href="#before-testing-scenarios" class="md-nav__link">
+    Before Testing Scenarios
+  </a>
+  
+    <nav class="md-nav" aria-label="Before Testing Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-add-full-path-to-your-map-file" class="md-nav__link">
+    1. Add Full Path to your map file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-modify-isego-setting" class="md-nav__link">
+    2. Modify "isEgo" setting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-test-your-single-scenario" class="md-nav__link">
+    How to Test your Single Scenario
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-test-your-mutiple-scenarios" class="md-nav__link">
+    How to Test your Mutiple Scenarios
   </a>
   
 </li>
@@ -731,8 +765,42 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#how-to-use" class="md-nav__link">
-    How to use
+  <a href="#before-testing-scenarios" class="md-nav__link">
+    Before Testing Scenarios
+  </a>
+  
+    <nav class="md-nav" aria-label="Before Testing Scenarios">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-add-full-path-to-your-map-file" class="md-nav__link">
+    1. Add Full Path to your map file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-modify-isego-setting" class="md-nav__link">
+    2. Modify "isEgo" setting
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-test-your-single-scenario" class="md-nav__link">
+    How to Test your Single Scenario
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-test-your-mutiple-scenarios" class="md-nav__link">
+    How to Test your Mutiple Scenarios
   </a>
   
 </li>
@@ -762,11 +830,41 @@
                 
                 
                 <h1 id="scenario-test-runner-user-guide">Scenario Test Runner User Guide<a class="headerlink" href="#scenario-test-runner-user-guide" title="Permanent link">#</a></h1>
-<p>Scenario Test Runner is being developed to assist in the definitive planning simulation using concept of OpenSCENARIO.
+<p>Scenario Test Runner is being developed to assist in the definitive planning simulation using the concept of OpenSCENARIO.
 Simulations are described in a "YAML" based format called a "tier4 scenario format".
-Then convert the scenario into an "XML" based format called an "OpenSCENARIO".
-The format has been found at <a href="http://www.openscenario.org/">OpenSCENARIO</a>.</p>
-<h2 id="how-to-use">How to use<a class="headerlink" href="#how-to-use" title="Permanent link">#</a></h2>
+Then the scenario is converted into an XML based format called "OpenSCENARIO".
+The specification of this format is found at <a href="http://www.openscenario.org/">OpenSCENARIO</a>.</p>
+<h2 id="before-testing-scenarios">Before Testing Scenarios<a class="headerlink" href="#before-testing-scenarios" title="Permanent link">#</a></h2>
+<p>You need to open your YAML file and edit the following two parts of your scenario file before testing it.</p>
+<h4 id="1-add-full-path-to-your-map-file">1. Add Full Path to your map file<a class="headerlink" href="#1-add-full-path-to-your-map-file" title="Permanent link">#</a></h4>
+<p>Find the following part in your YAML file;</p>
+<div class="highlight"><pre><span></span><code>RoadNetwork:
+    LogicFile:
+      filepath: lanelet2_map.osm
+</code></pre></div>
+<p>and add the full path to your Lanelet2 map file based on your local setp. For example;</p>
+<div class="highlight"><pre><span></span><code>RoadNetwork:
+    LogicFile:
+      filepath: /home/user-name/maps/location-a/lanelet2_map.osc
+</code></pre></div>
+<h4 id="2-modify-isego-setting">2. Modify "isEgo" setting<a class="headerlink" href="#2-modify-isego-setting" title="Permanent link">#</a></h4>
+<p>Find the following part in your YAML file;
+<div class="highlight"><pre><span></span><code>              Property:
+                - name: isEgo
+                  value: <span class="s2">&quot;true&quot;</span>
+</code></pre></div>
+and change to;</p>
+<p><div class="highlight"><pre><span></span><code>              Property:
+                - name: isEgo
+                  value: <span class="s2">&quot;false&quot;</span>
+</code></pre></div>
+This is the setting to let Ego vehicle run without connecting to Autoware for test run. <font color="Red"> Please note that this "isEgo" setting is only for scenario testing and you will need to revert it to "true" when you conduct the actual sceario simulation with Autoware. </font></p>
+<h2 id="how-to-test-your-single-scenario">How to Test your Single Scenario<a class="headerlink" href="#how-to-test-your-single-scenario" title="Permanent link">#</a></h2>
+<p><div class="highlight"><pre><span></span><code>ros2 launch scenario_test_runner scenario_test_runner.launch.py scenario:<span class="o">=</span><span class="s1">&#39;/home/user-name/scenario-folder/t4v2.yaml&#39;</span> with_rviz:<span class="o">=</span><span class="nb">true</span>
+</code></pre></div>
+The workflow file defines how to execute scenarios.
+If you want to know how to write the workflow file, read <a href="HowToWriteWorkflowFile">here.</a></p>
+<h2 id="how-to-test-your-mutiple-scenarios">How to Test your Mutiple Scenarios<a class="headerlink" href="#how-to-test-your-mutiple-scenarios" title="Permanent link">#</a></h2>
 <p><div class="highlight"><pre><span></span><code>ros2 launch scenario_test_runner scenario_test_runner.launch.py workflow:<span class="o">=</span><span class="s1">&#39;$(find-pkg-share scenario_test_runner)/config/workflow_example.yaml&#39;</span> log_directory:<span class="o">=</span><span class="s1">&#39;/tmp&#39;</span>
 </code></pre></div>
 The workflow file defines how to execute scenarios.
