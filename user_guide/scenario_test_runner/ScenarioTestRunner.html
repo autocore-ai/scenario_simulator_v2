@@ -459,14 +459,14 @@
         
           <li class="md-nav__item">
   <a href="#1-add-full-path-to-your-map-file" class="md-nav__link">
-    1. Add Full Path to your map file
+    1. Add Full Path to your Map File
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#2-modify-isego-setting" class="md-nav__link">
-    2. Modify "isEgo" setting
+    2. Modify "isEgo" Setting
   </a>
   
 </li>
@@ -477,15 +477,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-test-your-single-scenario" class="md-nav__link">
-    How to Test your Single Scenario
+  <a href="#how-to-test-single-scenario" class="md-nav__link">
+    How to Test Single Scenario
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-test-your-mutiple-scenarios" class="md-nav__link">
-    How to Test your Mutiple Scenarios
+  <a href="#how-to-test-mutiple-scenarios" class="md-nav__link">
+    How to Test Mutiple Scenarios
   </a>
   
 </li>
@@ -774,14 +774,14 @@
         
           <li class="md-nav__item">
   <a href="#1-add-full-path-to-your-map-file" class="md-nav__link">
-    1. Add Full Path to your map file
+    1. Add Full Path to your Map File
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#2-modify-isego-setting" class="md-nav__link">
-    2. Modify "isEgo" setting
+    2. Modify "isEgo" Setting
   </a>
   
 </li>
@@ -792,15 +792,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-test-your-single-scenario" class="md-nav__link">
-    How to Test your Single Scenario
+  <a href="#how-to-test-single-scenario" class="md-nav__link">
+    How to Test Single Scenario
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-test-your-mutiple-scenarios" class="md-nav__link">
-    How to Test your Mutiple Scenarios
+  <a href="#how-to-test-mutiple-scenarios" class="md-nav__link">
+    How to Test Mutiple Scenarios
   </a>
   
 </li>
@@ -830,13 +830,13 @@
                 
                 
                 <h1 id="scenario-test-runner-user-guide">Scenario Test Runner User Guide<a class="headerlink" href="#scenario-test-runner-user-guide" title="Permanent link">#</a></h1>
-<p>Scenario Test Runner is being developed to assist in the definitive planning simulation using the concept of OpenSCENARIO.
-Simulations are described in a "YAML" based format called a "tier4 scenario format".
-Then the scenario is converted into an XML based format called "OpenSCENARIO".
-The specification of this format is found at <a href="http://www.openscenario.org/">OpenSCENARIO</a>.</p>
+<p>Scenario Test Runner is being developed to support the scenario simulation using the OpenSCENARIO format.
+Scenarios are described in the YAML based format called "tier4 scenario format".
+Then the scenario is converted into XML based OpenSCENARIO format.
+The specification of this scenario format is found at <a href="http://www.openscenario.org/">OpenSCENARIO</a> site.</p>
 <h2 id="before-testing-scenarios">Before Testing Scenarios<a class="headerlink" href="#before-testing-scenarios" title="Permanent link">#</a></h2>
-<p>You need to open your YAML file and edit the following two parts of your scenario file before testing it.</p>
-<h4 id="1-add-full-path-to-your-map-file">1. Add Full Path to your map file<a class="headerlink" href="#1-add-full-path-to-your-map-file" title="Permanent link">#</a></h4>
+<p>You need to open your YAML file with text editor and edit the following two parts of your scenario file before testing it.</p>
+<h4 id="1-add-full-path-to-your-map-file">1. Add Full Path to your Map File<a class="headerlink" href="#1-add-full-path-to-your-map-file" title="Permanent link">#</a></h4>
 <p>Find the following part in your YAML file;</p>
 <div class="highlight"><pre><span></span><code>RoadNetwork:
     LogicFile:
@@ -847,7 +847,7 @@ The specification of this format is found at <a href="http://www.openscenario.or
     LogicFile:
       filepath: /home/user-name/maps/location-a/lanelet2_map.osc
 </code></pre></div>
-<h4 id="2-modify-isego-setting">2. Modify "isEgo" setting<a class="headerlink" href="#2-modify-isego-setting" title="Permanent link">#</a></h4>
+<h4 id="2-modify-isego-setting">2. Modify "isEgo" Setting<a class="headerlink" href="#2-modify-isego-setting" title="Permanent link">#</a></h4>
 <p>Find the following part in your YAML file;
 <div class="highlight"><pre><span></span><code>              Property:
                 - name: isEgo
@@ -858,13 +858,13 @@ and change to;</p>
                 - name: isEgo
                   value: <span class="s2">&quot;false&quot;</span>
 </code></pre></div>
-This is the setting to let Ego vehicle run without connecting to Autoware for test run. <font color="Red"> Please note that this "isEgo" setting is only for scenario testing and you will need to revert it to "true" when you conduct the actual sceario simulation with Autoware. </font></p>
-<h2 id="how-to-test-your-single-scenario">How to Test your Single Scenario<a class="headerlink" href="#how-to-test-your-single-scenario" title="Permanent link">#</a></h2>
+This is the setting to let Ego vehicle run without connecting to Autoware for testing the scenario. <font color="Red"> Please note that this "isEgo" setting is only for scenario testing and you will need to revert it to "true" when you conduct the actual sceario simulation with Autoware. </font></p>
+<h2 id="how-to-test-single-scenario">How to Test Single Scenario<a class="headerlink" href="#how-to-test-single-scenario" title="Permanent link">#</a></h2>
 <p><div class="highlight"><pre><span></span><code>ros2 launch scenario_test_runner scenario_test_runner.launch.py scenario:<span class="o">=</span><span class="s1">&#39;/home/user-name/scenario-folder/t4v2.yaml&#39;</span> with_rviz:<span class="o">=</span><span class="nb">true</span>
 </code></pre></div>
 The workflow file defines how to execute scenarios.
 If you want to know how to write the workflow file, read <a href="HowToWriteWorkflowFile">here.</a></p>
-<h2 id="how-to-test-your-mutiple-scenarios">How to Test your Mutiple Scenarios<a class="headerlink" href="#how-to-test-your-mutiple-scenarios" title="Permanent link">#</a></h2>
+<h2 id="how-to-test-mutiple-scenarios">How to Test Mutiple Scenarios<a class="headerlink" href="#how-to-test-mutiple-scenarios" title="Permanent link">#</a></h2>
 <p><div class="highlight"><pre><span></span><code>ros2 launch scenario_test_runner scenario_test_runner.launch.py workflow:<span class="o">=</span><span class="s1">&#39;$(find-pkg-share scenario_test_runner)/config/workflow_example.yaml&#39;</span> log_directory:<span class="o">=</span><span class="s1">&#39;/tmp&#39;</span>
 </code></pre></div>
 The workflow file defines how to execute scenarios.
