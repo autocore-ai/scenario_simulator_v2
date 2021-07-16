@@ -650,7 +650,7 @@
   <compound refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity" kind="class"><name>traffic_simulator::entity::PedestrianEntity</name>
     <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a5be0d5c3052f9f4552f2d02063468f02" kind="variable"><name>parameters</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1abef69077b1b61dce49386329ecb00792" kind="variable"><name>tree_ptr_</name></member>
-    <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a13e760bf527853a2da6d129107150df3" kind="variable"><name>target_speed_</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1af0e47c489cb52d516f0ea3fc5f8d1ed9" kind="variable"><name>target_speed_planner_</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a5bd932def32d53cd1fde80bed8adfcf6" kind="variable"><name>route_planner_ptr_</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a1ee67a55bd501e02513db60860f01d02" kind="function"><name>PedestrianEntity</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a540ae7a8360ca6974a4d9002b13625d7" kind="function"><name>PedestrianEntity</name></member>
@@ -986,6 +986,13 @@
     <member refid="classtraffic__simulator_1_1helper_1_1StopWatch_1a8a2abd4ca9cd8b7c13a3a485ea0f7019" kind="function"><name>stop</name></member>
     <member refid="classtraffic__simulator_1_1helper_1_1StopWatch_1aa86e160c169ba4b388c8a23620940a5b" kind="function"><name>print</name></member>
   </compound>
+  <compound refid="classtraffic__simulator_1_1behavior_1_1TargetSpeedPlanner" kind="class"><name>traffic_simulator::behavior::TargetSpeedPlanner</name>
+    <member refid="classtraffic__simulator_1_1behavior_1_1TargetSpeedPlanner_1a57fdf54d8c1af4fd10d5f02acf88e655" kind="variable"><name>target_speed_</name></member>
+    <member refid="classtraffic__simulator_1_1behavior_1_1TargetSpeedPlanner_1a1fce342133eae7dbe381d494f4df72bf" kind="variable"><name>continuous_</name></member>
+    <member refid="classtraffic__simulator_1_1behavior_1_1TargetSpeedPlanner_1a9611753cd47ea9d7b7680ba31ea79caf" kind="function"><name>setTargetSpeed</name></member>
+    <member refid="classtraffic__simulator_1_1behavior_1_1TargetSpeedPlanner_1a7677e8ff581a69ebd1044ea557dc6f47" kind="function"><name>update</name></member>
+    <member refid="classtraffic__simulator_1_1behavior_1_1TargetSpeedPlanner_1af376fb49d0bdca7dfc7f2997b25aa364" kind="function"><name>getTargetSpeed</name></member>
+  </compound>
   <compound refid="classtraffic__simulator_1_1traffic_1_1TrafficController" kind="class"><name>traffic_simulator::traffic::TrafficController</name>
     <member refid="classtraffic__simulator_1_1traffic_1_1TrafficController_1aa93c62c01d700530858eb4384bdadb1b" kind="variable"><name>hdmap_utils_</name></member>
     <member refid="classtraffic__simulator_1_1traffic_1_1TrafficController_1a1db210f31fd4a2f4ac89e71f10d42730" kind="variable"><name>modules_</name></member>
@@ -1093,9 +1100,8 @@
   <compound refid="classtraffic__simulator_1_1entity_1_1VehicleEntity" kind="class"><name>traffic_simulator::entity::VehicleEntity</name>
     <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1ad3f6d33277d6d3a7366a2f2219a5a7ee" kind="variable"><name>parameters</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a20be75486c599fcdb3a3c3eeec04e2f9" kind="variable"><name>tree_ptr_</name></member>
-    <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a13142bf23a1267ee670bdf98c18039b2" kind="variable"><name>to_lanelet_id_</name></member>
-    <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a7ec99e8e6811942c6e96e0217059477e" kind="variable"><name>target_speed_</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a3f9b4a15b0d15349bed17bb0b69a9f33" kind="variable"><name>route_planner_ptr_</name></member>
+    <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a26465eb1a25c630ec0909c6c255ea1a9" kind="variable"><name>target_speed_planner_</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a3c989a6b58852c517645225975bae493" kind="function"><name>VehicleEntity</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a869734d71d29e94d4beb3f8aa2dc334c" kind="function"><name>VehicleEntity</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a754679ade1e9098579f53174d43a01e4" kind="function"><name>~VehicleEntity</name></member>
@@ -1195,6 +1201,8 @@
     <member refid="traffic__light__state_8hpp_1af5e7d1109b1a701de175834e47170587" kind="function"><name>operator&lt;&lt;</name></member>
     <member refid="traffic__light__state_8hpp_1a13be641911af33072c58d28b622ede73" kind="function"><name>makeLampState</name></member>
   </compound>
+  <compound refid="namespacetraffic__simulator_1_1behavior" kind="namespace"><name>traffic_simulator::behavior</name>
+  </compound>
   <compound refid="namespacetraffic__simulator_1_1entity" kind="namespace"><name>traffic_simulator::entity</name>
     <member refid="ego__entity_8hpp_1ad302e23fac01bd493bdbc3d9569f7b2c" kind="enum"><name>VehicleModelType</name></member>
     <member refid="dummy_1ad302e23fac01bd493bdbc3d9569f7b2caa2221ddbe85a59308905a0f4e793fc3a" kind="enumvalue"><name>IDEAL_TWIST</name></member>
@@ -1260,6 +1268,8 @@
   <compound refid="walk__straight__action_8hpp" kind="file"><name>walk_straight_action.hpp</name>
   </compound>
   <compound refid="route__planner_8hpp" kind="file"><name>route_planner.hpp</name>
+  </compound>
+  <compound refid="target__speed__planner_8hpp" kind="file"><name>target_speed_planner.hpp</name>
   </compound>
   <compound refid="follow__front__entity__action_8hpp" kind="file"><name>follow_front_entity_action.hpp</name>
   </compound>
@@ -1375,6 +1385,8 @@
   <compound refid="walk__straight__action_8cpp" kind="file"><name>walk_straight_action.cpp</name>
   </compound>
   <compound refid="route__planner_8cpp" kind="file"><name>route_planner.cpp</name>
+  </compound>
+  <compound refid="target__speed__planner_8cpp" kind="file"><name>target_speed_planner.cpp</name>
   </compound>
   <compound refid="follow__front__entity__action_8cpp" kind="file"><name>follow_front_entity_action.cpp</name>
   </compound>

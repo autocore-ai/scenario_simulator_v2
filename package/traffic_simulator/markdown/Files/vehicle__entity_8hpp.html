@@ -772,6 +772,7 @@
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_msgs/msg/waypoints_array.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;rclcpp/rclcpp.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/behavior/route_planner.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/behavior/target_speed_planner.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/behavior/vehicle/behavior_tree.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/behavior/vehicle/lane_change_action.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/entity/entity_base.hpp&gt;</span><span class="cp"></span>
@@ -887,9 +888,8 @@
 
 <span class="k">private</span><span class="o">:</span>
   <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">entity_behavior</span><span class="o">::</span><span class="n">vehicle</span><span class="o">::</span><span class="n">BehaviorTree</span><span class="o">&gt;</span> <span class="n">tree_ptr_</span><span class="p">;</span>
-  <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">to_lanelet_id_</span><span class="p">;</span>
-  <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;</span> <span class="n">target_speed_</span><span class="p">;</span>
   <span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">RoutePlanner</span><span class="o">&gt;</span> <span class="n">route_planner_ptr_</span><span class="p">;</span>
+  <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">behavior</span><span class="o">::</span><span class="n">TargetSpeedPlanner</span> <span class="n">target_speed_planner_</span><span class="p">;</span>
 <span class="p">};</span>
 <span class="p">}</span>  <span class="c1">// namespace entity</span>
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
@@ -897,7 +897,7 @@
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__ENTITY__VEHICLE_ENTITY_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 16 July 2021 at 06:30:22 UTC</p>
+<p>Updated on 16 July 2021 at 11:29:19 UTC</p>
                 
                   
                 

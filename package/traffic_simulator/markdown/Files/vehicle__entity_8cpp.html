@@ -801,11 +801,7 @@
 
 <span class="kt">void</span> <span class="n">VehicleEntity</span><span class="o">::</span><span class="n">setTargetSpeed</span><span class="p">(</span><span class="kt">double</span> <span class="n">target_speed</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">continuous</span><span class="p">)</span>
 <span class="p">{</span>
-  <span class="n">target_speed_</span> <span class="o">=</span> <span class="n">target_speed</span><span class="p">;</span>
-  <span class="n">tree_ptr_</span><span class="o">-&gt;</span><span class="n">setValueToBlackBoard</span><span class="p">(</span><span class="s">&quot;target_speed&quot;</span><span class="p">,</span> <span class="n">target_speed_</span><span class="p">);</span>
-  <span class="k">if</span> <span class="p">(</span><span class="n">continuous</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">target_speed_</span> <span class="o">=</span> <span class="n">boost</span><span class="o">::</span><span class="n">none</span><span class="p">;</span>
-  <span class="p">}</span>
+  <span class="n">target_speed_planner_</span><span class="p">.</span><span class="n">setTargetSpeed</span><span class="p">(</span><span class="n">target_speed</span><span class="p">,</span> <span class="n">continuous</span><span class="p">);</span>
 <span class="p">}</span>
 
 <span class="kt">void</span> <span class="n">VehicleEntity</span><span class="o">::</span><span class="n">onUpdate</span><span class="p">(</span><span class="kt">double</span> <span class="n">current_time</span><span class="p">,</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">)</span>
@@ -820,6 +816,8 @@
     <span class="n">tree_ptr_</span><span class="o">-&gt;</span><span class="n">setValueToBlackBoard</span><span class="p">(</span><span class="s">&quot;other_entity_status&quot;</span><span class="p">,</span> <span class="n">other_status_</span><span class="p">);</span>
     <span class="n">tree_ptr_</span><span class="o">-&gt;</span><span class="n">setValueToBlackBoard</span><span class="p">(</span><span class="s">&quot;entity_type_list&quot;</span><span class="p">,</span> <span class="n">entity_type_list_</span><span class="p">);</span>
     <span class="n">tree_ptr_</span><span class="o">-&gt;</span><span class="n">setValueToBlackBoard</span><span class="p">(</span><span class="s">&quot;entity_status&quot;</span><span class="p">,</span> <span class="n">status_</span><span class="p">.</span><span class="n">get</span><span class="p">());</span>
+    <span class="n">target_speed_planner_</span><span class="p">.</span><span class="n">update</span><span class="p">(</span><span class="n">status_</span><span class="o">-&gt;</span><span class="n">action_status</span><span class="p">.</span><span class="n">twist</span><span class="p">.</span><span class="n">linear</span><span class="p">.</span><span class="n">x</span><span class="p">);</span>
+    <span class="n">tree_ptr_</span><span class="o">-&gt;</span><span class="n">setValueToBlackBoard</span><span class="p">(</span><span class="s">&quot;target_speed&quot;</span><span class="p">,</span> <span class="n">target_speed_planner_</span><span class="p">.</span><span class="n">getTargetSpeed</span><span class="p">());</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">status_</span><span class="o">-&gt;</span><span class="n">lanelet_pose_valid</span><span class="p">)</span> <span class="p">{</span>
       <span class="n">tree_ptr_</span><span class="o">-&gt;</span><span class="n">setValueToBlackBoard</span><span class="p">(</span>
         <span class="s">&quot;route_lanelets&quot;</span><span class="p">,</span> <span class="n">route_planner_ptr_</span><span class="o">-&gt;</span><span class="n">getRouteLanelets</span><span class="p">(</span><span class="n">status_</span><span class="o">-&gt;</span><span class="n">lanelet_pose</span><span class="p">));</span>
@@ -838,12 +836,6 @@
         <span class="k">return</span><span class="p">;</span>
       <span class="p">}</span>
     <span class="p">}</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">target_speed_</span><span class="p">)</span> <span class="p">{</span>
-      <span class="k">if</span> <span class="p">(</span><span class="n">status_updated</span><span class="p">.</span><span class="n">action_status</span><span class="p">.</span><span class="n">twist</span><span class="p">.</span><span class="n">linear</span><span class="p">.</span><span class="n">x</span> <span class="o">&gt;=</span> <span class="n">target_speed_</span><span class="p">.</span><span class="n">get</span><span class="p">())</span> <span class="p">{</span>
-        <span class="n">target_speed_</span> <span class="o">=</span> <span class="n">boost</span><span class="o">::</span><span class="n">none</span><span class="p">;</span>
-        <span class="n">tree_ptr_</span><span class="o">-&gt;</span><span class="n">setValueToBlackBoard</span><span class="p">(</span><span class="s">&quot;target_speed&quot;</span><span class="p">,</span> <span class="n">target_speed_</span><span class="p">);</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
     <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">status_</span><span class="p">)</span> <span class="p">{</span>
       <span class="n">linear_jerk_</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
@@ -859,7 +851,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 16 July 2021 at 06:30:22 UTC</p>
+<p>Updated on 16 July 2021 at 11:29:19 UTC</p>
                 
                   
                 
