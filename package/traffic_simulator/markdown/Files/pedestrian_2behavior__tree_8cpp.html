@@ -792,12 +792,19 @@
   <span class="n">BT</span><span class="o">::</span><span class="n">applyRecursiveVisitor</span><span class="p">(</span><span class="n">tree_</span><span class="p">.</span><span class="n">rootNode</span><span class="p">(),</span> <span class="n">visitor</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="n">BT</span><span class="o">::</span><span class="n">NodeStatus</span> <span class="n">BehaviorTree</span><span class="o">::</span><span class="n">tick</span><span class="p">(</span><span class="kt">double</span> <span class="n">current_time</span><span class="p">,</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">)</span>
+<span class="n">BT</span><span class="o">::</span><span class="n">NodeStatus</span> <span class="n">BehaviorTree</span><span class="o">::</span><span class="n">tickOnce</span><span class="p">(</span><span class="kt">double</span> <span class="n">current_time</span><span class="p">,</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">)</span>
 <span class="p">{</span>
   <span class="n">setValueToBlackBoard</span><span class="p">(</span><span class="s">&quot;current_time&quot;</span><span class="p">,</span> <span class="n">current_time</span><span class="p">);</span>
   <span class="n">setValueToBlackBoard</span><span class="p">(</span><span class="s">&quot;step_time&quot;</span><span class="p">,</span> <span class="n">step_time</span><span class="p">);</span>
-  <span class="k">auto</span> <span class="n">ret</span> <span class="o">=</span> <span class="n">tree_</span><span class="p">.</span><span class="n">rootNode</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">executeTick</span><span class="p">();</span>
-  <span class="k">return</span> <span class="n">ret</span><span class="p">;</span>
+  <span class="k">return</span> <span class="n">tree_</span><span class="p">.</span><span class="n">rootNode</span><span class="p">()</span><span class="o">-&gt;</span><span class="n">executeTick</span><span class="p">();</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">BehaviorTree</span><span class="o">::</span><span class="n">tick</span><span class="p">(</span><span class="kt">double</span> <span class="n">current_time</span><span class="p">,</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="n">tickOnce</span><span class="p">(</span><span class="n">current_time</span><span class="p">,</span> <span class="n">step_time</span><span class="p">);</span>
+  <span class="k">while</span> <span class="p">(</span><span class="n">getCurrentAction</span><span class="p">()</span> <span class="o">==</span> <span class="s">&quot;root&quot;</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">tickOnce</span><span class="p">(</span><span class="n">current_time</span><span class="p">,</span> <span class="n">step_time</span><span class="p">);</span>
+  <span class="p">}</span>
 <span class="p">}</span>
 
 <span class="kt">void</span> <span class="n">BehaviorTree</span><span class="o">::</span><span class="n">callback</span><span class="p">(</span>
@@ -825,7 +832,7 @@
 <span class="p">}</span>  <span class="c1">// namespace entity_behavior</span>
 </code></pre></div>
 <hr />
-<p>Updated on 16 July 2021 at 06:30:13 UTC</p>
+<p>Updated on 16 July 2021 at 06:30:22 UTC</p>
                 
                   
                 

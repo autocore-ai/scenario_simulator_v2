@@ -831,10 +831,7 @@
       <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span><span class="o">&gt;</span> <span class="n">empty</span> <span class="o">=</span> <span class="p">{};</span>
       <span class="n">tree_ptr_</span><span class="o">-&gt;</span><span class="n">setValueToBlackBoard</span><span class="p">(</span><span class="s">&quot;route_lanelets&quot;</span><span class="p">,</span> <span class="n">empty</span><span class="p">);</span>
     <span class="p">}</span>
-    <span class="n">action_status_</span> <span class="o">=</span> <span class="n">tree_ptr_</span><span class="o">-&gt;</span><span class="n">tick</span><span class="p">(</span><span class="n">current_time</span><span class="p">,</span> <span class="n">step_time</span><span class="p">);</span>
-    <span class="k">while</span> <span class="p">(</span><span class="n">getCurrentAction</span><span class="p">()</span> <span class="o">==</span> <span class="s">&quot;root&quot;</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">action_status_</span> <span class="o">=</span> <span class="n">tree_ptr_</span><span class="o">-&gt;</span><span class="n">tick</span><span class="p">(</span><span class="n">current_time</span><span class="p">,</span> <span class="n">step_time</span><span class="p">);</span>
-    <span class="p">}</span>
+    <span class="n">tree_ptr_</span><span class="o">-&gt;</span><span class="n">tick</span><span class="p">(</span><span class="n">current_time</span><span class="p">,</span> <span class="n">step_time</span><span class="p">);</span>
     <span class="k">auto</span> <span class="n">status_updated</span> <span class="o">=</span> <span class="n">tree_ptr_</span><span class="o">-&gt;</span><span class="n">getUpdatedStatus</span><span class="p">();</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">status_updated</span><span class="p">.</span><span class="n">lanelet_pose_valid</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">auto</span> <span class="n">following_lanelets</span> <span class="o">=</span>
@@ -866,7 +863,7 @@
 <span class="p">}</span>  <span class="c1">// namespace traffic_simulator</span>
 </code></pre></div>
 <hr />
-<p>Updated on 16 July 2021 at 06:30:13 UTC</p>
+<p>Updated on 16 July 2021 at 06:30:22 UTC</p>
                 
                   
                 

@@ -458,7 +458,7 @@
 <codeline lineno="37"><highlight class="normal">{</highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="39"><highlight class="normal"><sp/><sp/><ref refid="classentity__behavior_1_1vehicle_1_1BehaviorTree" kindref="compound">BehaviorTree</ref>();</highlight></codeline>
-<codeline lineno="40"><highlight class="normal"><sp/><sp/>BT::NodeStatus<sp/>tick(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>current_time,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>step_time);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>tick(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>current_time,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>step_time);</highlight></codeline>
 <codeline lineno="41"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>getCurrentAction()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>current_action_;<sp/>}</highlight></codeline>
 <codeline lineno="42"><highlight class="normal"></highlight></codeline>
 <codeline lineno="43"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal"><sp/>&lt;</highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
@@ -490,23 +490,24 @@
 <codeline lineno="69"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setRequest(std::string<sp/>request);</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"></highlight></codeline>
 <codeline lineno="71"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/>std::string<sp/>request_;</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/>BT::BehaviorTreeFactory<sp/>factory_;</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/>BT::Tree<sp/>tree_;</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;BT::StdCoutLogger&gt;<sp/>logger_cout_ptr_;</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>callback(</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>BT::Duration<sp/>timestamp,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BT::TreeNode<sp/>&amp;<sp/>node,<sp/>BT::NodeStatus<sp/>prev_status,</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>BT::NodeStatus<sp/>status);</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setupLogger();</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/>BT::TimestampType<sp/>type_;</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/>BT::TimePoint<sp/>first_timestamp_;</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/>std::vector&lt;BT::TreeNode::StatusChangeSubscriber&gt;<sp/>subscribers_;</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/>std::string<sp/>current_action_;</highlight></codeline>
-<codeline lineno="84"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="85"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>vehicle</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="86"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>entity_behavior</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="87"><highlight class="normal"></highlight></codeline>
-<codeline lineno="88"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>TRAFFIC_SIMULATOR__BEHAVIOR__VEHICLE__BEHAVIOR_TREE_HPP_</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/>BT::NodeStatus<sp/>tickOnce(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>current_time,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>step_time);</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/>std::string<sp/>request_;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/>BT::BehaviorTreeFactory<sp/>factory_;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/>BT::Tree<sp/>tree_;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;BT::StdCoutLogger&gt;<sp/>logger_cout_ptr_;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>callback(</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>BT::Duration<sp/>timestamp,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>BT::TreeNode<sp/>&amp;<sp/>node,<sp/>BT::NodeStatus<sp/>prev_status,</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>BT::NodeStatus<sp/>status);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>setupLogger();</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/>BT::TimestampType<sp/>type_;</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/>BT::TimePoint<sp/>first_timestamp_;</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>std::vector&lt;BT::TreeNode::StatusChangeSubscriber&gt;<sp/>subscribers_;</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/>std::string<sp/>current_action_;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="86"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>vehicle</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>entity_behavior</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>TRAFFIC_SIMULATOR__BEHAVIOR__VEHICLE__BEHAVIOR_TREE_HPP_</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/behavior/vehicle/behavior_tree.hpp"/>
   </compounddef>

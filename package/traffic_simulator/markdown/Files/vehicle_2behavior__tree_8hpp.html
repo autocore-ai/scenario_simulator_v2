@@ -789,7 +789,7 @@
 <span class="p">{</span>
 <span class="k">public</span><span class="o">:</span>
   <span class="n">BehaviorTree</span><span class="p">();</span>
-  <span class="n">BT</span><span class="o">::</span><span class="n">NodeStatus</span> <span class="nf">tick</span><span class="p">(</span><span class="kt">double</span> <span class="n">current_time</span><span class="p">,</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">);</span>
+  <span class="kt">void</span> <span class="nf">tick</span><span class="p">(</span><span class="kt">double</span> <span class="n">current_time</span><span class="p">,</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">);</span>
   <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="nf">getCurrentAction</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="k">return</span> <span class="n">current_action_</span><span class="p">;</span> <span class="p">}</span>
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
@@ -821,6 +821,7 @@
   <span class="kt">void</span> <span class="n">setRequest</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">request</span><span class="p">);</span>
 
 <span class="k">private</span><span class="o">:</span>
+  <span class="n">BT</span><span class="o">::</span><span class="n">NodeStatus</span> <span class="n">tickOnce</span><span class="p">(</span><span class="kt">double</span> <span class="n">current_time</span><span class="p">,</span> <span class="kt">double</span> <span class="n">step_time</span><span class="p">);</span>
   <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">request_</span><span class="p">;</span>
   <span class="n">BT</span><span class="o">::</span><span class="n">BehaviorTreeFactory</span> <span class="n">factory_</span><span class="p">;</span>
   <span class="n">BT</span><span class="o">::</span><span class="n">Tree</span> <span class="n">tree_</span><span class="p">;</span>
@@ -840,7 +841,7 @@
 <span class="cp">#endif  </span><span class="c1">// TRAFFIC_SIMULATOR__BEHAVIOR__VEHICLE__BEHAVIOR_TREE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 16 July 2021 at 06:30:13 UTC</p>
+<p>Updated on 16 July 2021 at 06:30:22 UTC</p>
                 
                   
                 

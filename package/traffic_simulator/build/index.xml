@@ -137,13 +137,14 @@
     <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1ae659242dbe88a1c8c216b0b2e5870448" kind="variable"><name>subscribers_</name></member>
     <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a60bb4d8a496004c48ab4a64572c1f822" kind="variable"><name>current_action_</name></member>
     <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1ac4b6b63cc15eb51a81286e3165096d89" kind="function"><name>BehaviorTree</name></member>
-    <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1ac732bed2c4bcbd9ef096248f21fef6d7" kind="function"><name>tick</name></member>
+    <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1afcf345fc477512849f94b6752bcd16bb" kind="function"><name>tick</name></member>
     <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1adaa7d6a0900f7b83ac48e07b055fb948" kind="function"><name>getCurrentAction</name></member>
     <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1acc861b358ff3ff04887d7759fe8b7921" kind="function"><name>setValueToBlackBoard</name></member>
     <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a1d11d7ad27aa10a385d16aceda832ff1" kind="function"><name>getUpdatedStatus</name></member>
     <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a1255513d34b4d65718b4562e012b25ae" kind="function"><name>getWaypoints</name></member>
     <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a3ffa21a663d47326b6a90077074dee1e" kind="function"><name>getObstacle</name></member>
     <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a23774953a30f91e14b8be94c947394f1" kind="function"><name>setRequest</name></member>
+    <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a614098bd34f5385b4eef401ddf05aae0" kind="function"><name>tickOnce</name></member>
     <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1aa6c7ae539b4fd639b77766b18649e870" kind="function"><name>callback</name></member>
     <member refid="classentity__behavior_1_1vehicle_1_1BehaviorTree_1a5d1ca853d53af7bbd6953068a64dbe80" kind="function"><name>setupLogger</name></member>
   </compound>
@@ -157,11 +158,12 @@
     <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a96cea00ee518186b177e0156534c03c4" kind="variable"><name>subscribers_</name></member>
     <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a390acc6959456f15aa32de4bf6e434b1" kind="variable"><name>current_action_</name></member>
     <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a12d9c92261514e0b813dc1401c95d6f1" kind="function"><name>BehaviorTree</name></member>
-    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1ab254a45f251ede34900779ca38463bd3" kind="function"><name>tick</name></member>
+    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a4f1e970aa68a698a3ac1611256f163a9" kind="function"><name>tick</name></member>
     <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a106f160afe74f8ae26a3fb46918a7779" kind="function"><name>getCurrentAction</name></member>
     <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1adaa31d1e820525d651264d2128a0fb20" kind="function"><name>setValueToBlackBoard</name></member>
     <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1adfdd91efe93706252c1bfe915d5c211c" kind="function"><name>getUpdatedStatus</name></member>
     <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a929d09a53c1f867a63befbfab4ce235d" kind="function"><name>setRequest</name></member>
+    <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1ac962854d8338640e03c8eab209eb9b9c" kind="function"><name>tickOnce</name></member>
     <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1a059d5772f80abba33d029733c1627cf0" kind="function"><name>callback</name></member>
     <member refid="classentity__behavior_1_1pedestrian_1_1BehaviorTree_1ade32fd6c8427b162e63dad8bc6069382" kind="function"><name>setupLogger</name></member>
   </compound>
@@ -648,7 +650,6 @@
   <compound refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity" kind="class"><name>traffic_simulator::entity::PedestrianEntity</name>
     <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a5be0d5c3052f9f4552f2d02063468f02" kind="variable"><name>parameters</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1abef69077b1b61dce49386329ecb00792" kind="variable"><name>tree_ptr_</name></member>
-    <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a1cc7dd1d9f224d88acd8bd0ff00c7eb5" kind="variable"><name>action_status_</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a13e760bf527853a2da6d129107150df3" kind="variable"><name>target_speed_</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a5bd932def32d53cd1fde80bed8adfcf6" kind="variable"><name>route_planner_ptr_</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1PedestrianEntity_1a1ee67a55bd501e02513db60860f01d02" kind="function"><name>PedestrianEntity</name></member>
@@ -1092,7 +1093,6 @@
   <compound refid="classtraffic__simulator_1_1entity_1_1VehicleEntity" kind="class"><name>traffic_simulator::entity::VehicleEntity</name>
     <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1ad3f6d33277d6d3a7366a2f2219a5a7ee" kind="variable"><name>parameters</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a20be75486c599fcdb3a3c3eeec04e2f9" kind="variable"><name>tree_ptr_</name></member>
-    <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a3f3c9b8e33308fdb14670952489d880c" kind="variable"><name>action_status_</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a13142bf23a1267ee670bdf98c18039b2" kind="variable"><name>to_lanelet_id_</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a7ec99e8e6811942c6e96e0217059477e" kind="variable"><name>target_speed_</name></member>
     <member refid="classtraffic__simulator_1_1entity_1_1VehicleEntity_1a3f9b4a15b0d15349bed17bb0b69a9f33" kind="variable"><name>route_planner_ptr_</name></member>

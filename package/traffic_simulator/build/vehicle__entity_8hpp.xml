@@ -897,15 +897,14 @@
 <codeline lineno="135"><highlight class="normal"></highlight></codeline>
 <codeline lineno="136"><highlight class="normal"></highlight><highlight class="keyword">private</highlight><highlight class="normal">:</highlight></codeline>
 <codeline lineno="137"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;entity_behavior::vehicle::BehaviorTree&gt;<sp/>tree_ptr_;</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/>BT::NodeStatus<sp/>action_status_;</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/>std::int64_t<sp/>to_lanelet_id_;</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/>boost::optional&lt;double&gt;<sp/>target_speed_;</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;traffic_simulator::RoutePlanner&gt;<sp/>route_planner_ptr_;</highlight></codeline>
-<codeline lineno="142"><highlight class="normal">};</highlight></codeline>
-<codeline lineno="143"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>entity</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="144"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>traffic_simulator</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="145"><highlight class="normal"></highlight></codeline>
-<codeline lineno="146"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>TRAFFIC_SIMULATOR__ENTITY__VEHICLE_ENTITY_HPP_</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/>std::int64_t<sp/>to_lanelet_id_;</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/>boost::optional&lt;double&gt;<sp/>target_speed_;</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/>std::shared_ptr&lt;traffic_simulator::RoutePlanner&gt;<sp/>route_planner_ptr_;</highlight></codeline>
+<codeline lineno="141"><highlight class="normal">};</highlight></codeline>
+<codeline lineno="142"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>entity</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>traffic_simulator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="144"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/><sp/>//<sp/>TRAFFIC_SIMULATOR__ENTITY__VEHICLE_ENTITY_HPP_</highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/include/traffic_simulator/entity/vehicle_entity.hpp"/>
   </compounddef>
