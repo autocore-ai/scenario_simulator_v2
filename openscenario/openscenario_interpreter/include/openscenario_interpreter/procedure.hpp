@@ -73,6 +73,9 @@ try {
 //   }
 // }
 
+auto toLanePosition(const geometry_msgs::msg::Pose & pose) -> typename std::decay<
+  decltype(connection.toLaneletPose(std::declval<decltype(pose)>()).get())>::type;
+
 #define STRIP_OPTIONAL(IDENTIFIER, ALTERNATE)                                     \
   template <typename... Ts>                                                       \
   auto IDENTIFIER(Ts &&... xs)                                                    \
@@ -103,32 +106,20 @@ STRIP_OPTIONAL(getTimeHeadway, std::numeric_limits<value_type>::quiet_NaN());
 
 FORWARD_TO_SIMULATION_API(attachDetectionSensor);
 FORWARD_TO_SIMULATION_API(attachLidarSensor);
-FORWARD_TO_SIMULATION_API(checkCollision);
 FORWARD_TO_SIMULATION_API(despawn);
 FORWARD_TO_SIMULATION_API(engage);
 FORWARD_TO_SIMULATION_API(getCurrentTime);
-FORWARD_TO_SIMULATION_API(getTrafficLightArrow);
-FORWARD_TO_SIMULATION_API(getTrafficLightColor);
 FORWARD_TO_SIMULATION_API(initialize);
 FORWARD_TO_SIMULATION_API(isInLanelet);
 FORWARD_TO_SIMULATION_API(ready);
-FORWARD_TO_SIMULATION_API(requestAcquirePosition);
-FORWARD_TO_SIMULATION_API(requestAssignRoute);
-FORWARD_TO_SIMULATION_API(requestLaneChange);
-FORWARD_TO_SIMULATION_API(requestWalkStraight);
 FORWARD_TO_SIMULATION_API(setEntityStatus);
 FORWARD_TO_SIMULATION_API(setTargetSpeed);
-FORWARD_TO_SIMULATION_API(setTrafficLightArrow);
-FORWARD_TO_SIMULATION_API(setTrafficLightArrowPhase);
-FORWARD_TO_SIMULATION_API(setTrafficLightColor);
-FORWARD_TO_SIMULATION_API(setTrafficLightColorPhase);
 FORWARD_TO_SIMULATION_API(spawn);
-FORWARD_TO_SIMULATION_API(toMapPose);
 FORWARD_TO_SIMULATION_API(updateFrame);
 
 #undef FORWARD_TO_SIMULATION_API
 
-#define RENAME(FROM, TO)                                       \
+#define RENAME(TO, FROM)                                       \
   template <typename... Ts>                                    \
   decltype(auto) TO(Ts &&... xs)                               \
   {                                                            \
@@ -136,8 +127,20 @@ FORWARD_TO_SIMULATION_API(updateFrame);
   }                                                            \
   static_assert(true, "")
 
-RENAME(reachPosition, isReachedPosition);
-RENAME(setDriverModel, assignController);
+// NOTE: See OpenSCENARIO 1.1 Figure 2. Actions and conditions
+
+RENAME(applyAcquirePositionAction, requestAcquirePosition);
+RENAME(applyAssignControllerAction, setDriverModel);
+RENAME(applyAssignRouteAction, requestAssignRoute);
+RENAME(applyLaneChangeAction, requestLaneChange);
+RENAME(applyWalkStraightAction, requestWalkStraight);
+RENAME(evaluateCollisionCondition, checkCollision);
+RENAME(evaluateReachPositionCondition, reachPosition);
+RENAME(getTrafficSignalArrow, getTrafficLightArrow);
+RENAME(getTrafficSignalColor, getTrafficLightColor);
+RENAME(setTrafficSignalArrow, setTrafficLightArrow);
+RENAME(setTrafficSignalColor, setTrafficLightColor);
+RENAME(toWorldPosition, toMapPose);
 
 #undef RENAME
 }  // namespace openscenario_interpreter

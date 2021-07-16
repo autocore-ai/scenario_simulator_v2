@@ -15,11 +15,13 @@
 #ifndef OPENSCENARIO_INTERPRETER__SYNTAX__SCENARIO_OBJECT_HPP_
 #define OPENSCENARIO_INTERPRETER__SYNTAX__SCENARIO_OBJECT_HPP_
 
+#include <concealer/autoware_def.hpp>
 #include <openscenario_interpreter/procedure.hpp>
 #include <openscenario_interpreter/syntax/entity_object.hpp>
 #include <openscenario_interpreter/syntax/entity_ref.hpp>
 #include <openscenario_interpreter/syntax/object_controller.hpp>
 #include <openscenario_interpreter/syntax/string.hpp>
+#include <openscenario_interpreter/utility/overload.hpp>
 
 namespace openscenario_interpreter
 {
@@ -73,43 +75,51 @@ struct ScenarioObject
   {
   }
 
-  decltype(auto) operator()(const Vehicle & vehicle)
-  {
-    return spawn(
-      object_controller.isEgo(), name,
-      static_cast<openscenario_msgs::msg::VehicleParameters>(vehicle));
-  }
-
-  decltype(auto) operator()(const Pedestrian & pedestrian) const
-  {
-    return spawn(
-      false, name, static_cast<openscenario_msgs::msg::PedestrianParameters>(pedestrian));
-  }
-
   auto evaluate()
   {
-    if (apply<bool>(*this, static_cast<const EntityObject &>(*this))) {
+    auto spawn_entity = overload(
+      [this](const Vehicle & vehicle) {
+        return spawn(
+          object_controller.isEgo(), name,
+          static_cast<openscenario_msgs::msg::VehicleParameters>(vehicle));
+      },
+      [this](const Pedestrian & pedestrian) {
+        return spawn(
+          false, name, static_cast<openscenario_msgs::msg::PedestrianParameters>(pedestrian));
+      },
+      [this](const MiscObject & misc_object) {
+        return spawn(
+          false, name, static_cast<openscenario_msgs::msg::MiscObjectParameters>(misc_object));
+      });
+
+    if (apply<bool>(spawn_entity, static_cast<const EntityObject &>(*this))) {
       if (is<Vehicle>()) {
-        assignController(name, object_controller);
+        applyAssignControllerAction(name, object_controller);
         if (object_controller.isEgo()) {
           attachLidarSensor(traffic_simulator::helper::constructLidarConfiguration(
-            traffic_simulator::helper::LidarType::VLP16, name
+            traffic_simulator::helper::LidarType::VLP16, name,
 #ifdef AUTOWARE_ARCHITECTURE_PROPOSAL
-            ,
             "/sensing/lidar/no_ground/pointcloud"
 #endif
+#ifdef AUTOWARE_AUTO
+            "/perception/points_nonground"
+#endif
             ));
+#ifdef AUTOWARE_ARCHITECTURE_PROPOSAL
           attachDetectionSensor(traffic_simulator::helper::constructDetectionSensorConfiguration(
             name,
-#ifdef AUTOWARE_ARCHITECTURE_PROPOSAL
-            "/perception/object_recognition/objects",
+            // publishing autoware_perception_msgs::msg::DynamicObjectArray
+            "/perception/object_recognition/objects", 0.1));
 #endif
-            0.1));
+          // Autoware.Auto does not currently support object prediction
+          // however it is work-in-progress for Cargo ODD
+          // msgs are already implemented and autoware_auto_msgs::msg::PredictedObjects will probably be used here
+          // topic name is yet unknown
         }
       }
       return unspecified;
     } else {
-      throw SemanticError("Failed to spawn entity '", name, "'.");
+      throw SemanticError("Failed to spawn entity ", std::quoted(name));
     }
   }
 };

@@ -1,12 +1,10 @@
-ScenarioModifiers:
-  ScenarioModifier: []
 OpenSCENARIO:
   FileHeader:
     revMajor: 1
     revMinor: 0
-    date: '2021-06-21T07:36:35.584Z'
-    description: ''
-    author: ''
+    date: "2021-06-21T07:36:35.584Z"
+    description: ""
+    author: ""
   ParameterDeclarations:
     ParameterDeclaration:
       - name: count
@@ -20,12 +18,32 @@ OpenSCENARIO:
     SceneGraphFile:
       filepath: $(find-pkg-share kashiwanoha_map)/map/pointcloud_map.pcd
     TrafficSignals:
-      TrafficSignalController: []
+      TrafficSignalController:
+        - name: empty-contoller
+          Phase: []
+        - name: simple-controller
+          Phase:
+            - name: blank
+              duration: 65535
+              TrafficSignalState:
+                - { trafficSignalId: "34802", state: "none" }
+            - name: green
+              duration: 3
+              TrafficSignalState:
+                - { trafficSignalId: "34802", state: "green" }
+            - name: yellow
+              duration: 3
+              TrafficSignalState:
+                - { trafficSignalId: "34802", state: "yellow" }
+            - name: red
+              duration: 3
+              TrafficSignalState:
+                - { trafficSignalId: "34802", state: "red" }
   Entities:
     ScenarioObject:
       - name: ego
         Vehicle:
-          name: ''
+          name: ""
           vehicleCategory: car
           BoundingBox:
             Center:
@@ -57,18 +75,18 @@ OpenSCENARIO:
             Property: []
         ObjectController:
           Controller:
-            name: ''
+            name: ""
             Properties:
               Property:
                 - name: isEgo
-                  value: 'true'
+                  value: "false"
       - name: vehicle-1
         Vehicle:
-          name: ''
+          name: ""
           vehicleCategory: car
           BoundingBox:
             Center:
-              x: -0.0
+              x: 0
               y: 0
               z: 1.25
             Dimensions:
@@ -96,9 +114,26 @@ OpenSCENARIO:
             Property: []
         ObjectController:
           Controller:
-            name: ''
+            name: ""
             Properties:
               Property: []
+      - name: barricade
+        MiscObject:
+          mass: 1.0
+          miscObjectCategory: obstacle
+          # model3d: "" # since OSC 1.1
+          name: ""
+          BoundingBox:
+            Center:
+              x: 0
+              y: 0
+              z: 0.5
+            Dimensions:
+              width: 3
+              length: 1
+              height: 1
+          Properties:
+            Property: []
   Storyboard:
     Init:
       Actions:
@@ -108,9 +143,9 @@ OpenSCENARIO:
               - TeleportAction:
                   Position: &ego-initial-position
                     LanePosition:
-                      roadId: ''
-                      laneId: '34513'
-                      s: 20
+                      roadId: ""
+                      laneId: "34513"
+                      s: 10
                       offset: 0
                       Orientation:
                         type: relative
@@ -121,8 +156,8 @@ OpenSCENARIO:
                   AcquirePositionAction:
                     Position: &ego-goal-position
                       LanePosition:
-                        roadId: ''
-                        laneId: '34630'
+                        roadId: ""
+                        laneId: "34630"
                         s: 10
                         offset: 0
                         Orientation:
@@ -135,8 +170,8 @@ OpenSCENARIO:
               - TeleportAction:
                   Position:
                     LanePosition:
-                      roadId: ''
-                      laneId: '34681'
+                      roadId: ""
+                      laneId: "34681"
                       s: 0
                       offset: 0
                       Orientation:
@@ -153,26 +188,40 @@ OpenSCENARIO:
                     SpeedActionTarget:
                       AbsoluteTargetSpeed:
                         value: 10
+          - entityRef: barricade
+            PrivateAction:
+              - TeleportAction:
+                  Position:
+                    LanePosition: &barricade-initial-position
+                      roadId: ""
+                      laneId: "34513"
+                      s: 20
+                      offset: 0
+                      Orientation:
+                        type: relative
+                        h: 0
+                        p: 0
+                        r: 0
     Story:
-      - name: ''
+      - name: "main"
         Act:
           - name: "countup!"
             ManeuverGroup:
               - maximumExecutionCount: 1
-                name: ''
+                name: ""
                 Actors:
                   selectTriggeringEntities: false
                   EntityRef: []
                 Maneuver:
-                  - name: ''
+                  - name: ""
                     Event:
-                      - name: ''
+                      - name: ""
                         priority: parallel
                         maximumExecutionCount: &count-max 100
                         StartTrigger:
                           ConditionGroup:
                             - Condition:
-                              - name: ''
+                              - name: "if (count < *count-max)"
                                 delay: 0
                                 conditionEdge: none
                                 ByValueCondition:
@@ -181,7 +230,7 @@ OpenSCENARIO:
                                     rule: lessThan
                                     value: *count-max
                         Action:
-                          - name: "increment"
+                          - name: "count += 1"
                             GlobalAction:
                               ParameterAction:
                                 parameterRef: count
@@ -200,23 +249,248 @@ OpenSCENARIO:
                         parameterRef: count
                         rule: equalTo
                         value: *count-default
+          - name: "obstacle"
+            ManeuverGroup:
+              - maximumExecutionCount: 1
+                name: ""
+                Actors:
+                  selectTriggeringEntities: false
+                  EntityRef:
+                    - entityRef: barricade
+                Maneuver:
+                  - name: "warp-every-3sec"
+                    Event:
+                      - name: "warp-1"
+                        priority: parallel
+                        maximumExecutionCount: 1
+                        StartTrigger:
+                          ConditionGroup:
+                            - Condition:
+                              - name: ""
+                                delay: 0
+                                conditionEdge: none
+                                ByValueCondition:
+                                  SimulationTimeCondition:
+                                    value: 3
+                                    rule: greaterThan
+                        Action:
+                          - name: ""
+                            PrivateAction:
+                              - TeleportAction:
+                                  Position:
+                                    LanePosition:
+                                      <<: *barricade-initial-position
+                                      s: 25
+                      - name: "warp-2"
+                        priority: parallel
+                        maximumExecutionCount: 1
+                        StartTrigger:
+                          ConditionGroup:
+                            - Condition:
+                              - name: ""
+                                delay: 0
+                                conditionEdge: none
+                                ByValueCondition:
+                                  SimulationTimeCondition:
+                                    value: 6
+                                    rule: greaterThan
+                              - name: ""
+                                delay: 0
+                                conditionEdge: none
+                                ByValueCondition:
+                                  StoryboardElementStateCondition:
+                                    storyboardElementRef: "warp-1"
+                                    storyboardElementType: event
+                                    state: completeState
+                        Action:
+                          - name: ""
+                            PrivateAction:
+                              - TeleportAction:
+                                  Position:
+                                    LanePosition:
+                                      <<: *barricade-initial-position
+                                      s: 30
+                      - name: "warp-3"
+                        priority: parallel
+                        maximumExecutionCount: 1
+                        StartTrigger:
+                          ConditionGroup:
+                            - Condition:
+                              - name: ""
+                                delay: 0
+                                conditionEdge: none
+                                ByValueCondition:
+                                  SimulationTimeCondition:
+                                    value: 9
+                                    rule: greaterThan
+                              - name: ""
+                                delay: 0
+                                conditionEdge: none
+                                ByValueCondition:
+                                  StoryboardElementStateCondition:
+                                    storyboardElementRef: "warp-2"
+                                    storyboardElementType: event
+                                    state: completeState
+                        Action:
+                          - name: ""
+                            PrivateAction:
+                              - TeleportAction:
+                                  Position:
+                                    LanePosition:
+                                      <<: *barricade-initial-position
+                                      s: 35
+                      - name: "delete barricade"
+                        priority: parallel
+                        maximumExecutionCount: 1
+                        StartTrigger:
+                          ConditionGroup:
+                            - Condition:
+                              - name: ""
+                                delay: 0
+                                conditionEdge: none
+                                ByValueCondition:
+                                  SimulationTimeCondition:
+                                    value: 12
+                                    rule: greaterThan
+                              - name: ""
+                                delay: 0
+                                conditionEdge: none
+                                ByValueCondition:
+                                  StoryboardElementStateCondition:
+                                    storyboardElementRef: "warp-3"
+                                    storyboardElementType: event
+                                    state: completeState
+                        Action:
+                          - name: ""
+                            GlobalAction:
+                              EntityAction:
+                                entityRef: barricade
+                                DeleteEntityAction:
+                            # PrivateAction: (NOTE: SOMETHING WENT WRONG)
+                            #   - TeleportAction:
+                            #       Position:
+                            #         LanePosition:
+                            #           roadId: ""
+                            #           laneId: "34513"
+                            #           s: 35
+                            #           offset: 10
+                            #           Orientation:
+                            #             type: relative
+                            #             h: 0
+                            #             p: 0
+                            #             r: 0
+            StartTrigger:
+              ConditionGroup:
+                - Condition:
+                    - name:
+                      delay: 0
+                      conditionEdge: none
+                      ByValueCondition:
+                        SimulationTimeCondition:
+                          value: 0
+                          rule: greaterThan
+          - name: "traffic-signal"
+            ManeuverGroup:
+              - maximumExecutionCount: 1
+                name: ""
+                Actors:
+                  selectTriggeringEntities: false
+                  EntityRef: []
+                Maneuver:
+                  - name: ""
+                    Event:
+                      - name: ""
+                        priority: parallel
+                        maximumExecutionCount: 100
+                        StartTrigger:
+                          ConditionGroup:
+                            - Condition:
+                              - name: "if signal(34802).state() == none"
+                                delay: 0
+                                conditionEdge: none
+                                ByValueCondition:
+                                  TrafficSignalCondition:
+                                    name: "34802"
+                                    state: none
+                              - name: "if simple_controller.phase() == blank"
+                                delay: 0
+                                conditionEdge: none
+                                ByValueCondition:
+                                  TrafficSignalControllerCondition:
+                                    trafficSignalControllerRef: simple-controller
+                                    phase: blank
+                        Action:
+                          - name: "change_phase(simple_controller, green)"
+                            GlobalAction:
+                              InfrastructureAction:
+                                TrafficSignalAction:
+                                  TrafficSignalControllerAction:
+                                    trafficSignalControllerRef: simple-controller
+                                    phase: green
+            StartTrigger:
+              ConditionGroup:
+                - Condition:
+                    - name:
+                      delay: 0
+                      conditionEdge: none
+                      ByValueCondition:
+                        SimulationTimeCondition:
+                          value: 0
+                          rule: greaterThan
           - name: _EndCondition
             ManeuverGroup:
               - maximumExecutionCount: 1
-                name: ''
+                name: ""
                 Actors:
                   selectTriggeringEntities: false
                   EntityRef:
                     - entityRef: ego
                 Maneuver:
-                  - name: ''
+                  - name: ""
                     Event:
-                      - name: ''
+                      - name: "success if"
                         priority: parallel
                         StartTrigger:
                           ConditionGroup:
                             - Condition:
-                                - name: ''
+                                - name: "if (ego.reach_position(*ego-goal-position, 1))"
+                                  delay: 0
+                                  conditionEdge: none
+                                  ByEntityCondition:
+                                    TriggeringEntities:
+                                      triggeringEntitiesRule: any
+                                      EntityRef:
+                                        - entityRef: ego
+                                    EntityCondition:
+                                      ReachPositionCondition: # NOTE: ReachPositionCondition is specialized DistanceCondition.
+                                        Position: *ego-goal-position
+                                        tolerance: 1
+                                - name: "if (distance(ego, *ego-goal-position) < 1)"
+                                  delay: 0
+                                  conditionEdge: none
+                                  ByEntityCondition:
+                                    TriggeringEntities:
+                                      triggeringEntitiesRule: any
+                                      EntityRef:
+                                        - entityRef: ego
+                                    EntityCondition:
+                                      DistanceCondition:
+                                        Position: *ego-goal-position
+                                        alongRoute: false
+                                        freespace: false
+                                        rule: lessThan
+                                        value: 1
+                        Action:
+                          - name: "return EXIT_SUCCESS"
+                            UserDefinedAction:
+                              CustomCommandAction:
+                                type: exitSuccess
+                      - name: "failure if"
+                        priority: parallel
+                        StartTrigger:
+                          ConditionGroup:
+                            - Condition:
+                                - name: ""
                                   delay: 0
                                   conditionEdge: none
                                   ByValueCondition:
@@ -224,7 +498,7 @@ OpenSCENARIO:
                                       value: 180
                                       rule: greaterThan
                             - Condition:
-                                - name: ''
+                                - name: ""
                                   delay: 0
                                   conditionEdge: none
                                   ByEntityCondition:
@@ -237,7 +511,7 @@ OpenSCENARIO:
                                         EntityRef:
                                           entityRef: ego
                             # - Condition:
-                            #     - name: ''
+                            #     - name: ""
                             #       delay: 0
                             #       conditionEdge: none
                             #       ByEntityCondition:
@@ -253,7 +527,7 @@ OpenSCENARIO:
                             #             alongRoute: true
                             #             rule: lessThan
                             - Condition:
-                                - name: ''
+                                - name: ""
                                   delay: 0
                                   conditionEdge: none
                                   ByEntityCondition:
@@ -266,7 +540,7 @@ OpenSCENARIO:
                                         rule: greaterThan
                                         value: 10
                             - Condition:
-                                - name: ''
+                                - name: ""
                                   delay: 0
                                   conditionEdge: none
                                   ByEntityCondition:
@@ -279,7 +553,7 @@ OpenSCENARIO:
                                       StandStillCondition:
                                         duration: 10
                             - Condition:
-                                - name: ''
+                                - name: ""
                                   delay: 0
                                   conditionEdge: none
                                   ByEntityCondition:
@@ -293,36 +567,7 @@ OpenSCENARIO:
                                         rule: greaterThan
                                         value: 10
                             - Condition:
-                                - name: ''
-                                  delay: 0
-                                  conditionEdge: none
-                                  ByEntityCondition:
-                                    TriggeringEntities:
-                                      triggeringEntitiesRule: any
-                                      EntityRef:
-                                        - entityRef: ego
-                                    EntityCondition:
-                                      ReachPositionCondition: # NOTE: ReachPositionCondition is specialized DistanceCondition.
-                                        Position: *ego-goal-position
-                                        tolerance: 1
-                            - Condition:
-                                - name: ''
-                                  delay: 0
-                                  conditionEdge: none
-                                  ByEntityCondition:
-                                    TriggeringEntities:
-                                      triggeringEntitiesRule: any
-                                      EntityRef:
-                                        - entityRef: ego
-                                    EntityCondition:
-                                      DistanceCondition:
-                                        Position: *ego-goal-position
-                                        alongRoute: false
-                                        freespace: false
-                                        rule: lessThan
-                                        value: 1
-                            - Condition:
-                                - name: ''
+                                - name: ""
                                   delay: 0
                                   conditionEdge: none
                                   ByEntityCondition:
@@ -356,14 +601,14 @@ OpenSCENARIO:
                                       storyboardElementType: act
                                       state: skipTransition
                         Action:
-                          - name: ''
+                          - name: "return EXIT_FAILURE"
                             UserDefinedAction:
                               CustomCommandAction:
                                 type: exitFailure
             StartTrigger:
               ConditionGroup:
                 - Condition:
-                    - name: ''
+                    - name: "if (0 < t)"
                       delay: 0
                       conditionEdge: none
                       ByValueCondition:
@@ -373,11 +618,10 @@ OpenSCENARIO:
     StopTrigger:
       ConditionGroup:
         - Condition:
-            - name: ''
+            - name: "if (300 < t)"
               delay: 0
               conditionEdge: none
               ByValueCondition:
                 SimulationTimeCondition:
                   value: 300
                   rule: greaterThan
-
