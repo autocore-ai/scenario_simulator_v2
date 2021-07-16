@@ -768,6 +768,7 @@
 <span class="cp">#define OPENSCENARIO_INTERPRETER__SYNTAX__RELATIVE_WORLD_POSITION_HPP_</span>
 
 <span class="cp">#include</span> <span class="cpf">&lt;geometry_msgs/msg/point.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;geometry_msgs/msg/pose.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/entity_ref.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_msgs/msg/lanelet_pose.hpp&gt;</span><span class="cp"></span>
 
@@ -818,6 +819,11 @@
     <span class="k">return</span> <span class="n">result</span><span class="p">;</span>
   <span class="p">}</span>
 
+  <span class="k">explicit</span> <span class="k">operator</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span><span class="p">()</span> <span class="k">const</span>
+  <span class="p">{</span>
+    <span class="k">throw</span> <span class="n">UNSUPPORTED_CONVERSION_DETECTED</span><span class="p">(</span><span class="n">RelativeWorldPosition</span><span class="p">,</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Pose</span><span class="p">);</span>
+  <span class="p">}</span>
+
   <span class="k">explicit</span> <span class="k">operator</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span><span class="p">()</span> <span class="k">const</span>
   <span class="p">{</span>
     <span class="k">throw</span> <span class="n">UNSUPPORTED_CONVERSION_DETECTED</span><span class="p">(</span>
@@ -830,7 +836,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__RELATIVE_WORLD_POSITION_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 July 2021 at 07:35:22 UTC</p>
+<p>Updated on 16 July 2021 at 03:31:56 UTC</p>
                 
                   
                 

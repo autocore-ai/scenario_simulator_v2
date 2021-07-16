@@ -936,23 +936,14 @@
 
 <span class="n">FORWARD_TO_SIMULATION_API</span><span class="p">(</span><span class="n">attachDetectionSensor</span><span class="p">);</span>
 <span class="n">FORWARD_TO_SIMULATION_API</span><span class="p">(</span><span class="n">attachLidarSensor</span><span class="p">);</span>
-<span class="n">FORWARD_TO_SIMULATION_API</span><span class="p">(</span><span class="n">checkCollision</span><span class="p">);</span>
 <span class="n">FORWARD_TO_SIMULATION_API</span><span class="p">(</span><span class="n">despawn</span><span class="p">);</span>
 <span class="n">FORWARD_TO_SIMULATION_API</span><span class="p">(</span><span class="n">engage</span><span class="p">);</span>
 <span class="n">FORWARD_TO_SIMULATION_API</span><span class="p">(</span><span class="n">getCurrentTime</span><span class="p">);</span>
 <span class="n">FORWARD_TO_SIMULATION_API</span><span class="p">(</span><span class="n">initialize</span><span class="p">);</span>
 <span class="n">FORWARD_TO_SIMULATION_API</span><span class="p">(</span><span class="n">isInLanelet</span><span class="p">);</span>
 <span class="n">FORWARD_TO_SIMULATION_API</span><span class="p">(</span><span class="n">ready</span><span class="p">);</span>
-<span class="n">FORWARD_TO_SIMULATION_API</span><span class="p">(</span><span class="n">requestAcquirePosition</span><span class="p">);</span>
-<span class="n">FORWARD_TO_SIMULATION_API</span><span class="p">(</span><span class="n">requestAssignRoute</span><span class="p">);</span>
-<span class="n">FORWARD_TO_SIMULATION_API</span><span class="p">(</span><span class="n">requestLaneChange</span><span class="p">);</span>
-<span class="n">FORWARD_TO_SIMULATION_API</span><span class="p">(</span><span class="n">requestWalkStraight</span><span class="p">);</span>
 <span class="n">FORWARD_TO_SIMULATION_API</span><span class="p">(</span><span class="n">setEntityStatus</span><span class="p">);</span>
 <span class="n">FORWARD_TO_SIMULATION_API</span><span class="p">(</span><span class="n">setTargetSpeed</span><span class="p">);</span>
-<span class="n">FORWARD_TO_SIMULATION_API</span><span class="p">(</span><span class="n">setTrafficLightArrow</span><span class="p">);</span>
-<span class="n">FORWARD_TO_SIMULATION_API</span><span class="p">(</span><span class="n">setTrafficLightArrowPhase</span><span class="p">);</span>
-<span class="n">FORWARD_TO_SIMULATION_API</span><span class="p">(</span><span class="n">setTrafficLightColor</span><span class="p">);</span>
-<span class="n">FORWARD_TO_SIMULATION_API</span><span class="p">(</span><span class="n">setTrafficLightColorPhase</span><span class="p">);</span>
 <span class="n">FORWARD_TO_SIMULATION_API</span><span class="p">(</span><span class="n">spawn</span><span class="p">);</span>
 <span class="n">FORWARD_TO_SIMULATION_API</span><span class="p">(</span><span class="n">updateFrame</span><span class="p">);</span>
 
@@ -966,10 +957,19 @@
 <span class="cp">  }                                                            \</span>
 <span class="cp">  static_assert(true, &quot;&quot;)</span>
 
-<span class="n">RENAME</span><span class="p">(</span><span class="n">assignController</span><span class="p">,</span> <span class="n">setDriverModel</span><span class="p">);</span>
+<span class="c1">// NOTE: See OpenSCENARIO 1.1 Figure 2. Actions and conditions</span>
+
+<span class="n">RENAME</span><span class="p">(</span><span class="n">applyAcquirePositionAction</span><span class="p">,</span> <span class="n">requestAcquirePosition</span><span class="p">);</span>
+<span class="n">RENAME</span><span class="p">(</span><span class="n">applyAssignControllerAction</span><span class="p">,</span> <span class="n">setDriverModel</span><span class="p">);</span>
+<span class="n">RENAME</span><span class="p">(</span><span class="n">applyAssignRouteAction</span><span class="p">,</span> <span class="n">requestAssignRoute</span><span class="p">);</span>
+<span class="n">RENAME</span><span class="p">(</span><span class="n">applyLaneChangeAction</span><span class="p">,</span> <span class="n">requestLaneChange</span><span class="p">);</span>
+<span class="n">RENAME</span><span class="p">(</span><span class="n">applyWalkStraightAction</span><span class="p">,</span> <span class="n">requestWalkStraight</span><span class="p">);</span>
+<span class="n">RENAME</span><span class="p">(</span><span class="n">evaluateCollisionCondition</span><span class="p">,</span> <span class="n">checkCollision</span><span class="p">);</span>
+<span class="n">RENAME</span><span class="p">(</span><span class="n">evaluateReachPositionCondition</span><span class="p">,</span> <span class="n">reachPosition</span><span class="p">);</span>
 <span class="n">RENAME</span><span class="p">(</span><span class="n">getTrafficSignalArrow</span><span class="p">,</span> <span class="n">getTrafficLightArrow</span><span class="p">);</span>
 <span class="n">RENAME</span><span class="p">(</span><span class="n">getTrafficSignalColor</span><span class="p">,</span> <span class="n">getTrafficLightColor</span><span class="p">);</span>
-<span class="n">RENAME</span><span class="p">(</span><span class="n">isReachedPosition</span><span class="p">,</span> <span class="n">reachPosition</span><span class="p">);</span>
+<span class="n">RENAME</span><span class="p">(</span><span class="n">setTrafficSignalArrow</span><span class="p">,</span> <span class="n">setTrafficLightArrow</span><span class="p">);</span>
+<span class="n">RENAME</span><span class="p">(</span><span class="n">setTrafficSignalColor</span><span class="p">,</span> <span class="n">setTrafficLightColor</span><span class="p">);</span>
 <span class="n">RENAME</span><span class="p">(</span><span class="n">toWorldPosition</span><span class="p">,</span> <span class="n">toMapPose</span><span class="p">);</span>
 
 <span class="cp">#undef RENAME</span>
@@ -978,7 +978,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__PROCEDURE_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 July 2021 at 07:35:22 UTC</p>
+<p>Updated on 16 July 2021 at 03:31:56 UTC</p>
                 
                   
                 

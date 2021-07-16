@@ -858,7 +858,7 @@
   <span class="kt">void</span> <span class="k">operator</span><span class="p">()()</span> <span class="k">const</span>
   <span class="p">{</span>
     <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">actor</span> <span class="p">:</span> <span class="n">actors</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">assignController</span><span class="p">(</span><span class="n">actor</span><span class="p">,</span> <span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">).</span><span class="n">as</span><span class="o">&lt;</span><span class="n">Controller</span><span class="o">&gt;</span><span class="p">());</span>
+      <span class="n">applyAssignControllerAction</span><span class="p">(</span><span class="n">actor</span><span class="p">,</span> <span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">).</span><span class="n">as</span><span class="o">&lt;</span><span class="n">Controller</span><span class="o">&gt;</span><span class="p">());</span>
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">};</span>
@@ -870,7 +870,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__ASSIGN_CONTROLLER_ACTION_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 July 2021 at 07:35:22 UTC</p>
+<p>Updated on 16 July 2021 at 03:31:57 UTC</p>
                 
                   
                 

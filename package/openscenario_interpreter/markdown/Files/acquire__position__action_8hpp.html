@@ -770,6 +770,7 @@
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/procedure.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/position.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/syntax/string.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/utility/overload.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;traffic_simulator/helper/helper.hpp&gt;</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">&lt;unordered_map&gt;</span><span class="cp"></span>
 
@@ -798,21 +799,12 @@
   <span class="p">{</span>
   <span class="p">}</span>
 
-  <span class="k">auto</span> <span class="k">operator</span><span class="p">()(</span><span class="k">const</span> <span class="n">Scope</span><span class="o">::</span><span class="n">Actor</span> <span class="o">&amp;</span> <span class="n">actor</span><span class="p">)</span> <span class="k">const</span>
-  <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">position</span><span class="p">.</span><span class="n">is</span><span class="o">&lt;</span><span class="n">LanePosition</span><span class="o">&gt;</span><span class="p">())</span> <span class="p">{</span>
-      <span class="n">requestAcquirePosition</span><span class="p">(</span>
-        <span class="n">actor</span><span class="p">,</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span><span class="o">&gt;</span><span class="p">(</span><span class="n">position</span><span class="p">.</span><span class="n">as</span><span class="o">&lt;</span><span class="n">LanePosition</span><span class="o">&gt;</span><span class="p">()));</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="k">throw</span> <span class="n">UNSUPPORTED_SETTING_DETECTED</span><span class="p">(</span><span class="n">AcquirePositionAction</span><span class="p">,</span> <span class="n">position</span><span class="p">.</span><span class="n">type</span><span class="p">().</span><span class="n">name</span><span class="p">());</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-
   <span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span> <span class="n">Boolean</span><span class="o">&gt;</span> <span class="n">accomplishments</span><span class="p">;</span>
 
   <span class="k">auto</span> <span class="n">reset</span><span class="p">()</span>
   <span class="p">{</span>
     <span class="n">accomplishments</span><span class="p">.</span><span class="n">clear</span><span class="p">();</span>
+
     <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">actor</span> <span class="p">:</span> <span class="n">actors</span><span class="p">)</span> <span class="p">{</span>
       <span class="n">accomplishments</span><span class="p">.</span><span class="n">emplace</span><span class="p">(</span><span class="n">actor</span><span class="p">,</span> <span class="nb">false</span><span class="p">);</span>
     <span class="p">}</span>
@@ -822,27 +814,46 @@
   <span class="p">{</span>
     <span class="n">reset</span><span class="p">();</span>
 
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">acquire_position</span> <span class="o">=</span> <span class="n">overload</span><span class="p">(</span>
+      <span class="p">[](</span><span class="k">const</span> <span class="n">WorldPosition</span> <span class="o">&amp;</span> <span class="n">position</span><span class="p">,</span> <span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">actor</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">applyAcquirePositionAction</span><span class="p">(</span>
+          <span class="n">actor</span><span class="p">,</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span><span class="o">&gt;</span><span class="p">(</span><span class="n">position</span><span class="p">));</span>
+      <span class="p">},</span>
+      <span class="p">[](</span><span class="k">const</span> <span class="n">RelativeWorldPosition</span> <span class="o">&amp;</span> <span class="n">position</span><span class="p">,</span> <span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">actor</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">applyAcquirePositionAction</span><span class="p">(</span>
+          <span class="n">actor</span><span class="p">,</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span><span class="o">&gt;</span><span class="p">(</span><span class="n">position</span><span class="p">));</span>
+      <span class="p">},</span>
+      <span class="p">[](</span><span class="k">const</span> <span class="n">LanePosition</span> <span class="o">&amp;</span> <span class="n">position</span><span class="p">,</span> <span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">actor</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">applyAcquirePositionAction</span><span class="p">(</span>
+          <span class="n">actor</span><span class="p">,</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span><span class="o">&gt;</span><span class="p">(</span><span class="n">position</span><span class="p">));</span>
+      <span class="p">});</span>
+
     <span class="k">for</span> <span class="p">(</span><span class="k">const</span> <span class="k">auto</span> <span class="o">&amp;</span> <span class="nl">actor</span> <span class="p">:</span> <span class="n">actors</span><span class="p">)</span> <span class="p">{</span>
-      <span class="p">(</span><span class="o">*</span><span class="k">this</span><span class="p">)(</span><span class="n">actor</span><span class="p">);</span>
+      <span class="n">apply</span><span class="p">(</span><span class="n">acquire_position</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">actor</span><span class="p">);</span>
     <span class="p">}</span>
 
     <span class="k">return</span> <span class="n">unspecified</span><span class="p">;</span>
   <span class="p">}</span>
 
-  <span class="k">auto</span> <span class="n">check</span><span class="p">(</span><span class="k">const</span> <span class="n">String</span> <span class="o">&amp;</span> <span class="n">actor</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="k">if</span> <span class="p">(</span><span class="n">position</span><span class="p">.</span><span class="n">is</span><span class="o">&lt;</span><span class="n">LanePosition</span><span class="o">&gt;</span><span class="p">())</span> <span class="p">{</span>
-      <span class="k">return</span> <span class="n">isReachedPosition</span><span class="p">(</span>
-        <span class="n">actor</span><span class="p">,</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span><span class="o">&gt;</span><span class="p">(</span><span class="n">position</span><span class="p">.</span><span class="n">as</span><span class="o">&lt;</span><span class="n">LanePosition</span><span class="o">&gt;</span><span class="p">()),</span> <span class="mf">1.0</span><span class="p">);</span>
-    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-      <span class="k">throw</span> <span class="n">UNSUPPORTED_SETTING_DETECTED</span><span class="p">(</span><span class="n">AcquirePositionAction</span><span class="p">,</span> <span class="n">position</span><span class="p">.</span><span class="n">type</span><span class="p">().</span><span class="n">name</span><span class="p">());</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-
   <span class="k">auto</span> <span class="n">update</span><span class="p">()</span>
   <span class="p">{</span>
+    <span class="k">const</span> <span class="k">auto</span> <span class="n">reach_position</span> <span class="o">=</span> <span class="n">overload</span><span class="p">(</span>
+      <span class="p">[](</span><span class="k">const</span> <span class="n">WorldPosition</span> <span class="o">&amp;</span> <span class="n">position</span><span class="p">,</span> <span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">actor</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">evaluateReachPositionCondition</span><span class="p">(</span>
+          <span class="n">actor</span><span class="p">,</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span><span class="o">&gt;</span><span class="p">(</span><span class="n">position</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">);</span>
+      <span class="p">},</span>
+      <span class="p">[](</span><span class="k">const</span> <span class="n">RelativeWorldPosition</span> <span class="o">&amp;</span> <span class="n">position</span><span class="p">,</span> <span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">actor</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">evaluateReachPositionCondition</span><span class="p">(</span>
+          <span class="n">actor</span><span class="p">,</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span><span class="o">&gt;</span><span class="p">(</span><span class="n">position</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">);</span>
+      <span class="p">},</span>
+      <span class="p">[](</span><span class="k">const</span> <span class="n">LanePosition</span> <span class="o">&amp;</span> <span class="n">position</span><span class="p">,</span> <span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="n">actor</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">evaluateReachPositionCondition</span><span class="p">(</span>
+          <span class="n">actor</span><span class="p">,</span> <span class="k">static_cast</span><span class="o">&lt;</span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">LaneletPose</span><span class="o">&gt;</span><span class="p">(</span><span class="n">position</span><span class="p">),</span> <span class="mf">1.0</span><span class="p">);</span>
+      <span class="p">});</span>
+
     <span class="k">for</span> <span class="p">(</span><span class="k">auto</span> <span class="o">&amp;&amp;</span> <span class="nl">each</span> <span class="p">:</span> <span class="n">accomplishments</span><span class="p">)</span> <span class="p">{</span>
-      <span class="n">each</span><span class="p">.</span><span class="n">second</span> <span class="o">=</span> <span class="n">each</span><span class="p">.</span><span class="n">second</span> <span class="n">or</span> <span class="n">check</span><span class="p">(</span><span class="n">each</span><span class="p">.</span><span class="n">first</span><span class="p">);</span>
+      <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">each</span><span class="p">)</span> <span class="o">=</span>
+        <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">1</span><span class="o">&gt;</span><span class="p">(</span><span class="n">each</span><span class="p">)</span> <span class="n">or</span> <span class="n">apply</span><span class="o">&lt;</span><span class="kt">bool</span><span class="o">&gt;</span><span class="p">(</span><span class="n">reach_position</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">std</span><span class="o">::</span><span class="n">get</span><span class="o">&lt;</span><span class="mi">0</span><span class="o">&gt;</span><span class="p">(</span><span class="n">each</span><span class="p">));</span>
     <span class="p">}</span>
   <span class="p">}</span>
 
@@ -856,7 +867,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__ACQUIRE_POSITION_ACTION_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 July 2021 at 07:35:22 UTC</p>
+<p>Updated on 16 July 2021 at 03:31:57 UTC</p>
                 
                   
                 

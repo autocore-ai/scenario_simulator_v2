@@ -820,13 +820,13 @@
   <span class="p">{</span>
     <span class="k">const</span> <span class="k">auto</span> <span class="n">color_opt</span> <span class="o">=</span> <span class="n">boost</span><span class="o">::</span><span class="n">lexical_cast</span><span class="o">&lt;</span><span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">Color</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">state</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">color_opt</span><span class="p">.</span><span class="n">has_value</span><span class="p">())</span> <span class="p">{</span>
-      <span class="n">setTrafficLightColor</span><span class="p">(</span><span class="n">id</span><span class="p">(),</span> <span class="n">color_opt</span><span class="p">.</span><span class="n">value</span><span class="p">());</span>
+      <span class="n">setTrafficSignalColor</span><span class="p">(</span><span class="n">id</span><span class="p">(),</span> <span class="n">color_opt</span><span class="p">.</span><span class="n">value</span><span class="p">());</span>
       <span class="k">return</span> <span class="n">unspecified</span><span class="p">;</span>
     <span class="p">}</span>
 
     <span class="k">const</span> <span class="k">auto</span> <span class="n">arrow_opt</span> <span class="o">=</span> <span class="n">boost</span><span class="o">::</span><span class="n">lexical_cast</span><span class="o">&lt;</span><span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="n">Arrow</span><span class="o">&gt;&gt;</span><span class="p">(</span><span class="n">state</span><span class="p">);</span>
     <span class="k">if</span> <span class="p">(</span><span class="n">arrow_opt</span><span class="p">.</span><span class="n">has_value</span><span class="p">())</span> <span class="p">{</span>
-      <span class="n">setTrafficLightArrow</span><span class="p">(</span><span class="n">id</span><span class="p">(),</span> <span class="n">arrow_opt</span><span class="p">.</span><span class="n">value</span><span class="p">());</span>
+      <span class="n">setTrafficSignalArrow</span><span class="p">(</span><span class="n">id</span><span class="p">(),</span> <span class="n">arrow_opt</span><span class="p">.</span><span class="n">value</span><span class="p">());</span>
       <span class="k">return</span> <span class="n">unspecified</span><span class="p">;</span>
     <span class="p">}</span>
 
@@ -843,7 +843,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__TRAFFIC_SIGNAL_STATE_ACTION_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 July 2021 at 07:35:22 UTC</p>
+<p>Updated on 16 July 2021 at 03:31:56 UTC</p>
                 
                   
                 

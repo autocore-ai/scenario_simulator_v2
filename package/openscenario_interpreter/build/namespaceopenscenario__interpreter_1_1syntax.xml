@@ -634,7 +634,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/collision_condition.hpp" line="84" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/collision_condition.cpp" bodystart="21" bodyend="25"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/collision_condition.hpp" line="85" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/collision_condition.cpp" bodystart="21" bodyend="25"/>
       </memberdef>
       <memberdef kind="function" id="color_8hpp_1a9875fdff536297bf3d30228061ecf370" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::istream &amp;</type>
@@ -1408,14 +1408,14 @@
         </inbodydescription>
         <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/performance.hpp" line="64" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/src/syntax/performance.cpp" bodystart="22" bodyend="31"/>
       </memberdef>
-      <memberdef kind="function" id="position_8hpp_1a1d862eba9f0da9cad488a3dbb9ef6946" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="position_8hpp_1ae558e840da0a45120aada1871d33275f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <templateparamlist>
           <param>
-            <type>typename R</type>
+            <type>typename Result</type>
             <defval>void</defval>
           </param>
           <param>
-            <type>typename F</type>
+            <type>typename Function</type>
           </param>
           <param>
             <type>typename...</type>
@@ -1423,13 +1423,13 @@
             <defname>Ts</defname>
           </param>
         </templateparamlist>
-        <type>decltype(auto)</type>
-        <definition>decltype(auto) openscenario_interpreter::syntax::apply</definition>
-        <argsstring>(F &amp;&amp;f, const Position &amp;position, Ts &amp;&amp;... xs)</argsstring>
+        <type>auto</type>
+        <definition>auto openscenario_interpreter::syntax::apply</definition>
+        <argsstring>(Function &amp;&amp;function, const Position &amp;position, Ts &amp;&amp;... xs) -&gt; Result</argsstring>
         <name>apply</name>
         <param>
-          <type>F &amp;&amp;</type>
-          <declname>f</declname>
+          <type>Function &amp;&amp;</type>
+          <declname>function</declname>
         </param>
         <param>
           <type>const <ref refid="structopenscenario__interpreter_1_1syntax_1_1Position" kindref="compound">Position</ref> &amp;</type>
@@ -1445,7 +1445,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/position.hpp" line="78" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/position.hpp" bodystart="78" bodyend="107"/>
+        <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/position.hpp" line="79" column="1" bodyfile="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/openscenario/openscenario_interpreter/include/openscenario_interpreter/syntax/position.hpp" bodystart="79" bodyend="110"/>
       </memberdef>
       <memberdef kind="function" id="priority_8hpp_1ab7be63c201a74f834bfe35e77c9ff752" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>std::istream &amp;</type>

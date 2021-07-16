@@ -795,7 +795,7 @@
 <span class="cm">   *  Assign a controller to an entity.</span>
 <span class="cm">   *</span>
 <span class="cm">   * ------------------------------------------------------------------------ */</span>
-  <span class="k">const</span> <span class="n">AssignControllerAction</span> <span class="n">assignController</span><span class="p">;</span>
+  <span class="k">const</span> <span class="n">AssignControllerAction</span> <span class="n">assign_controller_action</span><span class="p">;</span>
 
   <span class="cm">/* ---- OverrideControllerValueAction ----------------------------------------</span>
 <span class="cm">   *</span>
@@ -808,14 +808,14 @@
 
   <span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">Node</span><span class="p">,</span> <span class="k">typename</span> <span class="nc">Scope</span><span class="o">&gt;</span>
   <span class="k">explicit</span> <span class="n">ControllerAction</span><span class="p">(</span><span class="k">const</span> <span class="n">Node</span> <span class="o">&amp;</span> <span class="n">node</span><span class="p">,</span> <span class="n">Scope</span> <span class="o">&amp;</span> <span class="n">outer_scope</span><span class="p">)</span>
-  <span class="o">:</span> <span class="n">assignController</span><span class="p">(</span>
+  <span class="o">:</span> <span class="n">assign_controller_action</span><span class="p">(</span>
       <span class="n">readElement</span><span class="o">&lt;</span><span class="n">AssignControllerAction</span><span class="o">&gt;</span><span class="p">(</span><span class="s">&quot;AssignControllerAction&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">)),</span>
     <span class="n">override_controller_value_action</span><span class="p">(</span><span class="n">readElement</span><span class="o">&lt;</span><span class="n">OverrideControllerValueAction</span><span class="o">&gt;</span><span class="p">(</span>
       <span class="s">&quot;OverrideControllerValueAction&quot;</span><span class="p">,</span> <span class="n">node</span><span class="p">,</span> <span class="n">outer_scope</span><span class="p">))</span>  <span class="c1">// NOTE: DUMMY IMPLEMENTATION</span>
   <span class="p">{</span>
   <span class="p">}</span>
 
-  <span class="kt">void</span> <span class="n">start</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="n">assignController</span><span class="p">();</span> <span class="p">}</span>
+  <span class="kt">void</span> <span class="n">start</span><span class="p">()</span> <span class="k">const</span> <span class="p">{</span> <span class="n">assign_controller_action</span><span class="p">();</span> <span class="p">}</span>
 
   <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">true_type</span> <span class="n">accomplished</span><span class="p">{};</span>
 
@@ -827,7 +827,7 @@
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__SYNTAX__CONTROLLER_ACTION_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 15 July 2021 at 07:35:22 UTC</p>
+<p>Updated on 16 July 2021 at 03:31:57 UTC</p>
                 
                   
                 
