@@ -484,8 +484,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-test-mutiple-scenarios" class="md-nav__link">
-    How to Test Mutiple Scenarios
+  <a href="#how-to-test-multiple-scenarios" class="md-nav__link">
+    How to Test Multiple Scenarios
   </a>
   
 </li>
@@ -799,8 +799,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#how-to-test-mutiple-scenarios" class="md-nav__link">
-    How to Test Mutiple Scenarios
+  <a href="#how-to-test-multiple-scenarios" class="md-nav__link">
+    How to Test Multiple Scenarios
   </a>
   
 </li>
@@ -830,8 +830,8 @@
                 
                 
                 <h1 id="scenario-test-runner-user-guide">Scenario Test Runner User Guide<a class="headerlink" href="#scenario-test-runner-user-guide" title="Permanent link">#</a></h1>
-<p>You can test run (preview) the scenarios you created usng the GUI scenario editor before running it with Autoware.</p>
-<p>The file you exported from th GUI scenrio editor is in YAML based format called "tier4 scenario format". Then it is converted into XML based OpenSCENARIO format.
+<p>You can test run (preview) the scenarios you created using the GUI scenario editor before running it with Autoware.</p>
+<p>The file you exported from the GUI scenario editor is in YAML based format called "<a href="../../../design/TierIVScenarioFormatVersion2/">TierIV Scenario Format Version 2.0</a>". Then it is converted into XML based OpenSCENARIO format.
 The specification of this OpenSCENARIO format is found at <a href="http://www.openscenario.org/">OpenSCENARIO</a> site.</p>
 <h2 id="before-testing-scenarios">Before Testing Scenarios<a class="headerlink" href="#before-testing-scenarios" title="Permanent link">#</a></h2>
 <p>You need to open your YAML file with text editor and edit the following two parts of your scenario file before testing it.</p>
@@ -857,13 +857,13 @@ and change to;</p>
                 - name: isEgo
                   value: <span class="s2">&quot;false&quot;</span>
 </code></pre></div>
-This is the setting to let Ego vehicle run without connecting to Autoware for testing the scenario. <font color="Red"> Please note that this "isEgo" setting is only for scenario testing and you will need to revert it to "true" when you conduct the actual sceario simulation with Autoware. </font></p>
+This is the setting to let Ego vehicle run without connecting to Autoware for testing the scenario. <font color="Red"> Please note that this "isEgo" setting is only for scenario testing and you will need to revert it to "true" when you conduct the actual scenario simulation with Autoware. </font></p>
 <h2 id="how-to-test-single-scenario">How to Test Single Scenario<a class="headerlink" href="#how-to-test-single-scenario" title="Permanent link">#</a></h2>
 <p><div class="highlight"><pre><span></span><code>ros2 launch scenario_test_runner scenario_test_runner.launch.py scenario:<span class="o">=</span><span class="s1">&#39;/home/user-name/scenario-folder/t4v2.yaml&#39;</span> with_rviz:<span class="o">=</span><span class="nb">true</span>
 </code></pre></div>
 The workflow file defines how to execute scenarios.
 If you want to know how to write the workflow file, read <a href="../HowToWriteWorkflowFile/">here.</a></p>
-<h2 id="how-to-test-mutiple-scenarios">How to Test Mutiple Scenarios<a class="headerlink" href="#how-to-test-mutiple-scenarios" title="Permanent link">#</a></h2>
+<h2 id="how-to-test-multiple-scenarios">How to Test Multiple Scenarios<a class="headerlink" href="#how-to-test-multiple-scenarios" title="Permanent link">#</a></h2>
 <p><div class="highlight"><pre><span></span><code>ros2 launch scenario_test_runner scenario_test_runner.launch.py workflow:<span class="o">=</span><span class="s1">&#39;$(find-pkg-share scenario_test_runner)/config/workflow_example.yaml&#39;</span> log_directory:<span class="o">=</span><span class="s1">&#39;/tmp&#39;</span>
 </code></pre></div>
 The workflow file defines how to execute scenarios.
