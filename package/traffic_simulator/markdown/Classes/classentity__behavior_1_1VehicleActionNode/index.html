@@ -10,7 +10,7 @@
       
       
       <link rel="icon" href="../../../../../image/icon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
     
     
       
@@ -18,10 +18,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.fe914879.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.be71726b.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.3f5d1f46.min.css">
         
       
     
@@ -269,6 +269,18 @@
     <li class="md-nav__item">
       <a href="../../../../../tutorials/RunWithDocker/" class="md-nav__link">
         Run with docker
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tutorials/RunTestScenarioWithDocker/" class="md-nav__link">
+        Run test scenario with Docker
       </a>
     </li>
   
@@ -592,6 +604,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../design/Metrics/" class="md-nav__link">
+        Metrics
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -637,7 +661,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../../etc/ContactUs/" class="md-nav__link">
-        Contact Infomation
+        Contact Information
       </a>
     </li>
   
@@ -826,7 +850,7 @@
                 
                 <h1 id="entity_behaviorvehicleactionnode">entity_behavior::VehicleActionNode<a class="headerlink" href="#entity_behaviorvehicleactionnode" title="Permanent link">#</a></h1>
 <p>Inherits from <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1ActionNode">entity_behavior::ActionNode</a>, ActionNodeBase</p>
-<p>Inherited by <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1FollowFrontEntityAction">entity_behavior::vehicle::follow_lane_sequence::FollowFrontEntityAction</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1FollowLaneAction">entity_behavior::vehicle::follow_lane_sequence::FollowLaneAction</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1StopAtCrossingEntityAction">entity_behavior::vehicle::follow_lane_sequence::StopAtCrossingEntityAction</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1StopAtStopLineAction">entity_behavior::vehicle::follow_lane_sequence::StopAtStopLineAction</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1StopAtTrafficLightAction">entity_behavior::vehicle::follow_lane_sequence::StopAtTrafficLightAction</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1YieldAction">entity_behavior::vehicle::follow_lane_sequence::YieldAction</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1LaneChangeAction">entity_behavior::vehicle::LaneChangeAction</a></p>
+<p>Inherited by <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1FollowFrontEntityAction">entity_behavior::vehicle::follow_lane_sequence::FollowFrontEntityAction</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1FollowLaneAction">entity_behavior::vehicle::follow_lane_sequence::FollowLaneAction</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1MoveBackwardAction">entity_behavior::vehicle::follow_lane_sequence::MoveBackwardAction</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1StopAtCrossingEntityAction">entity_behavior::vehicle::follow_lane_sequence::StopAtCrossingEntityAction</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1StopAtStopLineAction">entity_behavior::vehicle::follow_lane_sequence::StopAtStopLineAction</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1StopAtTrafficLightAction">entity_behavior::vehicle::follow_lane_sequence::StopAtTrafficLightAction</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1YieldAction">entity_behavior::vehicle::follow_lane_sequence::YieldAction</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1LaneChangeAction">entity_behavior::vehicle::LaneChangeAction</a></p>
 <h2 id="public-functions">Public Functions<a class="headerlink" href="#public-functions" title="Permanent link">#</a></h2>
 <table>
 <thead>
@@ -936,8 +960,12 @@
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1ActionNode#function-gethorizon">getHorizon</a></strong>() const</td>
 </tr>
 <tr>
-<td>boost::optional&lt; openscenario_msgs::msg::EntityStatus &gt;</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1ActionNode#function-getfrontentitystatus">getFrontEntityStatus</a></strong>()</td>
+<td>boost::optional&lt; std::string &gt;</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1ActionNode#function-getfrontentityname">getFrontEntityName</a></strong>(const <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1math_1_1CatmullRomSpline">traffic_simulator::math::CatmullRomSpline</a> &amp; spline)</td>
+</tr>
+<tr>
+<td>openscenario_msgs::msg::EntityStatus</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1ActionNode#function-getentitystatus">getEntityStatus</a></strong>(const std::string target_name) const</td>
 </tr>
 <tr>
 <td>boost::optional&lt; double &gt;</td>
@@ -945,27 +973,19 @@
 </tr>
 <tr>
 <td>boost::optional&lt; double &gt;</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1ActionNode#function-getdistancetotargetentitypolygon">getDistanceToTargetEntityPolygon</a></strong>(const <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1math_1_1CatmullRomSpline">traffic_simulator::math::CatmullRomSpline</a> &amp; spline, const std::string target_name)</td>
+</tr>
+<tr>
+<td>boost::optional&lt; double &gt;</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1ActionNode#function-getdistancetostopline">getDistanceToStopLine</a></strong>(const std::vector&lt; std::int64_t &gt; &amp; route_lanelets, const std::vector&lt; geometry_msgs::msg::Point &gt; &amp; waypoints)</td>
 </tr>
 <tr>
 <td>boost::optional&lt; double &gt;</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1ActionNode#function-getdistancetofrontentity">getDistanceToFrontEntity</a></strong>()</td>
-</tr>
-<tr>
-<td>boost::optional&lt; double &gt;</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1ActionNode#function-getdistancetoconflictingentity">getDistanceToConflictingEntity</a></strong>(const std::vector&lt; std::int64_t &gt; &amp; following_lanelets) const</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1ActionNode#function-getdistancetofrontentity">getDistanceToFrontEntity</a></strong>(const <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1math_1_1CatmullRomSpline">traffic_simulator::math::CatmullRomSpline</a> &amp; spline)</td>
 </tr>
 <tr>
 <td>boost::optional&lt; double &gt;</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1ActionNode#function-getdistancetoconflictingentity">getDistanceToConflictingEntity</a></strong>(const std::vector&lt; std::int64_t &gt; &amp; route_lanelets, const <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1math_1_1CatmullRomSpline">traffic_simulator::math::CatmullRomSpline</a> &amp; spline)</td>
-</tr>
-<tr>
-<td>std::vector&lt; openscenario_msgs::msg::EntityStatus &gt;</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1ActionNode#function-getconflictingentitystatusonroute">getConflictingEntityStatusOnRoute</a></strong>(const std::vector&lt; std::int64_t &gt; &amp; route_lanelets) const</td>
-</tr>
-<tr>
-<td>boost::optional&lt; openscenario_msgs::msg::EntityStatus &gt;</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1ActionNode#function-getconflictingentitystatus">getConflictingEntityStatus</a></strong>(const std::vector&lt; std::int64_t &gt; &amp; following_lanelets) const</td>
 </tr>
 <tr>
 <td>bool</td>
@@ -1042,55 +1062,55 @@
 </table>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">#</a></h2>
 <h3 id="function-vehicleactionnode">function ~VehicleActionNode<a class="headerlink" href="#function-vehicleactionnode" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="o">~</span><span class="n">VehicleActionNode</span><span class="p">()</span> <span class="k">override</span> <span class="o">=</span><span class="k">default</span>
+<div class="highlight"><pre><span></span><code><span class="o">~</span><span class="n">VehicleActionNode</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="o">=</span><span class="k">default</span><span class="w"></span>
 </code></pre></div>
 <h3 id="function-providedports">function providedPorts<a class="headerlink" href="#function-providedports" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">static</span> <span class="kr">inline</span> <span class="n">BT</span><span class="o">::</span><span class="n">PortsList</span> <span class="n">providedPorts</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">BT</span><span class="o">::</span><span class="n">PortsList</span><span class="w"> </span><span class="n">providedPorts</span><span class="p">()</span><span class="w"></span>
 </code></pre></div>
 <h3 id="function-getblackboardvalues">function getBlackBoardValues<a class="headerlink" href="#function-getblackboardvalues" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">getBlackBoardValues</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">getBlackBoardValues</span><span class="p">()</span><span class="w"></span>
 </code></pre></div>
 <h3 id="function-calculatewaypoints">function calculateWaypoints<a class="headerlink" href="#function-calculatewaypoints" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">virtual</span> <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">WaypointsArray</span> <span class="n">calculateWaypoints</span><span class="p">()</span> <span class="o">=</span><span class="mi">0</span>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">WaypointsArray</span><span class="w"> </span><span class="n">calculateWaypoints</span><span class="p">()</span><span class="w"> </span><span class="o">=</span><span class="mi">0</span><span class="w"></span>
 </code></pre></div>
-<p><strong>Reimplemented by</strong>: <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1FollowFrontEntityAction#function-calculatewaypoints">entity_behavior::vehicle::follow_lane_sequence::FollowFrontEntityAction::calculateWaypoints</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1YieldAction#function-calculatewaypoints">entity_behavior::vehicle::follow_lane_sequence::YieldAction::calculateWaypoints</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1StopAtTrafficLightAction#function-calculatewaypoints">entity_behavior::vehicle::follow_lane_sequence::StopAtTrafficLightAction::calculateWaypoints</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1StopAtStopLineAction#function-calculatewaypoints">entity_behavior::vehicle::follow_lane_sequence::StopAtStopLineAction::calculateWaypoints</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1StopAtCrossingEntityAction#function-calculatewaypoints">entity_behavior::vehicle::follow_lane_sequence::StopAtCrossingEntityAction::calculateWaypoints</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1FollowLaneAction#function-calculatewaypoints">entity_behavior::vehicle::follow_lane_sequence::FollowLaneAction::calculateWaypoints</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1LaneChangeAction#function-calculatewaypoints">entity_behavior::vehicle::LaneChangeAction::calculateWaypoints</a></p>
+<p><strong>Reimplemented by</strong>: <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1FollowFrontEntityAction#function-calculatewaypoints">entity_behavior::vehicle::follow_lane_sequence::FollowFrontEntityAction::calculateWaypoints</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1YieldAction#function-calculatewaypoints">entity_behavior::vehicle::follow_lane_sequence::YieldAction::calculateWaypoints</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1StopAtTrafficLightAction#function-calculatewaypoints">entity_behavior::vehicle::follow_lane_sequence::StopAtTrafficLightAction::calculateWaypoints</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1StopAtStopLineAction#function-calculatewaypoints">entity_behavior::vehicle::follow_lane_sequence::StopAtStopLineAction::calculateWaypoints</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1StopAtCrossingEntityAction#function-calculatewaypoints">entity_behavior::vehicle::follow_lane_sequence::StopAtCrossingEntityAction::calculateWaypoints</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1MoveBackwardAction#function-calculatewaypoints">entity_behavior::vehicle::follow_lane_sequence::MoveBackwardAction::calculateWaypoints</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1FollowLaneAction#function-calculatewaypoints">entity_behavior::vehicle::follow_lane_sequence::FollowLaneAction::calculateWaypoints</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1LaneChangeAction#function-calculatewaypoints">entity_behavior::vehicle::LaneChangeAction::calculateWaypoints</a></p>
 <h3 id="function-calculateobstacle">function calculateObstacle<a class="headerlink" href="#function-calculateobstacle" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">virtual</span> <span class="k">const</span> <span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Obstacle</span> <span class="o">&gt;</span> <span class="n">calculateObstacle</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">WaypointsArray</span> <span class="o">&amp;</span> <span class="n">waypoints</span>
-<span class="p">)</span> <span class="o">=</span><span class="mi">0</span>
+<div class="highlight"><pre><span></span><code><span class="k">virtual</span><span class="w"> </span><span class="k">const</span><span class="w"> </span><span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="w"> </span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Obstacle</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">calculateObstacle</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">WaypointsArray</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">waypoints</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span><span class="o">=</span><span class="mi">0</span><span class="w"></span>
 </code></pre></div>
-<p><strong>Reimplemented by</strong>: <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1FollowFrontEntityAction#function-calculateobstacle">entity_behavior::vehicle::follow_lane_sequence::FollowFrontEntityAction::calculateObstacle</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1YieldAction#function-calculateobstacle">entity_behavior::vehicle::follow_lane_sequence::YieldAction::calculateObstacle</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1StopAtTrafficLightAction#function-calculateobstacle">entity_behavior::vehicle::follow_lane_sequence::StopAtTrafficLightAction::calculateObstacle</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1StopAtStopLineAction#function-calculateobstacle">entity_behavior::vehicle::follow_lane_sequence::StopAtStopLineAction::calculateObstacle</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1StopAtCrossingEntityAction#function-calculateobstacle">entity_behavior::vehicle::follow_lane_sequence::StopAtCrossingEntityAction::calculateObstacle</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1FollowLaneAction#function-calculateobstacle">entity_behavior::vehicle::follow_lane_sequence::FollowLaneAction::calculateObstacle</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1LaneChangeAction#function-calculateobstacle">entity_behavior::vehicle::LaneChangeAction::calculateObstacle</a></p>
+<p><strong>Reimplemented by</strong>: <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1FollowFrontEntityAction#function-calculateobstacle">entity_behavior::vehicle::follow_lane_sequence::FollowFrontEntityAction::calculateObstacle</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1YieldAction#function-calculateobstacle">entity_behavior::vehicle::follow_lane_sequence::YieldAction::calculateObstacle</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1StopAtTrafficLightAction#function-calculateobstacle">entity_behavior::vehicle::follow_lane_sequence::StopAtTrafficLightAction::calculateObstacle</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1StopAtStopLineAction#function-calculateobstacle">entity_behavior::vehicle::follow_lane_sequence::StopAtStopLineAction::calculateObstacle</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1StopAtCrossingEntityAction#function-calculateobstacle">entity_behavior::vehicle::follow_lane_sequence::StopAtCrossingEntityAction::calculateObstacle</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1MoveBackwardAction#function-calculateobstacle">entity_behavior::vehicle::follow_lane_sequence::MoveBackwardAction::calculateObstacle</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1follow__lane__sequence_1_1FollowLaneAction#function-calculateobstacle">entity_behavior::vehicle::follow_lane_sequence::FollowLaneAction::calculateObstacle</a>, <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1vehicle_1_1LaneChangeAction#function-calculateobstacle">entity_behavior::vehicle::LaneChangeAction::calculateObstacle</a></p>
 <h3 id="function-calculateentitystatusupdatedinworldframe">function calculateEntityStatusUpdatedInWorldFrame<a class="headerlink" href="#function-calculateentitystatusupdatedinworldframe" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="n">calculateEntityStatusUpdatedInWorldFrame</span><span class="p">(</span>
-    <span class="kt">double</span> <span class="n">target_speed</span>
-<span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span><span class="w"> </span><span class="n">calculateEntityStatusUpdatedInWorldFrame</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">target_speed</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 </code></pre></div>
 <h3 id="function-calculateentitystatusupdated">function calculateEntityStatusUpdated<a class="headerlink" href="#function-calculateentitystatusupdated" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="n">calculateEntityStatusUpdated</span><span class="p">(</span>
-    <span class="kt">double</span> <span class="n">target_speed</span>
-<span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span><span class="w"> </span><span class="n">calculateEntityStatusUpdated</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">target_speed</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 </code></pre></div>
 <h3 id="function-calculateentitystatusupdated_1">function calculateEntityStatusUpdated<a class="headerlink" href="#function-calculateentitystatusupdated_1" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="n">calculateEntityStatusUpdated</span><span class="p">(</span>
-    <span class="kt">double</span> <span class="n">target_speed</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">following_lanelets</span>
-<span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span><span class="w"> </span><span class="n">calculateEntityStatusUpdated</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">target_speed</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">following_lanelets</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 </code></pre></div>
 <h3 id="function-vehicleactionnode_1">function VehicleActionNode<a class="headerlink" href="#function-vehicleactionnode_1" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">VehicleActionNode</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">BT</span><span class="o">::</span><span class="n">NodeConfiguration</span> <span class="o">&amp;</span> <span class="n">config</span>
-<span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">VehicleActionNode</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">BT</span><span class="o">::</span><span class="n">NodeConfiguration</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">config</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 </code></pre></div>
 <h2 id="public-attributes-documentation">Public Attributes Documentation<a class="headerlink" href="#public-attributes-documentation" title="Permanent link">#</a></h2>
 <h3 id="variable-vehicle_parameters">variable vehicle_parameters<a class="headerlink" href="#variable-vehicle_parameters" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleParameters</span> <span class="n">vehicle_parameters</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">VehicleParameters</span><span class="w"> </span><span class="n">vehicle_parameters</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="variable-driver_model">variable driver_model<a class="headerlink" href="#variable-driver_model" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">DriverModel</span> <span class="n">driver_model</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">DriverModel</span><span class="w"> </span><span class="n">driver_model</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <hr />
-<p>Updated on 22 July 2021 at 00:08:00 UTC</p>
+<p>Updated on 31 August 2021 at 04:58:49 UTC</p>
                 
                   
                 
@@ -1132,10 +1152,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.56a63758.min.js"></script>
       
         <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       

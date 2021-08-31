@@ -10,7 +10,7 @@
       
       
       <link rel="icon" href="../../../../../image/icon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
     
     
       
@@ -18,10 +18,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.fe914879.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.be71726b.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.3f5d1f46.min.css">
         
       
     
@@ -269,6 +269,18 @@
     <li class="md-nav__item">
       <a href="../../../../../tutorials/RunWithDocker/" class="md-nav__link">
         Run with docker
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tutorials/RunTestScenarioWithDocker/" class="md-nav__link">
+        Run test scenario with Docker
       </a>
     </li>
   
@@ -592,6 +604,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../design/Metrics/" class="md-nav__link">
+        Metrics
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -637,7 +661,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../../etc/ContactUs/" class="md-nav__link">
-        Contact Infomation
+        Contact Information
       </a>
     </li>
   
@@ -775,31 +799,31 @@
 <span class="cp">#ifndef OPENSCENARIO_INTERPRETER__TYPE_TRAITS__HAS_STREAM_OUTPUT_OPERATOR_HPP_</span>
 <span class="cp">#define OPENSCENARIO_INTERPRETER__TYPE_TRAITS__HAS_STREAM_OUTPUT_OPERATOR_HPP_</span>
 
-<span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;openscenario_interpreter/type_traits/void_t.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;openscenario_interpreter/type_traits/void_t.hpp&gt;</span><span class="cp"></span>
 
-<span class="k">namespace</span> <span class="nn">openscenario_interpreter</span>
-<span class="p">{</span>
-<span class="kr">inline</span> <span class="k">namespace</span> <span class="nn">concepts</span>
-<span class="p">{</span>
-<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="p">,</span> <span class="k">typename</span> <span class="o">=</span> <span class="kt">void</span><span class="o">&gt;</span>
-<span class="k">struct</span> <span class="nc">HasStreamOutputOperator</span> <span class="o">:</span> <span class="k">public</span> <span class="n">std</span><span class="o">::</span><span class="n">false_type</span>
-<span class="p">{</span>
-<span class="p">};</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">openscenario_interpreter</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="kr">inline</span><span class="w"> </span><span class="k">namespace</span><span class="w"> </span><span class="nn">concepts</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="p">,</span><span class="w"> </span><span class="k">typename</span> <span class="o">=</span><span class="w"> </span><span class="kt">void</span><span class="o">&gt;</span><span class="w"></span>
+<span class="k">struct</span> <span class="nc">HasStreamOutputOperator</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">false_type</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 
-<span class="k">template</span> <span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span>
-<span class="k">struct</span> <span class="nc">HasStreamOutputOperator</span><span class="o">&lt;</span>
-  <span class="n">T</span><span class="p">,</span> <span class="n">void_t</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">declval</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span> <span class="o">&amp;&gt;</span><span class="p">()</span> <span class="o">&lt;&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">declval</span><span class="o">&lt;</span><span class="k">const</span> <span class="n">T</span> <span class="o">&amp;&gt;</span><span class="p">())</span><span class="o">&gt;&gt;</span>
-<span class="o">:</span> <span class="k">public</span> <span class="n">std</span><span class="o">::</span><span class="n">true_type</span>
-<span class="p">{</span>
-<span class="p">};</span>
-<span class="p">}</span>  <span class="c1">// namespace concepts</span>
-<span class="p">}</span>  <span class="c1">// namespace openscenario_interpreter</span>
+<span class="k">template</span><span class="w"> </span><span class="o">&lt;</span><span class="k">typename</span> <span class="nc">T</span><span class="o">&gt;</span><span class="w"></span>
+<span class="k">struct</span> <span class="nc">HasStreamOutputOperator</span><span class="o">&lt;</span><span class="w"></span>
+<span class="w">  </span><span class="n">T</span><span class="p">,</span><span class="w"> </span><span class="n">void_t</span><span class="o">&lt;</span><span class="k">decltype</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">declval</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">ostream</span><span class="w"> </span><span class="o">&amp;&gt;</span><span class="p">()</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">declval</span><span class="o">&lt;</span><span class="k">const</span><span class="w"> </span><span class="n">T</span><span class="w"> </span><span class="o">&amp;&gt;</span><span class="p">())</span><span class="o">&gt;&gt;</span><span class="w"></span>
+<span class="o">:</span><span class="w"> </span><span class="k">public</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">true_type</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace concepts</span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace openscenario_interpreter</span>
 
 <span class="cp">#endif  </span><span class="c1">// OPENSCENARIO_INTERPRETER__TYPE_TRAITS__HAS_STREAM_OUTPUT_OPERATOR_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 22 July 2021 at 00:08:03 UTC</p>
+<p>Updated on 31 August 2021 at 04:58:52 UTC</p>
                 
                   
                 
@@ -841,10 +865,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.56a63758.min.js"></script>
       
         <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       

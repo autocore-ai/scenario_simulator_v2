@@ -10,7 +10,7 @@
       
       
       <link rel="icon" href="../../../../../image/icon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
     
     
       
@@ -18,10 +18,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.fe914879.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.be71726b.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.3f5d1f46.min.css">
         
       
     
@@ -269,6 +269,18 @@
     <li class="md-nav__item">
       <a href="../../../../../tutorials/RunWithDocker/" class="md-nav__link">
         Run with docker
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tutorials/RunTestScenarioWithDocker/" class="md-nav__link">
+        Run test scenario with Docker
       </a>
     </li>
   
@@ -592,6 +604,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../design/Metrics/" class="md-nav__link">
+        Metrics
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -637,7 +661,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../../etc/ContactUs/" class="md-nav__link">
-        Contact Infomation
+        Contact Information
       </a>
     </li>
   
@@ -768,128 +792,129 @@
 <span class="cp">#ifndef SIMULATION_INTERFACE__ZMQ_MULTI_SERVER_HPP_</span>
 <span class="cp">#define SIMULATION_INTERFACE__ZMQ_MULTI_SERVER_HPP_</span>
 
-<span class="cp">#include</span> <span class="cpf">&lt;simulation_api_schema.pb.h&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;simulation_api_schema.pb.h&gt;</span><span class="cp"></span>
 
-<span class="cp">#include</span> <span class="cpf">&lt;functional&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;rclcpp/rclcpp.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;scenario_simulator_exception/exception.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;simulation_interface/constants.hpp&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;string&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;thread&gt;</span><span class="cp"></span>
-<span class="cp">#include</span> <span class="cpf">&lt;zmqpp/zmqpp.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;functional&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;rclcpp/rclcpp.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;scenario_simulator_exception/exception.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;simulation_interface/constants.hpp&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;string&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;thread&gt;</span><span class="cp"></span>
+<span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;zmqpp/zmqpp.hpp&gt;</span><span class="cp"></span>
 
-<span class="k">namespace</span> <span class="nn">zeromq</span>
-<span class="p">{</span>
-<span class="k">class</span> <span class="nc">MultiServer</span>
-<span class="p">{</span>
-<span class="k">public</span><span class="o">:</span>
-  <span class="k">explicit</span> <span class="n">MultiServer</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">simulation_interface</span><span class="o">::</span><span class="n">TransportProtocol</span> <span class="o">&amp;</span> <span class="n">protocol</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">simulation_interface</span><span class="o">::</span><span class="n">HostName</span> <span class="o">&amp;</span> <span class="n">hostname</span><span class="p">,</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span>
-      <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">InitializeRequest</span> <span class="o">&amp;</span><span class="p">,</span>
-      <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">InitializeResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
-      <span class="n">initialize_func</span><span class="p">,</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span>
-      <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateFrameRequest</span> <span class="o">&amp;</span><span class="p">,</span>
-      <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateFrameResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
-      <span class="n">update_frame_func</span><span class="p">,</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span>
-      <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateSensorFrameRequest</span> <span class="o">&amp;</span><span class="p">,</span>
-      <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateSensorFrameResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
-      <span class="n">update_sensor_frame_func</span><span class="p">,</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span>
-      <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnVehicleEntityRequest</span> <span class="o">&amp;</span><span class="p">,</span>
-      <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnVehicleEntityResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
-      <span class="n">spawn_vehicle_entity_func</span><span class="p">,</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span>
-      <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnPedestrianEntityRequest</span> <span class="o">&amp;</span><span class="p">,</span>
-      <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnPedestrianEntityResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
-      <span class="n">spawn_pedestrian_entity_func</span><span class="p">,</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span>
-      <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnMiscObjectEntityRequest</span> <span class="o">&amp;</span><span class="p">,</span>
-      <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnMiscObjectEntityResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
-      <span class="n">spawn_misc_object_entity_func</span><span class="p">,</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span>
-      <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">DespawnEntityRequest</span> <span class="o">&amp;</span><span class="p">,</span>
-      <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">DespawnEntityResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
-      <span class="n">despawn_entity_func</span><span class="p">,</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span>
-      <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateEntityStatusRequest</span> <span class="o">&amp;</span><span class="p">,</span>
-      <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateEntityStatusResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
-      <span class="n">update_entity_status_func</span><span class="p">,</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span>
-      <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">AttachLidarSensorRequest</span> <span class="o">&amp;</span><span class="p">,</span>
-      <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">AttachLidarSensorResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
-      <span class="n">attach_lidar_sensor_func</span><span class="p">,</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span>
-      <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">AttachDetectionSensorRequest</span> <span class="o">&amp;</span><span class="p">,</span>
-      <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">AttachDetectionSensorResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
-      <span class="n">attach_detection_sensor_func</span><span class="p">);</span>
+<span class="k">namespace</span><span class="w"> </span><span class="nn">zeromq</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">class</span> <span class="nc">MultiServer</span><span class="w"></span>
+<span class="p">{</span><span class="w"></span>
+<span class="k">public</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="k">explicit</span><span class="w"> </span><span class="n">MultiServer</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">simulation_interface</span><span class="o">::</span><span class="n">TransportProtocol</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">protocol</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">simulation_interface</span><span class="o">::</span><span class="n">HostName</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">hostname</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">InitializeRequest</span><span class="w"> </span><span class="o">&amp;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">InitializeResponse</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="n">initialize_func</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateFrameRequest</span><span class="w"> </span><span class="o">&amp;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateFrameResponse</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="n">update_frame_func</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateSensorFrameRequest</span><span class="w"> </span><span class="o">&amp;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateSensorFrameResponse</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="n">update_sensor_frame_func</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnVehicleEntityRequest</span><span class="w"> </span><span class="o">&amp;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnVehicleEntityResponse</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="n">spawn_vehicle_entity_func</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnPedestrianEntityRequest</span><span class="w"> </span><span class="o">&amp;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnPedestrianEntityResponse</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="n">spawn_pedestrian_entity_func</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnMiscObjectEntityRequest</span><span class="w"> </span><span class="o">&amp;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnMiscObjectEntityResponse</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="n">spawn_misc_object_entity_func</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">DespawnEntityRequest</span><span class="w"> </span><span class="o">&amp;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">DespawnEntityResponse</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="n">despawn_entity_func</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateEntityStatusRequest</span><span class="w"> </span><span class="o">&amp;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateEntityStatusResponse</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="n">update_entity_status_func</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">AttachLidarSensorRequest</span><span class="w"> </span><span class="o">&amp;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">AttachLidarSensorResponse</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="n">attach_lidar_sensor_func</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="w"></span>
+<span class="w">      </span><span class="k">const</span><span class="w"> </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">AttachDetectionSensorRequest</span><span class="w"> </span><span class="o">&amp;</span><span class="p">,</span><span class="w"></span>
+<span class="w">      </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">AttachDetectionSensorResponse</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">      </span><span class="n">attach_detection_sensor_func</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="o">~</span><span class="n">MultiServer</span><span class="p">();</span><span class="w"></span>
 
-<span class="k">private</span><span class="o">:</span>
-  <span class="kt">void</span> <span class="n">poll</span><span class="p">();</span>
-  <span class="kt">void</span> <span class="nf">start_poll</span><span class="p">();</span>
-  <span class="n">std</span><span class="o">::</span><span class="kr">thread</span> <span class="n">thread_</span><span class="p">;</span>
-  <span class="k">const</span> <span class="n">zmqpp</span><span class="o">::</span><span class="n">context</span> <span class="n">context_</span><span class="p">;</span>
-  <span class="k">const</span> <span class="n">zmqpp</span><span class="o">::</span><span class="n">socket_type</span> <span class="n">type_</span><span class="p">;</span>
-  <span class="n">zmqpp</span><span class="o">::</span><span class="n">poller</span> <span class="n">poller_</span><span class="p">;</span>
-  <span class="n">zmqpp</span><span class="o">::</span><span class="n">socket</span> <span class="n">initialize_sock_</span><span class="p">;</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">InitializeRequest</span> <span class="o">&amp;</span><span class="p">,</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">InitializeResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
-    <span class="n">initialize_func_</span><span class="p">;</span>
-  <span class="n">zmqpp</span><span class="o">::</span><span class="n">socket</span> <span class="n">update_frame_sock_</span><span class="p">;</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateFrameRequest</span> <span class="o">&amp;</span><span class="p">,</span>
-    <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateFrameResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
-    <span class="n">update_frame_func_</span><span class="p">;</span>
-  <span class="n">zmqpp</span><span class="o">::</span><span class="n">socket</span> <span class="n">update_sensor_frame_sock_</span><span class="p">;</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateSensorFrameRequest</span> <span class="o">&amp;</span><span class="p">,</span>
-    <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateSensorFrameResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
-    <span class="n">update_sensor_frame_func_</span><span class="p">;</span>
-  <span class="n">zmqpp</span><span class="o">::</span><span class="n">socket</span> <span class="n">spawn_vehicle_entity_sock_</span><span class="p">;</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnVehicleEntityRequest</span> <span class="o">&amp;</span><span class="p">,</span>
-    <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnVehicleEntityResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
-    <span class="n">spawn_vehicle_entity_func_</span><span class="p">;</span>
-  <span class="n">zmqpp</span><span class="o">::</span><span class="n">socket</span> <span class="n">spawn_pedestrian_entity_sock_</span><span class="p">;</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnPedestrianEntityRequest</span> <span class="o">&amp;</span><span class="p">,</span>
-    <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnPedestrianEntityResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
-    <span class="n">spawn_pedestrian_entity_func_</span><span class="p">;</span>
-  <span class="n">zmqpp</span><span class="o">::</span><span class="n">socket</span> <span class="n">spawn_misc_object_entity_sock_</span><span class="p">;</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnMiscObjectEntityRequest</span> <span class="o">&amp;</span><span class="p">,</span>
-    <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnMiscObjectEntityResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
-    <span class="n">spawn_misc_object_entity_func_</span><span class="p">;</span>
-  <span class="n">zmqpp</span><span class="o">::</span><span class="n">socket</span> <span class="n">despawn_entity_sock_</span><span class="p">;</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">DespawnEntityRequest</span> <span class="o">&amp;</span><span class="p">,</span>
-    <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">DespawnEntityResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
-    <span class="n">despawn_entity_func_</span><span class="p">;</span>
-  <span class="n">zmqpp</span><span class="o">::</span><span class="n">socket</span> <span class="n">update_entity_status_sock_</span><span class="p">;</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateEntityStatusRequest</span> <span class="o">&amp;</span><span class="p">,</span>
-    <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateEntityStatusResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
-    <span class="n">update_entity_status_func_</span><span class="p">;</span>
-  <span class="n">zmqpp</span><span class="o">::</span><span class="n">socket</span> <span class="n">attach_lidar_sensor_sock_</span><span class="p">;</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">AttachLidarSensorRequest</span> <span class="o">&amp;</span><span class="p">,</span>
-    <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">AttachLidarSensorResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
-    <span class="n">attach_lidar_sensor_func_</span><span class="p">;</span>
-  <span class="n">zmqpp</span><span class="o">::</span><span class="n">socket</span> <span class="n">attach_detection_sensor_sock_</span><span class="p">;</span>
-  <span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">AttachDetectionSensorRequest</span> <span class="o">&amp;</span><span class="p">,</span>
-    <span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">AttachDetectionSensorResponse</span> <span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span>
-    <span class="n">attach_detection_sensor_func_</span><span class="p">;</span>
-<span class="p">};</span>
-<span class="p">}</span>  <span class="c1">// namespace zeromq</span>
+<span class="k">private</span><span class="o">:</span><span class="w"></span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="n">poll</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="kt">void</span><span class="w"> </span><span class="nf">start_poll</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="kr">thread</span><span class="w"> </span><span class="n">thread_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">zmqpp</span><span class="o">::</span><span class="n">context</span><span class="w"> </span><span class="n">context_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">const</span><span class="w"> </span><span class="n">zmqpp</span><span class="o">::</span><span class="n">socket_type</span><span class="w"> </span><span class="n">type_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">zmqpp</span><span class="o">::</span><span class="n">poller</span><span class="w"> </span><span class="n">poller_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">zmqpp</span><span class="o">::</span><span class="n">socket</span><span class="w"> </span><span class="n">initialize_sock_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">InitializeRequest</span><span class="w"> </span><span class="o">&amp;</span><span class="p">,</span><span class="w"> </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">InitializeResponse</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="n">initialize_func_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">zmqpp</span><span class="o">::</span><span class="n">socket</span><span class="w"> </span><span class="n">update_frame_sock_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateFrameRequest</span><span class="w"> </span><span class="o">&amp;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateFrameResponse</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="n">update_frame_func_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">zmqpp</span><span class="o">::</span><span class="n">socket</span><span class="w"> </span><span class="n">update_sensor_frame_sock_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateSensorFrameRequest</span><span class="w"> </span><span class="o">&amp;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateSensorFrameResponse</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="n">update_sensor_frame_func_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">zmqpp</span><span class="o">::</span><span class="n">socket</span><span class="w"> </span><span class="n">spawn_vehicle_entity_sock_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnVehicleEntityRequest</span><span class="w"> </span><span class="o">&amp;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnVehicleEntityResponse</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="n">spawn_vehicle_entity_func_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">zmqpp</span><span class="o">::</span><span class="n">socket</span><span class="w"> </span><span class="n">spawn_pedestrian_entity_sock_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnPedestrianEntityRequest</span><span class="w"> </span><span class="o">&amp;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnPedestrianEntityResponse</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="n">spawn_pedestrian_entity_func_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">zmqpp</span><span class="o">::</span><span class="n">socket</span><span class="w"> </span><span class="n">spawn_misc_object_entity_sock_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnMiscObjectEntityRequest</span><span class="w"> </span><span class="o">&amp;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">SpawnMiscObjectEntityResponse</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="n">spawn_misc_object_entity_func_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">zmqpp</span><span class="o">::</span><span class="n">socket</span><span class="w"> </span><span class="n">despawn_entity_sock_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">DespawnEntityRequest</span><span class="w"> </span><span class="o">&amp;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">DespawnEntityResponse</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="n">despawn_entity_func_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">zmqpp</span><span class="o">::</span><span class="n">socket</span><span class="w"> </span><span class="n">update_entity_status_sock_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateEntityStatusRequest</span><span class="w"> </span><span class="o">&amp;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">UpdateEntityStatusResponse</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="n">update_entity_status_func_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">zmqpp</span><span class="o">::</span><span class="n">socket</span><span class="w"> </span><span class="n">attach_lidar_sensor_sock_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">AttachLidarSensorRequest</span><span class="w"> </span><span class="o">&amp;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">AttachLidarSensorResponse</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="n">attach_lidar_sensor_func_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">zmqpp</span><span class="o">::</span><span class="n">socket</span><span class="w"> </span><span class="n">attach_detection_sensor_sock_</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="n">std</span><span class="o">::</span><span class="n">function</span><span class="o">&lt;</span><span class="kt">void</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">AttachDetectionSensorRequest</span><span class="w"> </span><span class="o">&amp;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="n">simulation_api_schema</span><span class="o">::</span><span class="n">AttachDetectionSensorResponse</span><span class="w"> </span><span class="o">&amp;</span><span class="p">)</span><span class="o">&gt;</span><span class="w"></span>
+<span class="w">    </span><span class="n">attach_detection_sensor_func_</span><span class="p">;</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
+<span class="p">}</span><span class="w">  </span><span class="c1">// namespace zeromq</span>
 
 <span class="cp">#endif  </span><span class="c1">// SIMULATION_INTERFACE__ZMQ_MULTI_SERVER_HPP_</span>
 </code></pre></div>
 <hr />
-<p>Updated on 22 July 2021 at 00:08:01 UTC</p>
+<p>Updated on 31 August 2021 at 04:58:50 UTC</p>
                 
                   
                 
@@ -931,10 +956,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.56a63758.min.js"></script>
       
         <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       

@@ -10,7 +10,7 @@
       
       
       <link rel="icon" href="../../../../../image/icon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
     
     
       
@@ -18,10 +18,10 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.fe914879.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.be71726b.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.3f5d1f46.min.css">
         
       
     
@@ -269,6 +269,18 @@
     <li class="md-nav__item">
       <a href="../../../../../tutorials/RunWithDocker/" class="md-nav__link">
         Run with docker
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../tutorials/RunTestScenarioWithDocker/" class="md-nav__link">
+        Run test scenario with Docker
       </a>
     </li>
   
@@ -592,6 +604,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../../design/Metrics/" class="md-nav__link">
+        Metrics
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -637,7 +661,7 @@
   
     <li class="md-nav__item">
       <a href="../../../../../etc/ContactUs/" class="md-nav__link">
-        Contact Infomation
+        Contact Information
       </a>
     </li>
   
@@ -769,8 +793,15 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#function-getfrontentitystatus" class="md-nav__link">
-    function getFrontEntityStatus
+  <a href="#function-getfrontentityname" class="md-nav__link">
+    function getFrontEntityName
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-getentitystatus" class="md-nav__link">
+    function getEntityStatus
   </a>
   
 </li>
@@ -778,6 +809,13 @@
           <li class="md-nav__item">
   <a href="#function-getdistancetotrafficlightstopline" class="md-nav__link">
     function getDistanceToTrafficLightStopLine
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#function-getdistancetotargetentitypolygon" class="md-nav__link">
+    function getDistanceToTargetEntityPolygon
   </a>
   
 </li>
@@ -799,27 +837,6 @@
           <li class="md-nav__item">
   <a href="#function-getdistancetoconflictingentity" class="md-nav__link">
     function getDistanceToConflictingEntity
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#function-getdistancetoconflictingentity_1" class="md-nav__link">
-    function getDistanceToConflictingEntity
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#function-getconflictingentitystatusonroute" class="md-nav__link">
-    function getConflictingEntityStatusOnRoute
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#function-getconflictingentitystatus" class="md-nav__link">
-    function getConflictingEntityStatus
   </a>
   
 </li>
@@ -1020,8 +1037,12 @@
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1ActionNode#function-gethorizon">getHorizon</a></strong>() const</td>
 </tr>
 <tr>
-<td>boost::optional&lt; openscenario_msgs::msg::EntityStatus &gt;</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1ActionNode#function-getfrontentitystatus">getFrontEntityStatus</a></strong>()</td>
+<td>boost::optional&lt; std::string &gt;</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1ActionNode#function-getfrontentityname">getFrontEntityName</a></strong>(const <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1math_1_1CatmullRomSpline">traffic_simulator::math::CatmullRomSpline</a> &amp; spline)</td>
+</tr>
+<tr>
+<td>openscenario_msgs::msg::EntityStatus</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1ActionNode#function-getentitystatus">getEntityStatus</a></strong>(const std::string target_name) const</td>
 </tr>
 <tr>
 <td>boost::optional&lt; double &gt;</td>
@@ -1029,27 +1050,19 @@
 </tr>
 <tr>
 <td>boost::optional&lt; double &gt;</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1ActionNode#function-getdistancetotargetentitypolygon">getDistanceToTargetEntityPolygon</a></strong>(const <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1math_1_1CatmullRomSpline">traffic_simulator::math::CatmullRomSpline</a> &amp; spline, const std::string target_name)</td>
+</tr>
+<tr>
+<td>boost::optional&lt; double &gt;</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1ActionNode#function-getdistancetostopline">getDistanceToStopLine</a></strong>(const std::vector&lt; std::int64_t &gt; &amp; route_lanelets, const std::vector&lt; geometry_msgs::msg::Point &gt; &amp; waypoints)</td>
 </tr>
 <tr>
 <td>boost::optional&lt; double &gt;</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1ActionNode#function-getdistancetofrontentity">getDistanceToFrontEntity</a></strong>()</td>
-</tr>
-<tr>
-<td>boost::optional&lt; double &gt;</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1ActionNode#function-getdistancetoconflictingentity">getDistanceToConflictingEntity</a></strong>(const std::vector&lt; std::int64_t &gt; &amp; following_lanelets) const</td>
+<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1ActionNode#function-getdistancetofrontentity">getDistanceToFrontEntity</a></strong>(const <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1math_1_1CatmullRomSpline">traffic_simulator::math::CatmullRomSpline</a> &amp; spline)</td>
 </tr>
 <tr>
 <td>boost::optional&lt; double &gt;</td>
 <td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1ActionNode#function-getdistancetoconflictingentity">getDistanceToConflictingEntity</a></strong>(const std::vector&lt; std::int64_t &gt; &amp; route_lanelets, const <a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classtraffic__simulator_1_1math_1_1CatmullRomSpline">traffic_simulator::math::CatmullRomSpline</a> &amp; spline)</td>
-</tr>
-<tr>
-<td>std::vector&lt; openscenario_msgs::msg::EntityStatus &gt;</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1ActionNode#function-getconflictingentitystatusonroute">getConflictingEntityStatusOnRoute</a></strong>(const std::vector&lt; std::int64_t &gt; &amp; route_lanelets) const</td>
-</tr>
-<tr>
-<td>boost::optional&lt; openscenario_msgs::msg::EntityStatus &gt;</td>
-<td><strong><a href="/scenario_simulator_v2/package/traffic_simulator/markdown/Classes/classentity__behavior_1_1ActionNode#function-getconflictingentitystatus">getConflictingEntityStatus</a></strong>(const std::vector&lt; std::int64_t &gt; &amp; following_lanelets) const</td>
 </tr>
 <tr>
 <td>void</td>
@@ -1130,135 +1143,135 @@
 </table>
 <h2 id="public-functions-documentation">Public Functions Documentation<a class="headerlink" href="#public-functions-documentation" title="Permanent link">#</a></h2>
 <h3 id="function-actionnode">function ~ActionNode<a class="headerlink" href="#function-actionnode" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="o">~</span><span class="n">ActionNode</span><span class="p">()</span> <span class="k">override</span> <span class="o">=</span><span class="k">default</span>
+<div class="highlight"><pre><span></span><code><span class="o">~</span><span class="n">ActionNode</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="w"> </span><span class="o">=</span><span class="k">default</span><span class="w"></span>
 </code></pre></div>
 <h3 id="function-stopatendofroad">function stopAtEndOfRoad<a class="headerlink" href="#function-stopatendofroad" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="n">stopAtEndOfRoad</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span><span class="w"> </span><span class="n">stopAtEndOfRoad</span><span class="p">()</span><span class="w"></span>
 </code></pre></div>
 <h3 id="function-providedports">function providedPorts<a class="headerlink" href="#function-providedports" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="k">static</span> <span class="kr">inline</span> <span class="n">BT</span><span class="o">::</span><span class="n">PortsList</span> <span class="n">providedPorts</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="k">static</span><span class="w"> </span><span class="kr">inline</span><span class="w"> </span><span class="n">BT</span><span class="o">::</span><span class="n">PortsList</span><span class="w"> </span><span class="n">providedPorts</span><span class="p">()</span><span class="w"></span>
 </code></pre></div>
 <h3 id="function-halt">function halt<a class="headerlink" href="#function-halt" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kr">inline</span> <span class="kt">void</span> <span class="n">halt</span><span class="p">()</span> <span class="k">override</span>
+<div class="highlight"><pre><span></span><code><span class="kr">inline</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="n">halt</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="w"></span>
 </code></pre></div>
 <p>You don't need to override this. </p>
 <h3 id="function-getyieldstopdistance">function getYieldStopDistance<a class="headerlink" href="#function-getyieldstopdistance" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span> <span class="kt">double</span> <span class="o">&gt;</span> <span class="n">getYieldStopDistance</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">following_lanelets</span>
-<span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">getYieldStopDistance</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">following_lanelets</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 </code></pre></div>
 <h3 id="function-getrightofwayentities">function getRightOfWayEntities<a class="headerlink" href="#function-getrightofwayentities" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="o">&gt;</span> <span class="n">getRightOfWayEntities</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">getRightOfWayEntities</span><span class="p">()</span><span class="w"></span>
 </code></pre></div>
 <h3 id="function-getrightofwayentities_1">function getRightOfWayEntities<a class="headerlink" href="#function-getrightofwayentities_1" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="o">&gt;</span> <span class="n">getRightOfWayEntities</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">following_lanelets</span>
-<span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">getRightOfWayEntities</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">following_lanelets</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 </code></pre></div>
 <h3 id="function-getotherentitystatus">function getOtherEntityStatus<a class="headerlink" href="#function-getotherentitystatus" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="o">&gt;</span> <span class="n">getOtherEntityStatus</span><span class="p">(</span>
-    <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="n">lanelet_id</span>
-<span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">getOtherEntityStatus</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span><span class="w"> </span><span class="n">lanelet_id</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 </code></pre></div>
 <h3 id="function-gethorizon">function getHorizon<a class="headerlink" href="#function-gethorizon" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kt">double</span> <span class="n">getHorizon</span><span class="p">()</span> <span class="k">const</span>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">getHorizon</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
 </code></pre></div>
-<h3 id="function-getfrontentitystatus">function getFrontEntityStatus<a class="headerlink" href="#function-getfrontentitystatus" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="o">&gt;</span> <span class="n">getFrontEntityStatus</span><span class="p">()</span>
+<h3 id="function-getfrontentityname">function getFrontEntityName<a class="headerlink" href="#function-getfrontentityname" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">getFrontEntityName</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">CatmullRomSpline</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">spline</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<h3 id="function-getentitystatus">function getEntityStatus<a class="headerlink" href="#function-getentitystatus" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span><span class="w"> </span><span class="n">getEntityStatus</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">target_name</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
 </code></pre></div>
 <h3 id="function-getdistancetotrafficlightstopline">function getDistanceToTrafficLightStopLine<a class="headerlink" href="#function-getdistancetotrafficlightstopline" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span> <span class="kt">double</span> <span class="o">&gt;</span> <span class="n">getDistanceToTrafficLightStopLine</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">route_lanelets</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">waypoints</span>
-<span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">getDistanceToTrafficLightStopLine</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">route_lanelets</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">waypoints</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
+</code></pre></div>
+<h3 id="function-getdistancetotargetentitypolygon">function getDistanceToTargetEntityPolygon<a class="headerlink" href="#function-getdistancetotargetentitypolygon" title="Permanent link">#</a></h3>
+<div class="highlight"><pre><span></span><code><span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">getDistanceToTargetEntityPolygon</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">CatmullRomSpline</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">spline</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">target_name</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 </code></pre></div>
 <h3 id="function-getdistancetostopline">function getDistanceToStopLine<a class="headerlink" href="#function-getdistancetostopline" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span> <span class="kt">double</span> <span class="o">&gt;</span> <span class="n">getDistanceToStopLine</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">route_lanelets</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">waypoints</span>
-<span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">getDistanceToStopLine</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">route_lanelets</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">geometry_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">Point</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">waypoints</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 </code></pre></div>
 <h3 id="function-getdistancetofrontentity">function getDistanceToFrontEntity<a class="headerlink" href="#function-getdistancetofrontentity" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span> <span class="kt">double</span> <span class="o">&gt;</span> <span class="n">getDistanceToFrontEntity</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">getDistanceToFrontEntity</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">CatmullRomSpline</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">spline</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 </code></pre></div>
 <h3 id="function-getdistancetoconflictingentity">function getDistanceToConflictingEntity<a class="headerlink" href="#function-getdistancetoconflictingentity" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span> <span class="kt">double</span> <span class="o">&gt;</span> <span class="n">getDistanceToConflictingEntity</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">following_lanelets</span>
-<span class="p">)</span> <span class="k">const</span>
-</code></pre></div>
-<h3 id="function-getdistancetoconflictingentity_1">function getDistanceToConflictingEntity<a class="headerlink" href="#function-getdistancetoconflictingentity_1" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span> <span class="kt">double</span> <span class="o">&gt;</span> <span class="n">getDistanceToConflictingEntity</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">route_lanelets</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">CatmullRomSpline</span> <span class="o">&amp;</span> <span class="n">spline</span>
-<span class="p">)</span>
-</code></pre></div>
-<h3 id="function-getconflictingentitystatusonroute">function getConflictingEntityStatusOnRoute<a class="headerlink" href="#function-getconflictingentitystatusonroute" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="o">&gt;</span> <span class="n">getConflictingEntityStatusOnRoute</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">route_lanelets</span>
-<span class="p">)</span> <span class="k">const</span>
-</code></pre></div>
-<h3 id="function-getconflictingentitystatus">function getConflictingEntityStatus<a class="headerlink" href="#function-getconflictingentitystatus" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="o">&gt;</span> <span class="n">getConflictingEntityStatus</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">following_lanelets</span>
-<span class="p">)</span> <span class="k">const</span>
+<div class="highlight"><pre><span></span><code><span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">getDistanceToConflictingEntity</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">route_lanelets</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">math</span><span class="o">::</span><span class="n">CatmullRomSpline</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">spline</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 </code></pre></div>
 <h3 id="function-getblackboardvalues">function getBlackBoardValues<a class="headerlink" href="#function-getblackboardvalues" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kt">void</span> <span class="n">getBlackBoardValues</span><span class="p">()</span>
+<div class="highlight"><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="n">getBlackBoardValues</span><span class="p">()</span><span class="w"></span>
 </code></pre></div>
 <h3 id="function-foundconflictingentity">function foundConflictingEntity<a class="headerlink" href="#function-foundconflictingentity" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kt">bool</span> <span class="n">foundConflictingEntity</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="o">&gt;</span> <span class="o">&amp;</span> <span class="n">following_lanelets</span>
-<span class="p">)</span> <span class="k">const</span>
+<div class="highlight"><pre><span></span><code><span class="kt">bool</span><span class="w"> </span><span class="n">foundConflictingEntity</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">following_lanelets</span><span class="w"></span>
+<span class="p">)</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
 </code></pre></div>
 <h3 id="function-executetick">function executeTick<a class="headerlink" href="#function-executetick" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">BT</span><span class="o">::</span><span class="n">NodeStatus</span> <span class="n">executeTick</span><span class="p">()</span> <span class="k">override</span>
+<div class="highlight"><pre><span></span><code><span class="n">BT</span><span class="o">::</span><span class="n">NodeStatus</span><span class="w"> </span><span class="n">executeTick</span><span class="p">()</span><span class="w"> </span><span class="k">override</span><span class="w"></span>
 </code></pre></div>
 <p>throws if the derived class return RUNNING. </p>
 <h3 id="function-calculatestopdistance">function calculateStopDistance<a class="headerlink" href="#function-calculatestopdistance" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kt">double</span> <span class="n">calculateStopDistance</span><span class="p">()</span> <span class="k">const</span>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">calculateStopDistance</span><span class="p">()</span><span class="w"> </span><span class="k">const</span><span class="w"></span>
 </code></pre></div>
 <h3 id="function-actionnode_1">function ActionNode<a class="headerlink" href="#function-actionnode_1" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">ActionNode</span><span class="p">(</span>
-    <span class="k">const</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="o">&amp;</span> <span class="n">name</span><span class="p">,</span>
-    <span class="k">const</span> <span class="n">BT</span><span class="o">::</span><span class="n">NodeConfiguration</span> <span class="o">&amp;</span> <span class="n">config</span>
-<span class="p">)</span>
+<div class="highlight"><pre><span></span><code><span class="n">ActionNode</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">name</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="k">const</span><span class="w"> </span><span class="n">BT</span><span class="o">::</span><span class="n">NodeConfiguration</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">config</span><span class="w"></span>
+<span class="p">)</span><span class="w"></span>
 </code></pre></div>
 <h2 id="public-attributes-documentation">Public Attributes Documentation<a class="headerlink" href="#public-attributes-documentation" title="Permanent link">#</a></h2>
 <h3 id="variable-updated_status">variable updated_status<a class="headerlink" href="#variable-updated_status" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="n">updated_status</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span><span class="w"> </span><span class="n">updated_status</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="variable-traffic_light_manager">variable traffic_light_manager<a class="headerlink" href="#variable-traffic_light_manager" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span> <span class="n">traffic_simulator</span><span class="o">::</span><span class="n">TrafficLightManager</span> <span class="o">&gt;</span> <span class="n">traffic_light_manager</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">traffic_simulator</span><span class="o">::</span><span class="n">TrafficLightManager</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">traffic_light_manager</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="variable-target_speed">variable target_speed<a class="headerlink" href="#variable-target_speed" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span> <span class="kt">double</span> <span class="o">&gt;</span> <span class="n">target_speed</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="n">boost</span><span class="o">::</span><span class="n">optional</span><span class="o">&lt;</span><span class="w"> </span><span class="kt">double</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">target_speed</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="variable-step_time">variable step_time<a class="headerlink" href="#variable-step_time" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kt">double</span> <span class="n">step_time</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">step_time</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="variable-route_lanelets">variable route_lanelets<a class="headerlink" href="#variable-route_lanelets" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span> <span class="o">&gt;</span> <span class="n">route_lanelets</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="kt">int64_t</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">route_lanelets</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="variable-request">variable request<a class="headerlink" href="#variable-request" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">string</span> <span class="n">request</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="w"> </span><span class="n">request</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="variable-other_entity_status">variable other_entity_status<a class="headerlink" href="#variable-other_entity_status" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="o">&gt;</span> <span class="n">other_entity_status</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">other_entity_status</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="variable-hdmap_utils">variable hdmap_utils<a class="headerlink" href="#variable-hdmap_utils" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span> <span class="n">hdmap_utils</span><span class="o">::</span><span class="n">HdMapUtils</span> <span class="o">&gt;</span> <span class="n">hdmap_utils</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">shared_ptr</span><span class="o">&lt;</span><span class="w"> </span><span class="n">hdmap_utils</span><span class="o">::</span><span class="n">HdMapUtils</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">hdmap_utils</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="variable-entity_type_list">variable entity_type_list<a class="headerlink" href="#variable-entity_type_list" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span> <span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span> <span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityType</span> <span class="o">&gt;</span> <span class="n">entity_type_list</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="n">std</span><span class="o">::</span><span class="n">unordered_map</span><span class="o">&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">string</span><span class="p">,</span><span class="w"> </span><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityType</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="n">entity_type_list</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="variable-entity_status">variable entity_status<a class="headerlink" href="#variable-entity_status" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span> <span class="n">entity_status</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="n">openscenario_msgs</span><span class="o">::</span><span class="n">msg</span><span class="o">::</span><span class="n">EntityStatus</span><span class="w"> </span><span class="n">entity_status</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <h3 id="variable-current_time">variable current_time<a class="headerlink" href="#variable-current_time" title="Permanent link">#</a></h3>
-<div class="highlight"><pre><span></span><code><span class="kt">double</span> <span class="n">current_time</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="kt">double</span><span class="w"> </span><span class="n">current_time</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <hr />
-<p>Updated on 22 July 2021 at 00:08:00 UTC</p>
+<p>Updated on 31 August 2021 at 04:58:49 UTC</p>
                 
                   
                 
@@ -1300,10 +1313,10 @@
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../../../../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../../../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
     
     
-      <script src="../../../../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.56a63758.min.js"></script>
       
         <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       

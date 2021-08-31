@@ -11,450 +11,445 @@
     <includes local="no">unordered_map</includes>
     <includes local="no">vector</includes>
     <incdepgraph>
-      <node id="5312">
+      <node id="5615">
         <label>scenario_simulator_exception/exception.hpp</label>
       </node>
-      <node id="5361">
+      <node id="5663">
         <label>traffic_simulator/traffic_lights/traffic_light_state.hpp</label>
         <link refid="traffic__light__state_8hpp_source"/>
-        <childnode refid="5362" relation="include">
+        <childnode refid="5664" relation="include">
         </childnode>
-        <childnode refid="5363" relation="include">
+        <childnode refid="5665" relation="include">
         </childnode>
-        <childnode refid="5364" relation="include">
+        <childnode refid="5666" relation="include">
         </childnode>
       </node>
-      <node id="5368">
+      <node id="5670">
         <label>iomanip</label>
       </node>
-      <node id="5310">
+      <node id="5613">
         <label>queue</label>
       </node>
-      <node id="5309">
+      <node id="5612">
         <label>limits</label>
       </node>
-      <node id="5341">
+      <node id="5644">
         <label>geometry_msgs/msg/pose_stamped.hpp</label>
       </node>
-      <node id="5321">
+      <node id="5624">
         <label>openscenario_msgs/msg/entity_type.hpp</label>
       </node>
-      <node id="5374">
+      <node id="5676">
         <label>std_msgs/msg/color_rgba.hpp</label>
       </node>
-      <node id="5340">
+      <node id="5643">
         <label>geographic_msgs/msg/geo_point.hpp</label>
       </node>
-      <node id="5324">
+      <node id="5627">
         <label>openscenario_msgs/msg/waypoints_array.hpp</label>
       </node>
-      <node id="5333">
+      <node id="5636">
         <label>lanelet2_routing/RoutingGraph.h</label>
       </node>
-      <node id="5375">
+      <node id="5677">
         <label>traffic_simulator/traffic_lights/traffic_light_phase.hpp</label>
         <link refid="traffic__light__phase_8hpp_source"/>
-        <childnode refid="5309" relation="include">
+        <childnode refid="5612" relation="include">
         </childnode>
-        <childnode refid="5312" relation="include">
+        <childnode refid="5615" relation="include">
         </childnode>
-        <childnode refid="5325" relation="include">
+        <childnode refid="5628" relation="include">
         </childnode>
-        <childnode refid="5359" relation="include">
+        <childnode refid="5661" relation="include">
         </childnode>
-        <childnode refid="5358" relation="include">
+        <childnode refid="5660" relation="include">
         </childnode>
       </node>
-      <node id="5328">
+      <node id="5631">
         <label>lanelet2_core/geometry/Lanelet.h</label>
       </node>
-      <node id="5367">
+      <node id="5669">
         <label>autoware_perception_msgs/msg/traffic_light_state_array.hpp</label>
       </node>
-      <node id="5320">
+      <node id="5623">
         <label>openscenario_msgs/msg/entity_status.hpp</label>
       </node>
-      <node id="5362">
+      <node id="5664">
         <label>autoware_perception_msgs/msg/lamp_state.hpp</label>
       </node>
-      <node id="5354">
+      <node id="5657">
         <label>geometry_msgs/msg/pose.hpp</label>
       </node>
-      <node id="5323">
+      <node id="5626">
         <label>openscenario_msgs/msg/vehicle_parameters.hpp</label>
       </node>
-      <node id="5308">
+      <node id="5611">
         <label>/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/entity/entity_base.cpp</label>
         <link refid="entity__base_8cpp"/>
-        <childnode refid="5309" relation="include">
+        <childnode refid="5612" relation="include">
         </childnode>
-        <childnode refid="5310" relation="include">
+        <childnode refid="5613" relation="include">
         </childnode>
-        <childnode refid="5311" relation="include">
+        <childnode refid="5614" relation="include">
         </childnode>
-        <childnode refid="5312" relation="include">
+        <childnode refid="5615" relation="include">
         </childnode>
-        <childnode refid="5313" relation="include">
+        <childnode refid="5616" relation="include">
         </childnode>
-        <childnode refid="5314" relation="include">
+        <childnode refid="5617" relation="include">
         </childnode>
-        <childnode refid="5360" relation="include">
+        <childnode refid="5662" relation="include">
         </childnode>
-        <childnode refid="5358" relation="include">
+        <childnode refid="5660" relation="include">
         </childnode>
       </node>
-      <node id="5372">
+      <node id="5674">
         <label>cassert</label>
       </node>
-      <node id="5364">
+      <node id="5666">
         <label>stdexcept</label>
       </node>
-      <node id="5356">
-        <label>openscenario_msgs/msg/hermite_curve.hpp</label>
-      </node>
-      <node id="5313">
+      <node id="5616">
         <label>string</label>
       </node>
-      <node id="5322">
+      <node id="5625">
         <label>openscenario_msgs/msg/obstacle.hpp</label>
       </node>
-      <node id="5344">
+      <node id="5647">
         <label>lanelet2_extension_psim/utility/utilities.hpp</label>
       </node>
-      <node id="5346">
+      <node id="5649">
         <label>traffic_simulator/hdmap_utils/cache.hpp</label>
         <link refid="cache_8hpp_source"/>
-        <childnode refid="5316" relation="include">
+        <childnode refid="5619" relation="include">
         </childnode>
-        <childnode refid="5347" relation="include">
+        <childnode refid="5650" relation="include">
         </childnode>
-        <childnode refid="5348" relation="include">
+        <childnode refid="5651" relation="include">
         </childnode>
-        <childnode refid="5312" relation="include">
+        <childnode refid="5615" relation="include">
         </childnode>
-        <childnode refid="5349" relation="include">
+        <childnode refid="5652" relation="include">
         </childnode>
-        <childnode refid="5360" relation="include">
+        <childnode refid="5662" relation="include">
         </childnode>
-        <childnode refid="5358" relation="include">
+        <childnode refid="5660" relation="include">
         </childnode>
       </node>
-      <node id="5345">
+      <node id="5648">
         <label>map</label>
       </node>
-      <node id="5352">
+      <node id="5654">
         <label>traffic_simulator/math/hermite_curve.hpp</label>
         <link refid="hermite__curve_8hpp_source"/>
-        <childnode refid="5353" relation="include">
+        <childnode refid="5655" relation="include">
         </childnode>
-        <childnode refid="5316" relation="include">
+        <childnode refid="5656" relation="include">
         </childnode>
-        <childnode refid="5347" relation="include">
+        <childnode refid="5619" relation="include">
         </childnode>
-        <childnode refid="5354" relation="include">
+        <childnode refid="5650" relation="include">
         </childnode>
-        <childnode refid="5355" relation="include">
+        <childnode refid="5657" relation="include">
         </childnode>
-        <childnode refid="5356" relation="include">
+        <childnode refid="5658" relation="include">
         </childnode>
-        <childnode refid="5357" relation="include">
+        <childnode refid="5659" relation="include">
         </childnode>
-        <childnode refid="5358" relation="include">
+        <childnode refid="5660" relation="include">
         </childnode>
       </node>
-      <node id="5371">
+      <node id="5673">
         <label>traffic_simulator/color_utils/color_utils.hpp</label>
         <link refid="color__utils_8hpp_source"/>
-        <childnode refid="5372" relation="include">
+        <childnode refid="5674" relation="include">
         </childnode>
-        <childnode refid="5373" relation="include">
+        <childnode refid="5675" relation="include">
         </childnode>
-        <childnode refid="5345" relation="include">
+        <childnode refid="5648" relation="include">
         </childnode>
-        <childnode refid="5374" relation="include">
+        <childnode refid="5676" relation="include">
         </childnode>
-        <childnode refid="5313" relation="include">
+        <childnode refid="5616" relation="include">
         </childnode>
       </node>
-      <node id="5318">
+      <node id="5621">
         <label>openscenario_msgs/msg/bounding_box.hpp</label>
       </node>
-      <node id="5311">
+      <node id="5614">
         <label>rclcpp/rclcpp.hpp</label>
       </node>
-      <node id="5332">
+      <node id="5635">
         <label>lanelet2_routing/RoutingCost.h</label>
       </node>
-      <node id="5337">
+      <node id="5640">
         <label>tf2_geometry_msgs/tf2_geometry_msgs.h</label>
       </node>
-      <node id="5325">
+      <node id="5628">
         <label>traffic_simulator/hdmap_utils/hdmap_utils.hpp</label>
         <link refid="hdmap__utils_8hpp_source"/>
-        <childnode refid="5326" relation="include">
+        <childnode refid="5629" relation="include">
         </childnode>
-        <childnode refid="5327" relation="include">
+        <childnode refid="5630" relation="include">
         </childnode>
-        <childnode refid="5328" relation="include">
+        <childnode refid="5631" relation="include">
         </childnode>
-        <childnode refid="5329" relation="include">
+        <childnode refid="5632" relation="include">
         </childnode>
-        <childnode refid="5330" relation="include">
+        <childnode refid="5633" relation="include">
         </childnode>
-        <childnode refid="5331" relation="include">
+        <childnode refid="5634" relation="include">
         </childnode>
-        <childnode refid="5332" relation="include">
+        <childnode refid="5635" relation="include">
         </childnode>
-        <childnode refid="5333" relation="include">
+        <childnode refid="5636" relation="include">
         </childnode>
-        <childnode refid="5334" relation="include">
+        <childnode refid="5637" relation="include">
         </childnode>
-        <childnode refid="5335" relation="include">
+        <childnode refid="5638" relation="include">
         </childnode>
-        <childnode refid="5336" relation="include">
+        <childnode refid="5639" relation="include">
         </childnode>
-        <childnode refid="5337" relation="include">
+        <childnode refid="5640" relation="include">
         </childnode>
-        <childnode refid="5338" relation="include">
+        <childnode refid="5641" relation="include">
         </childnode>
-        <childnode refid="5339" relation="include">
+        <childnode refid="5642" relation="include">
         </childnode>
-        <childnode refid="5316" relation="include">
+        <childnode refid="5619" relation="include">
         </childnode>
-        <childnode refid="5340" relation="include">
+        <childnode refid="5643" relation="include">
         </childnode>
-        <childnode refid="5341" relation="include">
+        <childnode refid="5644" relation="include">
         </childnode>
-        <childnode refid="5342" relation="include">
+        <childnode refid="5645" relation="include">
         </childnode>
-        <childnode refid="5343" relation="include">
+        <childnode refid="5646" relation="include">
         </childnode>
-        <childnode refid="5344" relation="include">
+        <childnode refid="5647" relation="include">
         </childnode>
-        <childnode refid="5345" relation="include">
+        <childnode refid="5648" relation="include">
         </childnode>
-        <childnode refid="5317" relation="include">
+        <childnode refid="5620" relation="include">
         </childnode>
-        <childnode refid="5320" relation="include">
+        <childnode refid="5623" relation="include">
         </childnode>
-        <childnode refid="5311" relation="include">
+        <childnode refid="5614" relation="include">
         </childnode>
-        <childnode refid="5313" relation="include">
+        <childnode refid="5616" relation="include">
         </childnode>
-        <childnode refid="5346" relation="include">
+        <childnode refid="5649" relation="include">
         </childnode>
-        <childnode refid="5352" relation="include">
+        <childnode refid="5654" relation="include">
         </childnode>
-        <childnode refid="5361" relation="include">
+        <childnode refid="5663" relation="include">
         </childnode>
-        <childnode refid="5360" relation="include">
+        <childnode refid="5662" relation="include">
         </childnode>
-        <childnode refid="5359" relation="include">
+        <childnode refid="5661" relation="include">
         </childnode>
-        <childnode refid="5358" relation="include">
+        <childnode refid="5660" relation="include">
         </childnode>
-        <childnode refid="5365" relation="include">
+        <childnode refid="5667" relation="include">
         </childnode>
       </node>
-      <node id="5350">
+      <node id="5653">
         <label>exception</label>
       </node>
-      <node id="5326">
+      <node id="5629">
         <label>geometry_msgs/msg/vector3.h</label>
       </node>
-      <node id="5355">
+      <node id="5658">
         <label>geometry_msgs/msg/vector3.hpp</label>
       </node>
-      <node id="5319">
+      <node id="5622">
         <label>openscenario_msgs/msg/driver_model.hpp</label>
       </node>
-      <node id="5370">
+      <node id="5672">
         <label>autoware_perception_msgs/msg/traffic_light_state.hpp</label>
       </node>
-      <node id="5331">
+      <node id="5634">
         <label>lanelet2_routing/Route.h</label>
       </node>
-      <node id="5343">
+      <node id="5646">
         <label>lanelet2_extension_psim/utility/query.hpp</label>
       </node>
-      <node id="5353">
+      <node id="5656">
         <label>quaternion_operation/quaternion_operation.h</label>
       </node>
-      <node id="5342">
+      <node id="5645">
         <label>lanelet2_extension_psim/utility/message_conversion.hpp</label>
       </node>
-      <node id="5347">
+      <node id="5650">
         <label>geometry_msgs/msg/point.hpp</label>
       </node>
-      <node id="5373">
+      <node id="5675">
         <label>cstdio</label>
       </node>
-      <node id="5351">
-        <label>openscenario_msgs/msg/catmull_rom_spline.hpp</label>
-      </node>
-      <node id="5358">
+      <node id="5660">
         <label>vector</label>
       </node>
-      <node id="5339">
+      <node id="5642">
         <label>boost/filesystem.hpp</label>
       </node>
-      <node id="5315">
+      <node id="5655">
+        <label>gtest/gtest.h</label>
+      </node>
+      <node id="5618">
         <label>autoware_vehicle_msgs/msg/vehicle_command.hpp</label>
       </node>
-      <node id="5359">
+      <node id="5661">
         <label>utility</label>
       </node>
-      <node id="5357">
+      <node id="5659">
         <label>traffic_simulator/math/polynomial_solver.hpp</label>
         <link refid="polynomial__solver_8hpp_source"/>
-        <childnode refid="5358" relation="include">
+        <childnode refid="5660" relation="include">
         </childnode>
       </node>
-      <node id="5335">
+      <node id="5638">
         <label>lanelet2_traffic_rules/TrafficRulesFactory.h</label>
       </node>
-      <node id="5349">
+      <node id="5652">
         <label>traffic_simulator/math/catmull_rom_spline.hpp</label>
         <link refid="catmull__rom__spline_8hpp_source"/>
-        <childnode refid="5350" relation="include">
+        <childnode refid="5653" relation="include">
         </childnode>
-        <childnode refid="5347" relation="include">
+        <childnode refid="5650" relation="include">
         </childnode>
-        <childnode refid="5351" relation="include">
+        <childnode refid="5616" relation="include">
         </childnode>
-        <childnode refid="5313" relation="include">
+        <childnode refid="5654" relation="include">
         </childnode>
-        <childnode refid="5352" relation="include">
+        <childnode refid="5661" relation="include">
         </childnode>
-        <childnode refid="5359" relation="include">
-        </childnode>
-        <childnode refid="5358" relation="include">
+        <childnode refid="5660" relation="include">
         </childnode>
       </node>
-      <node id="5330">
+      <node id="5633">
         <label>lanelet2_core/primitives/LaneletSequence.h</label>
       </node>
-      <node id="5363">
+      <node id="5665">
         <label>iostream</label>
       </node>
-      <node id="5327">
+      <node id="5630">
         <label>lanelet2_core/LaneletMap.h</label>
       </node>
-      <node id="5369">
+      <node id="5671">
         <label>traffic_simulator/traffic_lights/traffic_light.hpp</label>
         <link refid="traffic__light_8hpp_source"/>
-        <childnode refid="5370" relation="include">
+        <childnode refid="5672" relation="include">
         </childnode>
-        <childnode refid="5363" relation="include">
+        <childnode refid="5665" relation="include">
         </childnode>
-        <childnode refid="5309" relation="include">
+        <childnode refid="5612" relation="include">
         </childnode>
-        <childnode refid="5364" relation="include">
+        <childnode refid="5666" relation="include">
         </childnode>
-        <childnode refid="5371" relation="include">
+        <childnode refid="5673" relation="include">
         </childnode>
-        <childnode refid="5375" relation="include">
+        <childnode refid="5677" relation="include">
         </childnode>
-        <childnode refid="5361" relation="include">
+        <childnode refid="5663" relation="include">
         </childnode>
-        <childnode refid="5360" relation="include">
+        <childnode refid="5662" relation="include">
         </childnode>
-        <childnode refid="5359" relation="include">
+        <childnode refid="5661" relation="include">
         </childnode>
-        <childnode refid="5358" relation="include">
+        <childnode refid="5660" relation="include">
         </childnode>
       </node>
-      <node id="5366">
+      <node id="5668">
         <label>traffic_simulator/traffic_lights/traffic_light_manager.hpp</label>
         <link refid="traffic__light__manager_8hpp_source"/>
-        <childnode refid="5367" relation="include">
+        <childnode refid="5669" relation="include">
         </childnode>
-        <childnode refid="5368" relation="include">
+        <childnode refid="5670" relation="include">
         </childnode>
-        <childnode refid="5317" relation="include">
+        <childnode refid="5620" relation="include">
         </childnode>
-        <childnode refid="5311" relation="include">
+        <childnode refid="5614" relation="include">
         </childnode>
-        <childnode refid="5364" relation="include">
+        <childnode refid="5666" relation="include">
         </childnode>
-        <childnode refid="5313" relation="include">
+        <childnode refid="5616" relation="include">
         </childnode>
-        <childnode refid="5325" relation="include">
+        <childnode refid="5628" relation="include">
         </childnode>
-        <childnode refid="5369" relation="include">
+        <childnode refid="5671" relation="include">
         </childnode>
-        <childnode refid="5360" relation="include">
+        <childnode refid="5662" relation="include">
         </childnode>
-        <childnode refid="5359" relation="include">
+        <childnode refid="5661" relation="include">
         </childnode>
-        <childnode refid="5358" relation="include">
+        <childnode refid="5660" relation="include">
         </childnode>
-        <childnode refid="5365" relation="include">
+        <childnode refid="5667" relation="include">
         </childnode>
       </node>
-      <node id="5360">
+      <node id="5662">
         <label>unordered_map</label>
       </node>
-      <node id="5338">
+      <node id="5641">
         <label>autoware_auto_msgs/msg/had_map_bin.hpp</label>
       </node>
-      <node id="5365">
+      <node id="5667">
         <label>visualization_msgs/msg/marker_array.hpp</label>
       </node>
-      <node id="5348">
+      <node id="5651">
         <label>mutex</label>
       </node>
-      <node id="5329">
+      <node id="5632">
         <label>lanelet2_core/primitives/BasicRegulatoryElements.h</label>
       </node>
-      <node id="5314">
+      <node id="5617">
         <label>traffic_simulator/entity/entity_base.hpp</label>
         <link refid="entity__base_8hpp_source"/>
-        <childnode refid="5315" relation="include">
+        <childnode refid="5618" relation="include">
         </childnode>
-        <childnode refid="5316" relation="include">
+        <childnode refid="5619" relation="include">
         </childnode>
-        <childnode refid="5317" relation="include">
+        <childnode refid="5620" relation="include">
         </childnode>
-        <childnode refid="5318" relation="include">
+        <childnode refid="5621" relation="include">
         </childnode>
-        <childnode refid="5319" relation="include">
+        <childnode refid="5622" relation="include">
         </childnode>
-        <childnode refid="5320" relation="include">
+        <childnode refid="5623" relation="include">
         </childnode>
-        <childnode refid="5321" relation="include">
+        <childnode refid="5624" relation="include">
         </childnode>
-        <childnode refid="5322" relation="include">
+        <childnode refid="5625" relation="include">
         </childnode>
-        <childnode refid="5323" relation="include">
+        <childnode refid="5626" relation="include">
         </childnode>
-        <childnode refid="5324" relation="include">
+        <childnode refid="5627" relation="include">
         </childnode>
-        <childnode refid="5310" relation="include">
+        <childnode refid="5613" relation="include">
         </childnode>
-        <childnode refid="5313" relation="include">
+        <childnode refid="5616" relation="include">
         </childnode>
-        <childnode refid="5325" relation="include">
+        <childnode refid="5628" relation="include">
         </childnode>
-        <childnode refid="5366" relation="include">
+        <childnode refid="5668" relation="include">
         </childnode>
-        <childnode refid="5360" relation="include">
+        <childnode refid="5662" relation="include">
         </childnode>
-        <childnode refid="5358" relation="include">
+        <childnode refid="5660" relation="include">
         </childnode>
-        <childnode refid="5365" relation="include">
+        <childnode refid="5667" relation="include">
         </childnode>
       </node>
-      <node id="5334">
+      <node id="5637">
         <label>lanelet2_routing/RoutingGraphContainer.h</label>
       </node>
-      <node id="5316">
+      <node id="5619">
         <label>boost/optional.hpp</label>
       </node>
-      <node id="5336">
+      <node id="5639">
         <label>tf2/LinearMath/Matrix3x3.h</label>
       </node>
-      <node id="5317">
+      <node id="5620">
         <label>memory</label>
       </node>
     </incdepgraph>
@@ -498,93 +493,85 @@
 <codeline lineno="31"><highlight class="normal"><sp/><sp/>status_<sp/>=<sp/>boost::none;</highlight></codeline>
 <codeline lineno="32"><highlight class="normal">}</highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal">EntityBase::EntityBase(</highlight></codeline>
-<codeline lineno="35"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>type,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::string<sp/>&amp;<sp/>name,</highlight></codeline>
-<codeline lineno="36"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::EntityStatus<sp/>&amp;<sp/>initial_state)</highlight></codeline>
-<codeline lineno="37"><highlight class="normal">:<sp/>EntityBase(type,<sp/>name)</highlight></codeline>
-<codeline lineno="38"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="39"><highlight class="normal"><sp/><sp/>status_<sp/>=<sp/>initial_state;</highlight></codeline>
-<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>EntityBase::onUpdate(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)<sp/>{<sp/>status_before_update_<sp/>=<sp/>status_;<sp/>}</highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal">boost::optional&lt;double&gt;<sp/>EntityBase::getStandStillDuration()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>stand_still_duration_;<sp/>}</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"></highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>autoware_vehicle_msgs::msg::VehicleCommand<sp/>EntityBase::getVehicleCommand()</highlight></codeline>
-<codeline lineno="47"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="48"><highlight class="normal"><sp/><sp/>THROW_SIMULATION_ERROR(</highlight><highlight class="stringliteral">&quot;get<sp/>vehicle<sp/>command<sp/>does<sp/>not<sp/>support<sp/>in<sp/>&quot;</highlight><highlight class="normal">,<sp/>type,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>entity<sp/>type&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="49"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="50"><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>EntityBase::updateStandStillDuration(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>step_time)</highlight></codeline>
-<codeline lineno="52"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!status_)<sp/>{</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>stand_still_duration_<sp/>=<sp/>boost::none;</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!stand_still_duration_)<sp/>{</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>stand_still_duration_<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::fabs(status_-&gt;action_status.twist.linear.x)<sp/>&lt;=<sp/>std::numeric_limits&lt;double&gt;::epsilon())<sp/>{</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>stand_still_duration_<sp/>=<sp/>step_time<sp/>+<sp/>stand_still_duration_.get();</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>stand_still_duration_<sp/>=<sp/>0;</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="66"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>EntityBase::updateEntityStatusTimestamp(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>current_time)</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>EntityBase::onUpdate(</highlight><highlight class="keywordtype">double</highlight><highlight class="normal">,<sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal">)<sp/>{<sp/>status_before_update_<sp/>=<sp/>status_;<sp/>}</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"></highlight></codeline>
+<codeline lineno="36"><highlight class="normal">boost::optional&lt;double&gt;<sp/>EntityBase::getStandStillDuration()</highlight><highlight class="keyword"><sp/>const<sp/></highlight><highlight class="normal">{<sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>stand_still_duration_;<sp/>}</highlight></codeline>
+<codeline lineno="37"><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>autoware_vehicle_msgs::msg::VehicleCommand<sp/>EntityBase::getVehicleCommand()</highlight></codeline>
+<codeline lineno="39"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/>THROW_SIMULATION_ERROR(</highlight><highlight class="stringliteral">&quot;get<sp/>vehicle<sp/>command<sp/>does<sp/>not<sp/>support<sp/>in<sp/>&quot;</highlight><highlight class="normal">,<sp/>type,<sp/></highlight><highlight class="stringliteral">&quot;<sp/>entity<sp/>type&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>EntityBase::updateStandStillDuration(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>step_time)</highlight></codeline>
+<codeline lineno="44"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!status_)<sp/>{</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/>stand_still_duration_<sp/>=<sp/>boost::none;</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!stand_still_duration_)<sp/>{</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>stand_still_duration_<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>std::fabs(status_-&gt;action_status.twist.linear.x)<sp/>&lt;=<sp/>std::numeric_limits&lt;double&gt;::epsilon())<sp/>{</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>stand_still_duration_<sp/>=<sp/>step_time<sp/>+<sp/>stand_still_duration_.get();</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>stand_still_duration_<sp/>=<sp/>0;</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>EntityBase::updateEntityStatusTimestamp(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>current_time)</highlight></codeline>
+<codeline lineno="61"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status_)<sp/>{</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/>status_-&gt;time<sp/>=<sp/>current_time;</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="65"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>EntityBase::setOtherStatus(</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unordered_map&lt;std::string,<sp/>openscenario_msgs::msg::EntityStatus&gt;<sp/>&amp;<sp/>status)</highlight></codeline>
 <codeline lineno="69"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status_)<sp/>{</highlight></codeline>
-<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/>status_-&gt;time<sp/>=<sp/>current_time;</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="73"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"></highlight></codeline>
-<codeline lineno="75"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>EntityBase::setOtherStatus(</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>std::unordered_map&lt;std::string,<sp/>openscenario_msgs::msg::EntityStatus&gt;<sp/>&amp;<sp/>status)</highlight></codeline>
-<codeline lineno="77"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/>other_status_.clear();</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status_)<sp/>{</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>each<sp/>:<sp/>status)<sp/>{</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(each.first<sp/>!=<sp/>name)<sp/>{</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p0<sp/>=<sp/>each.second.pose.position;</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p1<sp/>=<sp/>status_.get().pose.position;</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>distance<sp/>=</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::sqrt(std::pow(p0.x<sp/>-<sp/>p1.x,<sp/>2)<sp/>+<sp/>std::pow(p0.y<sp/>-<sp/>p1.y,<sp/>2)<sp/>+<sp/>std::pow(p0.z<sp/>-<sp/>p1.z,<sp/>2));</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance<sp/>&lt;<sp/>30)<sp/>{</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>other_status_.insert(each);</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="92"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="93"><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::EntityStatus<sp/>EntityBase::getStatus()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
-<codeline lineno="95"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!status_)<sp/>{</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/>THROW_SEMANTIC_ERROR(</highlight><highlight class="stringliteral">&quot;status<sp/>is<sp/>not<sp/>set&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;status_.get();</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="101"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"></highlight></codeline>
-<codeline lineno="103"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>EntityBase::setStatus(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::EntityStatus<sp/>&amp;<sp/>status)</highlight></codeline>
-<codeline lineno="104"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/>status_<sp/>=<sp/>status;</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/>status_-&gt;name<sp/>=<sp/>name;</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="108"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"></highlight></codeline>
-<codeline lineno="110"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>EntityBase::stopAtEndOfRoad()</highlight></codeline>
-<codeline lineno="111"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!status_)<sp/>{</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>THROW_SEMANTIC_ERROR(</highlight><highlight class="stringliteral">&quot;status<sp/>is<sp/>not<sp/>set&quot;</highlight><highlight class="normal">);</highlight></codeline>
-<codeline lineno="114"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><sp/><sp/><sp/><sp/>status_.get().action_status.twist<sp/>=<sp/>geometry_msgs::msg::Twist();</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/>status_.get().action_status.accel<sp/>=<sp/>geometry_msgs::msg::Accel();</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="118"><highlight class="normal">}</highlight></codeline>
-<codeline lineno="119"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>entity</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="120"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>traffic_simulator</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal"><sp/><sp/>other_status_.clear();</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(status_)<sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">for</highlight><highlight class="normal"><sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>&amp;<sp/>each<sp/>:<sp/>status)<sp/>{</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(each.first<sp/>!=<sp/>name)<sp/>{</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p0<sp/>=<sp/>each.second.pose.position;</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">auto</highlight><highlight class="normal"><sp/>p1<sp/>=<sp/>status_.get().pose.position;</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>distance<sp/>=</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>std::sqrt(std::pow(p0.x<sp/>-<sp/>p1.x,<sp/>2)<sp/>+<sp/>std::pow(p0.y<sp/>-<sp/>p1.y,<sp/>2)<sp/>+<sp/>std::pow(p0.z<sp/>-<sp/>p1.z,<sp/>2));</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(distance<sp/>&lt;<sp/>30)<sp/>{</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>other_status_.insert(each);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::EntityStatus<sp/>EntityBase::getStatus()</highlight><highlight class="keyword"><sp/>const</highlight></codeline>
+<codeline lineno="87"><highlight class="keyword"></highlight><highlight class="normal">{</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!status_)<sp/>{</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>THROW_SEMANTIC_ERROR(</highlight><highlight class="stringliteral">&quot;status<sp/>is<sp/>not<sp/>set&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this-&gt;status_.get();</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="94"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"><sp/>EntityBase::setStatus(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/>openscenario_msgs::msg::EntityStatus<sp/>&amp;<sp/>status)</highlight></codeline>
+<codeline lineno="96"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/>status_<sp/>=<sp/>status;</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/>status_-&gt;name<sp/>=<sp/>name;</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">true</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="100"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>EntityBase::stopAtEndOfRoad()</highlight></codeline>
+<codeline lineno="103"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/></highlight><highlight class="keywordflow">if</highlight><highlight class="normal"><sp/>(!status_)<sp/>{</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>THROW_SEMANTIC_ERROR(</highlight><highlight class="stringliteral">&quot;status<sp/>is<sp/>not<sp/>set&quot;</highlight><highlight class="normal">);</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/>}<sp/></highlight><highlight class="keywordflow">else</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>status_.get().action_status.twist<sp/>=<sp/>geometry_msgs::msg::Twist();</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/>status_.get().action_status.accel<sp/>=<sp/>geometry_msgs::msg::Accel();</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="110"><highlight class="normal">}</highlight></codeline>
+<codeline lineno="111"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>entity</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="112"><highlight class="normal">}<sp/><sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>traffic_simulator</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/home/runner/work/scenario_simulator_v2/scenario_simulator_v2/simulation/traffic_simulator/src/entity/entity_base.cpp"/>
   </compounddef>

@@ -10,7 +10,7 @@
       
       
       <link rel="icon" href="../../image/icon.png">
-      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.0">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.5">
     
     
       
@@ -18,10 +18,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.fe914879.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.be71726b.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ba0d045b.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
         
       
     
@@ -332,6 +332,18 @@
     <li class="md-nav__item">
       <a href="../RunWithDocker/" class="md-nav__link">
         Run with docker
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../RunTestScenarioWithDocker/" class="md-nav__link">
+        Run test scenario with Docker
       </a>
     </li>
   
@@ -655,6 +667,18 @@
   
 
           
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../design/Metrics/" class="md-nav__link">
+        Metrics
+      </a>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -700,7 +724,7 @@
   
     <li class="md-nav__item">
       <a href="../../etc/ContactUs/" class="md-nav__link">
-        Contact Infomation
+        Contact Information
       </a>
     </li>
   
@@ -792,6 +816,8 @@
                 
                 
                 <h1 id="build-instructions">Build Instructions<a class="headerlink" href="#build-instructions" title="Permanent link">#</a></h1>
+<p>This setup instruction is based on ROS2-foxy.
+If you want to setup in galactic environment, please replace foxy to galactic.</p>
 <h2 id="setup-ros-2-environment">Setup ROS 2 environment<a class="headerlink" href="#setup-ros-2-environment" title="Permanent link">#</a></h2>
 <p>This framework only supports ROS 2 Foxy Fitzroy. (<a href="https://docs.ros.org/en/foxy/Installation.html">https://docs.ros.org/en/foxy/Installation.html</a>)<br />
 You can install Foxy by typing the command below in your terminal.</p>
@@ -817,12 +843,12 @@ git clone https://github.com/tier4/scenario_simulator_v2.git
 <span class="c1"># These lines are necessary right now, but it will be removed in the near future</span>
 <span class="nb">cd</span> scenario_simulator_v2
 <span class="c1"># This script clones the part of the source codes in Autoware and add it to the workspace</span>
-sh install_depends.sh
+sh install_depends.sh foxy
 </code></pre></div>
 <h2 id="install-dependencies-via-rosdep">Install dependencies via rosdep<a class="headerlink" href="#install-dependencies-via-rosdep" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code><span class="nb">cd</span> ~/scenario_simulator_ws
 <span class="nb">source</span> /opt/ros/foxy/setup.bash
-rosdep install -iry --from-paths src --rosdistro foxy
+rosdep install -iry --from-paths src/scenario_simulator_v2 --rosdistro foxy
 </code></pre></div>
 <h2 id="build-scenario_simulator_vs">Build scenario_simulator_vs<a class="headerlink" href="#build-scenario_simulator_vs" title="Permanent link">#</a></h2>
 <div class="highlight"><pre><span></span><code>colcon build --symlink-install
@@ -901,10 +927,10 @@ rosdep install -iry --from-paths src --rosdistro foxy
     <div class="md-dialog" data-md-component="dialog">
       <div class="md-dialog__inner md-typeset"></div>
     </div>
-    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.53c85856.min.js", "version": null}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.409db549.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.716f8af4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.56a63758.min.js"></script>
       
         <script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
       
