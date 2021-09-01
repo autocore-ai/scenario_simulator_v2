@@ -54,7 +54,31 @@ Scenario:
 ```
 **注意： path的工作流文件不一定为OpenScenario的xosc文件，也可以是T4V2的yaml文件，即第三步不是必须。**
 
-## 五、测试work_flow打包进入docker镜像
+## 五、 场景地图
+
+目前使用的地图是Tier4中的地图，如果要更换地图，记得将新的地图放到docker镜像中，实际可以拷贝到work_flow/map/下，对应生成的测试场景的yaml文件中地图路径也跟随改动。
+
+例子：
+
+1. 生成测试场景，文件名称为test.yaml
+
+2. 编辑test.yaml，将osm的path替换成在docker中map的实际位置，注意为全路径
+
+```
+RoadNetwork:
+    LogicFile:
+      filepath: lanelet2_map.osm
+```
+
+替换成
+
+```
+RoadNetwork:
+    LogicFile:
+      filepath: /home/ubuntu/Desktop/scenario_simulator_ws/work_flow/map/lanelet2_map.osm
+```
+
+## 六、测试work_flow打包进入docker镜像
 
 1. 将work_flow目录copy到scenario_simulator_v2下
 2. 将原镜像打一个tag，如: sudo docker tag scenario_simulator_v2:latest ssv:first
@@ -80,10 +104,61 @@ ENTRYPOINT ["/docker-entrypoint.sh"]
 sudo docker build -t scenario_simulator_v2 .
 ```
 
-## 六、 执行case
+## 七、 执行case
 
 ```
-sudo rocker --nvidia --x11 scenario_simulator_v2 ./startup.sh
+sudo docker run -i scenario_simulator_v2 ./startup.sh
 ``` 
 
-## 八、结果说明
+## 八、增加新case
+
+1. 使用Tier4的场景工具，生成case yaml文件
+
+2. 将yaml文件copy到work_flow/test_scenario目录下
+
+3. 在work_flow.yaml文件中添加case
+
+4. 重新打包镜像： sudo docker build -t scenario_simulator_v2 .
+
+5. 执行case： sudo docker run -i scenario_simulator_v2 ./startup.sh
+
+## 九、结果说明
+
+1. Pass的case
+
+case测试通过后，每个case的前边会有[PASSED]的字显示
+
+```
++ ros2 run scenario_test_runner result_checker /tmp/scenario_test_runner/result.junit.xml
+[PASSED] /tmp/scenario_test_runner/line_keep_normal_speed_case_1/line_keep_normal_speed_case_1.xosc
+```
+
+2. Failed的case
+
+case测试通过后，每个case的前边会有[FAILED]的字显示
+
+```
++ ros2 run scenario_test_runner result_checker /tmp/scenario_test_runner/result.junit.xml
+[FAILED] /tmp/scenario_test_runner/line_keep_normal_speed_case_1/line_keep_normal_speed_case_1.xosc
+```
+
+3. 执行异常
+
+若出现以下错误，则表示执行case中遇见问题，未生成测试结果，需要看具体错误原因
+
+```
++ ros2 run scenario_test_runner result_checker /tmp/scenario_test_runner/result.junit.xml
+Traceback (most recent call last):
+  File "/home/ubuntu/Desktop/scenario_simulator_ws/install/scenario_test_runner/lib/scenario_test_runner/result_checker", line 11, in <module>
+    load_entry_point('scenario-test-runner', 'console_scripts', 'result_checker')()
+  File "/home/ubuntu/Desktop/scenario_simulator_ws/build/scenario_test_runner/scenario_test_runner/result_checker.py", line 80, in main
+    checker.check(args.xml)
+  File "/home/ubuntu/Desktop/scenario_simulator_ws/build/scenario_test_runner/scenario_test_runner/result_checker.py", line 44, in check
+    suites = ET.parse(result).getroot()
+  File "/usr/lib/python3.8/xml/etree/ElementTree.py", line 1202, in parse
+    tree.parse(source, parser)
+  File "/usr/lib/python3.8/xml/etree/ElementTree.py", line 584, in parse
+    source = open(source, "rb")
+FileNotFoundError: [Errno 2] No such file or directory: '/tmp/scenario_test_runner/result.junit.xml'
+
+```

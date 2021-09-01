@@ -3,11 +3,11 @@ Scenario:
       path: /home/ubuntu/Desktop/scenario_simulator_ws/work_flow/test_scenario/line_keep_normal_speed_case_1.yaml
     } 
   #- {
-  #    path: /home/odd-ci/scenario_simulator_ws/work_flow/test_scenario/line_keep_following_front_vehicle_case_2.yaml
+  #    path: /home/ubuntu/Desktop/scenario_simulator_ws/work_flow/test_scenario/line_keep_following_front_vehicle_case_2.yaml
   #  }
   #- {
-  #    path: /home/odd-ci/scenario_simulator_ws/work_flow/test_scenario/line_keep_stop_safe_dis_with_front_car_case_3.yaml
+  #    path: /home/ubuntu/Desktop/scenario_simulator_ws/work_flow/test_scenario/line_keep_stop_safe_dis_with_front_car_case_3.yaml
   #  }
   #- {
-  #     path: /home/odd-ci/scenario_simulator_ws/work_flow/test_scenario/wide_line_bicycle_3.yaml
+  #     path: /home/ubuntu/Desktop/scenario_simulator_ws/work_flow/test_scenario/wide_line_bicycle_3.yaml
   #  }

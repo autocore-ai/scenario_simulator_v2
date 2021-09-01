@@ -54,7 +54,7 @@ def launch_setup(context, *args, **kwargs):
     # Autoware Launch File
     autoware_launch_file_defaults = {
         "awf/auto": "autoware_auto.launch.py",
-        "tier4/proposal": "planning_simulator.launch.xml"
+        "tier4/proposal": "acpilot_pnc_tester.launch.xml"
     }
     autoware_launch_file = LaunchConfiguration(
         "autoware-launch-file", default=autoware_launch_file_defaults[architecture_type.perform(context)]

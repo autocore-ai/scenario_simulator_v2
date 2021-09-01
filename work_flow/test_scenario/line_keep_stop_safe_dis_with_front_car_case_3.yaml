@@ -13,7 +13,7 @@ OpenSCENARIO:
     CatalogLocation: []
   RoadNetwork:
     LogicFile:
-      filepath: /home/odd-ci/scenario_simulator_ws/work_flow/map/lanelet2_map.osm
+      filepath: /home/ubuntu/Desktop/scenario_simulator_ws/work_flow/map/lanelet2_map.osm
     SceneGraphFile:
       filepath: lanelet2_map.pcd
     TrafficSignals:
